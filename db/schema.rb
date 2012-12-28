@@ -11,7 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121228145042) do
+ActiveRecord::Schema.define(:version => 20121228201300) do
+
+  create_table "samples", :force => true do |t|
+    t.integer  "set_meta_id"
+    t.datetime "sample_time"
+    t.integer  "generated_kilowatts"
+    t.integer  "temperature"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  add_index "samples", ["sample_time"], :name => "index_samples_on_sample_time"
+  add_index "samples", ["set_meta_id"], :name => "index_samples_on_set_meta_id"
+
+  create_table "set_meta", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

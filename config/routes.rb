@@ -2,7 +2,7 @@ Linknsynch::Application.routes.draw do
   devise_for :users
 
   root :to => "home#index" 
-
+  resources :set_metas
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

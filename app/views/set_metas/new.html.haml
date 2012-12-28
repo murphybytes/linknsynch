@@ -1,0 +1,20 @@
+%h2 Upload New Data Set
+%p
+  Upload file with generation and temperature data.  The file must be a CSV (Comma Seperated Value)  
+  formatted file with a single sample on each row.  The file must contain three columns.  The first 
+  column is an 
+  %a{ :href=>'http://en.wikipedia.org/wiki/ISO_8601'}
+    ISO 8601
+  formatted timestamp.  We expect the time to be given in hour increments.  The second column is 
+  the temperature given in Farenheit, and the third column is
+  the generated kilowatts for the period.  Both temperature and generation values are given as integers.
+%h4 Example File Contents
+%p
+  2012-12-01T00:00:00,23,147
+  %br
+  2012-12-01T00:01:00,23,150
+= simple_form_for @set, :url => { :action => "create" }  do |f|
+  = f.input :name, :label => 'Data Set Name'
+  = f.input :description, :label => 'Data Set Description'
+  = f.input :upload_file, :as => :file, :label => 'CSV Upload File', :placeholder => 'datafile.csv'
+  = f.button :submit, "Create Set"

@@ -15,7 +15,15 @@ Linknsynch::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
-
+  config.action_mailer.smtp_settings = { 
+    :enable_starttls_auto => true,
+    :address              => "smtp.google.com",
+    :port                 => "587",
+    :domain               => "gmail.com",
+    :authentication       => :plain,
+    :user_name            => "murphybytesjunk@gmail.com",
+    :password             => "Rgvjnco6JtU7qr"
+  }
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
