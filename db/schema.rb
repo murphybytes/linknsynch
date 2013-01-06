@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121228201300) do
+ActiveRecord::Schema.define(:version => 20130106185838) do
 
   create_table "samples", :force => true do |t|
     t.integer  "set_meta_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(:version => 20121228201300) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
