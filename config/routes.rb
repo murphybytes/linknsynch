@@ -3,6 +3,7 @@ Linknsynch::Application.routes.draw do
 
   root :to => "home#index" 
   resources :set_metas
+  resources :calculations
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

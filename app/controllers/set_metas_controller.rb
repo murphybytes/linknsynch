@@ -4,6 +4,12 @@ class SetMetasController < ApplicationController
     @set ||= SetMeta.new
   end
 
+  def index
+    logger.debug "Called index"
+    @sets = SetMeta.all
+
+  end
+
   def create
     begin
       logger.debug "CURRENT USER #{current_user.id}"
@@ -40,7 +46,5 @@ class SetMetasController < ApplicationController
     end
   end
 
-  def index
-  end
-
+ 
 end
