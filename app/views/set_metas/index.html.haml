@@ -1,3 +1,11 @@
-%h2 Data Sets
-- @sets.each do |set|
-  %p= set.name
+%h2 Samples 
+%table.table.table-bordered
+  %tr
+    %th 
+      Sample Name
+    %th 
+      Description
+  - @sets.each do |set|
+    %tr
+      %td= set.name
+      %td= set.description
