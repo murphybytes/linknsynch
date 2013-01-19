@@ -6,24 +6,23 @@ class SetMetasController < ApplicationController
 
   def index
     logger.debug "Called index"
-    @sets = SetMeta.all
+    @sets = SetMeta.where( user_id: current_user.id )
 
   end
 
   def create
     begin
-      logger.debug "CURRENT USER #{current_user.id}"
-      original_filename = params[:set_meta][:upload_file].original_filename 
-      @io = StringIO.new( params[:set_meta][ :upload_file ].read )
-     
-      @set = SetMeta.new( name: params[:set_meta][:name], 
-                             description:  params[:set_meta][:description] )
+
+      original_filename = params[:upload_file][:file].original_filename
+      @io = StringIO.new( params[ :upload_file ][:file].read )
+
+      @set = SetMeta.new( params[:set_meta] )
       @set.user = current_user
       @set.save
 
       logger.debug "New set #{@set.attributes}"
 
-      logger.debug "Started writing file #{@original_filename} to db"
+      logger.debug "Started writing file #{original_filename} to db"
       @io.each_line do | line |
         iso_date, temp, kilowatts = line.split( "," )
         logger.debug "Processing line #{line}"
@@ -31,8 +30,7 @@ class SetMetasController < ApplicationController
         @set.samples << Sample.new( :sample_time => DateTime.parse( iso_date.strip ),
                              :temperature => temp.strip,
                              :generated_kilowatts => kilowatts.strip )
-      end                    
-      
+      end
 
       if @set.save
         flash[:notice] = "Uploaded #{@original_filename}"
@@ -40,7 +38,7 @@ class SetMetasController < ApplicationController
         render :action => "new" 
       end
       logger.debug "Finished writing file #{@original_filename} to db"
-      
+
     rescue => e
       logger.error e.message
     end

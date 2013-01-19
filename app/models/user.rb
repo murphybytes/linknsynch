@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
     has_many :set_metas, :autosave => true, :dependent => :delete_all
+  has_many :thermal_storage_profiles, :autosave => true, :dependent => :delete_all
 end

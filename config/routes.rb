@@ -4,6 +4,7 @@ Linknsynch::Application.routes.draw do
   root :to => "home#index" 
   resources :set_metas
   resources :calculations
+  resources :thermal_storage_profiles
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

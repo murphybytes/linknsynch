@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106185838) do
+ActiveRecord::Schema.define(:version => 20130113194846) do
 
   create_table "samples", :force => true do |t|
     t.integer  "set_meta_id"
@@ -31,6 +31,20 @@ ActiveRecord::Schema.define(:version => 20130106185838) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "user_id"
+  end
+
+  create_table "thermal_storage_profiles", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "units"
+    t.integer  "user_id"
+    t.decimal  "capacity"
+    t.decimal  "storage"
+    t.decimal  "charge_rate"
+    t.decimal  "base_threshold"
+    t.decimal  "usage"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "users", :force => true do |t|
