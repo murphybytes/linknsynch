@@ -1,0 +1,11 @@
+%h4 Thermal Storage Profiles
+%table.table.table-bordered
+  %tr
+    %th
+      Profile Name
+    %th
+      Description
+  - @profiles.each do |profile|
+    %tr
+      %td= profile.name
+      %td= profile.description

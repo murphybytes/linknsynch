@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  description: MyText
+  units: 1
+  user_id: 1
+  capacity: 
+  storage: 
+  charge_rate: 
+  base_threshold: 
+  usage: 
+
+two:
+  name: MyString
+  description: MyText
+  units: 1
+  user_id: 1
+  capacity: 
+  storage: 
+  charge_rate: 
+  base_threshold: 
+  usage: 
