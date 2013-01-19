@@ -7,6 +7,9 @@ one:
   user_id: 1
   btu_required: 9.99
   base_temperature: 1
+  created_at: <%= DateTime.now %>
+  updated_at: <%= DateTime.now %>
+
 
 two:
   name: MyString
@@ -15,3 +18,5 @@ two:
   user_id: 1
   btu_required: 9.99
   base_temperature: 1
+  created_at: <%= DateTime.now %>
+  updated_at: <%= DateTime.now %>

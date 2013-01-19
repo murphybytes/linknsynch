@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130113194846) do
+ActiveRecord::Schema.define(:version => 20130118134306) do
+
+  create_table "home_profiles", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "home_count"
+    t.integer  "user_id"
+    t.decimal  "btu_required"
+    t.integer  "base_temperature"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "samples", :force => true do |t|
     t.integer  "set_meta_id"
