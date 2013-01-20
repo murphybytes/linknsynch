@@ -1,12 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  name: TestHomeProfile
   description: MyText
-  home_count: 1
+  home_count: 1000
   user_id: 1
-  btu_required: 9.99
-  base_temperature: 1
+  btu_required: 713.4889
+  base_temperature: 60
+  thermostat_temperature: 70
   created_at: <%= DateTime.now %>
   updated_at: <%= DateTime.now %>
 
@@ -18,5 +19,6 @@ two:
   user_id: 1
   btu_required: 9.99
   base_temperature: 1
+  thermostat_temperature: 70
   created_at: <%= DateTime.now %>
   updated_at: <%= DateTime.now %>

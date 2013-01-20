@@ -10,10 +10,12 @@ class CalculatorTest < ActiveSupport::TestCase
     assert_equal 8760, @@set.samples.size, "sample count"
   end
 
-  test "calculator" do
+  test "Verify Total KW Generation" do
     calculator = PQR::Calculator.new( samples: @@set.samples )
     calculator.run
     assert_equal 8760 * 10000, calculator.total_kw_generated
   end
+
+  
 
 end

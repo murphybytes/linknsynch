@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130118134306) do
+ActiveRecord::Schema.define(:version => 20130120021902) do
 
   create_table "home_profiles", :force => true do |t|
     t.string   "name"
@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(:version => 20130118134306) do
     t.integer  "user_id"
     t.decimal  "btu_required"
     t.integer  "base_temperature"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.integer  "thermostat_temperature"
   end
 
   create_table "samples", :force => true do |t|
