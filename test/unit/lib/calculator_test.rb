@@ -11,9 +11,9 @@ class CalculatorTest < ActiveSupport::TestCase
   end
 
   test "calculator" do
-    calculator = PQR::Calculator.new( {} )
+    calculator = PQR::Calculator.new( samples: @@set.samples )
     calculator.run
-    assert calculator.total_kw_generated > 0
+    assert_equal 8760 * 10000, calculator.total_kw_generated
   end
 
 end
