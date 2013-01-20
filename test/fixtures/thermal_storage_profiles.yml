@@ -1,23 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  name: WaterHeaters
   description: MyText
-  units: 1
+  units: 100
   user_id: 1
-  capacity: 
-  storage: 
-  charge_rate: 
-  base_threshold: 
-  usage: 
+  capacity: <%= 11.0 * 100 %>
+  storage: <%= 11.0 * 100 %>
+  charge_rate: <%= 4.0 * 100 %>
+  base_threshold: <%= 6.0 * 100 %>
+  usage:  <%= 0.5 * 100 %>
 
 two:
-  name: MyString
+  name: SlabHeaters
   description: MyText
-  units: 1
+  units: 200
   user_id: 1
-  capacity: 
-  storage: 
-  charge_rate: 
-  base_threshold: 
-  usage: 
+  capacity: <%= 11.0 * 200 %>
+  storage: <%= 11.0 * 200 %>
+  charge_rate: <%= 4.0 * 200 %>
+  base_threshold: <%= 6.0 * 200 %>
+  usage:  <%= 0.5 * 200 %>
+
+  

@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130120021902) do
+ActiveRecord::Schema.define(:version => 20130120171234) do
 
   create_table "home_profiles", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "home_count"
     t.integer  "user_id"
-    t.decimal  "btu_required"
+    t.decimal  "btu_factor"
     t.integer  "base_temperature"
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
