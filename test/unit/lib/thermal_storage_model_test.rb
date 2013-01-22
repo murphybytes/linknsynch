@@ -40,7 +40,7 @@ class ThermalStorageModelTest < ActiveSupport::TestCase
   end
 
   test "Should correctly calculate available kws" do
-    assert_equal 1200, @model.get_available
+    assert_equal 1500, @model.get_available
   end
 
   
