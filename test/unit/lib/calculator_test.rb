@@ -5,7 +5,12 @@ class CalculatorTest < ActiveSupport::TestCase
   def setup
     @@set ||= SetMeta.where( :name => 'TestSample' ).first
     @home_profile ||= HomeProfile.where( :name => 'TestHomeProfile' ).first
-    @calculator ||= PQR::Calculator.new( samples: @@set.samples, home_profile: @home_profile )
+
+    @water_heaters ||= ThermalStorageProfile.where( name: 'WaterHeaters' ).first
+    @slab_heaters ||= ThermalStorageProfile.where( name: 'SlabHeaters' ).first
+    @model ||= PQR::ThermalStorageModel.new( @water_heaters, @slab_heaters )
+    
+    @calculator ||= PQR::Calculator.new( samples: @@set.samples, home_profile: @home_profile, thermal_storage_model: @model )
     @calculator.run
 
   end
