@@ -17,12 +17,12 @@ class HomeProfilesController < ApplicationController
     begin
       @profile = HomeProfile.create( params[:home_profile] )
       flash[:notice] = 'Created Home Profile'
-      render :action => 'index'
     rescue => e
       logger.error e.message
       flash[:alert] = e.message
       render :action => 'new'
     end
+    redirect_to home_profiles_path
   end
 
 

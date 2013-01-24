@@ -5,40 +5,23 @@
     Select a sample, home profile and one or more thermal storage profiles to perform calculations. 
 
 
-= form_for @profile, :url => { :action => 'create' }, :html => {:class => 'form-horizontal'}  do |f|
-  %div{ :class => 'control-group' }
-    %div{ :class => 'control-label' }
-      Profile Name:
+= form_tag( calculations_path, :method => :post,  :html => {:class => 'form-horizontal'} )  do
+  .control_group
+    .control_label
+      Sample Name:
     .controls
-      = f.text_field :name
-  %div{ :class => 'control-group' }
-    %div{ :class => 'control-label' }
-      Description:
+      = select_tag 'set', options_from_collection_for_select( @set_metas, "id", "name" ) 
+  .control_group
+    .control_label
+      Home Profile:
     .controls
-      = f.text_area :description
-  %div{ :class => 'control-group' }
-    %div{ :class => 'control-label' }
-      BTU Factor:
+      = select_tag 'home_profile', options_from_collection_for_select( @home_profiles, "id", "name" ) 
+  .control_group
+    .control_label
+      Thermal Storage Profile:
     .controls
-      = f.text_field :btu_factor
-  %div{ :class => 'control-group' }
-    %div{ :class => 'control-label' }
-      Total Units:
-    .controls
-      = f.text_field :home_count
-  %div{ :class => 'control-group' }
-    %div{ :class => 'control-label' }
-      Base Temperature (F):
-    .controls
-      = f.text_field :base_temperature
-  %div{ :class => 'control-group' }
-    %div{ :class => 'control-label' }
-      Thermostat Temperature (F): 
-    .controls
-      = f.text_field :thermostat_temperature
+      = select_tag 'thermal_storage_profile', options_from_collection_for_select( @thermal_profiles, "id", "name" ), multiple: true 
 
-  = f.hidden_field :user_id
- 
-  %div{ :class => 'control-group' }
+  .control_group
     .controls
-      = f.submit 'Create Profile',  :class => 'btn btn-primary'  
+      = button_tag 'Calculate',  :class => 'btn btn-primary'

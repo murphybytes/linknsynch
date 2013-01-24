@@ -1,0 +1,28 @@
+%h4 Calculation Results
+%table.table.table-bordered
+  %tr
+    %tr
+      %td
+        Total KW Generated
+      %td= @calculation.total_kw_generated
+    %tr
+      %td
+        Total KW Required for Heating
+      %td= @calculation.total_kw_required_for_heating
+    %tr
+      %td
+        Total KW Required for Heating LS
+      %td= @calculation.total_kw_required_for_heating_ls
+    %tr
+      %td
+        Total KW Load Unserved
+      %td= @calculation.total_kw_load_unserved
+    %tr
+      %td
+        Total KW Load Unserved LS
+      %td= @calculation.total_kw_load_unserved_ls
+    %tr
+      %td
+        Total KW Excess Off Peak 
+      %td= @calculation.total_kw_excess_off_peak_capacity
+
