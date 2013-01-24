@@ -27,7 +27,7 @@ module PQR
       total_kw_load_unserved = 0.0
       total_kw_load_unserved_ls = 0.0
       total_kw_excess_off_peak_capacity = 0.0
-      
+
 
       @samples.each do |sample|
 
@@ -51,10 +51,10 @@ module PQR
           unless Utils.is_peak?( sample.sample_time )
             excess_capacity = [ kw_generated - kw_required_for_heating, 0.0 ].max
             if excess_capacity > 0.0
-              used = @thermal_storage_model.charge( excess_capacity ) 
-              total_kw_excess_off_peak_capacity += ( excess_capacity - used )  
+              used = @thermal_storage_model.charge( excess_capacity )
+              total_kw_excess_off_peak_capacity += ( excess_capacity - used )
             end
-          end 
+          end
         end
 
       end
