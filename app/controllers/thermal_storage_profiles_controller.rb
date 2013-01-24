@@ -15,7 +15,7 @@ class ThermalStorageProfilesController < ApplicationController
     begin
       logger.debug "CURRENT USER #{current_user.id}"
       @profile = ThermalStorageProfile.create( params[:thermal_storage_profile] )
-      flash[:notice] = "Created Profile"
+      flash[:notice] = "Created Thermal Storage Profile"
       render :action => 'index'
      rescue => e
        logger.error e.message

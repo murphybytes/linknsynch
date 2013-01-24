@@ -1,0 +1,62 @@
+%h4 
+  Create Homes Profile
+%dl
+  %dd 
+    Define a block of homes that will be used in calculations.
+%h5 
+  Definitions
+%dl{ :class => 'dl-vertical' }
+  %dt
+    Base Temperature
+  %dd
+    Homes will have heaters turned on if the sample temperature is below this value
+  %dt
+    BTU Factor
+  %dd
+    Used to calculate the energy required to heat a home.
+  %dt 
+    Profile Name
+  %dd
+    The name of this profile. (Must be unique)
+  %dt
+    Thermostat Temperature
+  %dd
+    Thermostat setting for homes in this profile.
+
+= form_for @profile, :url => { :action => 'create' }, :html => {:class => 'form-horizontal'}  do |f|
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Profile Name:
+    .controls
+      = f.text_field :name
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Description:
+    .controls
+      = f.text_area :description
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      BTU Factor:
+    .controls
+      = f.text_field :btu_factor
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Total Units:
+    .controls
+      = f.text_field :home_count
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Base Temperature (F):
+    .controls
+      = f.text_field :base_temperature
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Thermostat Temperature (F): 
+    .controls
+      = f.text_field :thermostat_temperature
+
+  = f.hidden_field :user_id
+ 
+  %div{ :class => 'control-group' }
+    .controls
+      = f.submit 'Create Profile',  :class => 'btn btn-primary'  
