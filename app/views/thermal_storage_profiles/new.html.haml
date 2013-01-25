@@ -24,10 +24,6 @@
   %dd
     The amount of energy the thermal storage loses in an hour due to use. For example water heaters 
     would lose energy due to radiation, showers, laundry and the like.
-  %dt 
-    Per Unit Storage
-  %dd
-    The energy stored in a single thermal storage unit.
 
 = form_for @profile, :url => { :action => 'create' }, :html => {:class => 'form-horizontal'}  do |f|
   %div{ :class => 'control-group' }
@@ -40,11 +36,6 @@
       Description:
     .controls
       = f.text_area :description
-  %div{ :class => 'control-group' }
-    %div{ :class => 'control-label' }
-      Initial Per Unit Storage:
-    .controls
-      = f.text_field :storage
   %div{ :class => 'control-group' }
     %div{ :class => 'control-label' }
       Total Units:
@@ -70,11 +61,7 @@
       Capacity: 
     .controls
       = f.text_field :capacity
-  %div{ :class => 'control-group' }
-    %div{ :class => 'control-label' }
-      Storage:
-    .controls
-      = f.text_field :storage
+
   = f.hidden_field :user_id
  
   %div{ :class => 'control-group' }

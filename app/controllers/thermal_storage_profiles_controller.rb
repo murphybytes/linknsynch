@@ -17,11 +17,24 @@ class ThermalStorageProfilesController < ApplicationController
       @profile = ThermalStorageProfile.create( params[:thermal_storage_profile] )
       flash[:notice] = "Created Thermal Storage Profile"
       render :action => 'index'
-     rescue => e
-       logger.error e.message
+    rescue => e
+      logger.error e.message
       render :action => 'new'
     end
   end
 
- 
+  def show
+    @profile = ThermalStorageProfile.find( params[:id] )
+  end
+
+  def destroy
+    ThermalStorageProfile.delete( params[:id] )
+  end
+
+  def edit
+  end
+
+  def update
+  end
+  
 end

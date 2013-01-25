@@ -1,0 +1,47 @@
+%h4 
+  Thermal Storage Profile
+
+.row
+  .span4
+    Name
+  .span8
+    = @profile.name
+.row
+  .span4
+    Description
+  .span8
+    = @profile.description
+.row
+  .span4
+    Total Units
+  .span8
+    = @profile.units
+.row
+  .span4
+    Normal Usage
+  .span8
+    = @profile.usage
+.row
+  .span4
+    Charge Rate
+  .span8
+    = @profile.charge_rate
+.row 
+  .span4
+    Base Threshold
+  .span8
+    = @profile.base_threshold
+.row
+  .span4 
+    Capacity
+  .span8
+    = @profile.capacity
+.row
+  .span12
+    &nbsp;
+.row
+  .span3
+    = link_to "Edit&nbsp;&nbsp;<i class='icon-edit icon-white'>&nbsp;</i>".html_safe, edit_thermal_storage_profile_path( @profile.id ),  :class => "btn btn-block btn-success"
+  .span3
+    = link_to "Delete&nbsp;&nbsp;<i class='icon-remove icon-white'>&nbsp;</i>".html_safe, thermal_storage_profile_path( @profile.id ), :method => :delete,  :class => "btn btn-block btn-danger"
+  .span6

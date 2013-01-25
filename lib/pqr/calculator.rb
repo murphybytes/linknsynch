@@ -35,17 +35,17 @@ module PQR
         total_kw_generated += kw_generated
 
         kw_required_for_heating = get_kw_required_for_heating( sample )
-        kw_required_for_heating_ls = kw_required_for_heating
+        total_kw_required_for_heating_ls += kw_required_for_heating
         total_kw_required_for_heating += kw_required_for_heating
 
         kw_load_unserved = get_kw_load_unserved( kw_generated, kw_required_for_heating )
         total_kw_load_unserved += kw_load_unserved
+        total_kw_load_unserved_ls += kw_load_unserved
 
         if kw_load_unserved > 0.0
           adjustment = get_load_unserved_adjustment( kw_load_unserved )
-          total_kw_load_unserved_ls += (kw_load_unserved - adjustment)
-          kw_required_for_heating_ls -= adjustment
-          total_kw_required_for_heating_ls += kw_required_for_heating_ls
+          total_kw_load_unserved_ls -= adjustment
+          total_kw_required_for_heating_ls += adjustment
         else
           # if off peak charge thermal storage
           unless Utils.is_peak?( sample.sample_time )
