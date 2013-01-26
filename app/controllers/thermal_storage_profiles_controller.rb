@@ -16,11 +16,12 @@ class ThermalStorageProfilesController < ApplicationController
       logger.debug "CURRENT USER #{current_user.id}"
       @profile = ThermalStorageProfile.create( params[:thermal_storage_profile] )
       flash[:notice] = "Created Thermal Storage Profile"
-      render :action => 'index'
+      redirect_to thermal_storage_profiles_path
     rescue => e
+      flash[:alert] = e.message
       logger.error e.message
       render :action => 'new'
-    end
+    end    
   end
 
   def show
@@ -29,12 +30,25 @@ class ThermalStorageProfilesController < ApplicationController
 
   def destroy
     ThermalStorageProfile.delete( params[:id] )
+    flash[:notice] = 'Thermal profile deleted'
+    redirect_to thermal_storage_profiles_path
   end
 
   def edit
+    @profile ||= ThermalStorageProfile.find( params[:id] )
   end
 
   def update
+    begin
+      @profile ||= ThermalStorageProfile.find( params[:thermal_storage_profile][:id] )
+      @profile.update_attributes( params[:thermal_storage_profile])
+      flash[:notice] = 'Thermal storage updated'
+      redirect_to thermal_storage_profile_path( params[:id] )          
+    rescue => e
+      flash[:alert] = e.message
+      logger.error "Thermal storage profile update failed - #{ e.message }"
+      render :action => 'edit'
+    end
   end
   
 end

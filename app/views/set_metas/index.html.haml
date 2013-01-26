@@ -7,5 +7,5 @@
       Description
   - @sets.each do |set|
     %tr
-      %td= set.name
+      %td= link_to set.name, set_meta_path( set.id ) 
       %td= set.description

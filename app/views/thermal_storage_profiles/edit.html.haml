@@ -1,0 +1,70 @@
+%h4 
+  Edit Thermal Storage Profile
+%dl
+  %dd 
+    Define a block of thermal storage units such as water heaters or slab heat.  These units
+    can be combined with with temperature and generation samples in calculations. 
+%h5 
+  Definitions
+%dl{ :class => 'dl-horizontal' }
+  %dt
+    Base Threshold
+  %dd
+    Lower bound of energy storage, if energy in thermal storage unit drops below this value it must be charged.
+  %dt
+    Capacity
+  %dd
+    The maximum amount of energy it is possible to store in a unit of thermal storage.
+  %dt
+    Charge Rate
+  %dd
+    The rate at which energy can be accumulated in the thermal storage, given in Kw / hour.
+  %dt
+    Normal Usage
+  %dd
+    The amount of energy the thermal storage loses in an hour due to use. For example water heaters 
+    would lose energy due to radiation, showers, laundry and the like.
+
+= form_for @profile,  :html => {:class => 'form-horizontal'}  do |f|
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Profile Name:
+    .controls
+      = f.text_field :name
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Description:
+    .controls
+      = f.text_area :description
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Total Units:
+    .controls
+      = f.text_field :units
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Normal Usage:
+    .controls
+      = f.text_field :usage
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Charge Rate: 
+    .controls
+      = f.text_field :charge_rate
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Base Threshold:
+    .controls
+      = f.text_field :base_threshold
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Capacity: 
+    .controls
+      = f.text_field :capacity
+
+  = f.hidden_field :user_id
+  = f.hidden_field :id 
+ 
+  %div{ :class => 'control-group' }
+    .controls
+      = f.submit 'Save Profile',  :class => 'btn btn-primary'  

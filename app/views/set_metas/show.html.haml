@@ -1,0 +1,37 @@
+%h4 
+  Sample Profile
+
+.row
+  .span4
+    Name:
+  .span8
+    = @set.name
+.row
+  .span4
+    Description:
+  .span8
+    = @set.description
+.row
+  .span4
+    Sample Count:
+  .span8
+    = @set.samples.count
+.row
+  .span4
+    Sample Begin Date
+  .span8
+    =  @set.samples.first.sample_time 
+.row
+  .span4
+    Sample End Date
+  .span8
+    = @set.samples.last.sample_time
+.row
+  .span12
+    &nbsp;
+.row
+  .span3
+    = link_to "Edit&nbsp;&nbsp;<i class='icon-edit icon-white'>&nbsp;</i>".html_safe, edit_set_meta_path( @set.id ),  :class => "btn btn-block btn-success"
+  .span3
+    = link_to "Delete&nbsp;&nbsp;<i class='icon-remove icon-white'>&nbsp;</i>".html_safe, set_meta_path( @set.id ), :method => :delete,  :class => "btn btn-block btn-danger"
+  .span6

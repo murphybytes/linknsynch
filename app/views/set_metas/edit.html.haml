@@ -1,0 +1,18 @@
+%h4 
+  Edit Sample 
+= form_for @set, :url => set_meta_path( @set.id ),  :html => {:class => 'form-horizontal' }  do |f|
+  .control_group
+    .control_label
+      Sample Name:
+    .controls
+      = f.text_field :name
+  .control_group
+    .control_label
+      Description:
+    .controls
+      = f.text_area :description
+  = f.hidden_field :id
+
+  .control_group
+    .controls
+      = f.submit 'Save', :class => 'btn btn-primary'

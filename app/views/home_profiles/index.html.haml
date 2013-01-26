@@ -7,5 +7,5 @@
       Description
   - @profiles.each do |profile|
     %tr
-      %td= profile.name
+      %td= link_to profile.name, home_profile_path( profile.id ) 
       %td= profile.description

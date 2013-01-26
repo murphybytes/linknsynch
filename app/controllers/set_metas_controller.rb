@@ -7,12 +7,14 @@ class SetMetasController < ApplicationController
   def index
     logger.debug "Called index"
     @sets = SetMeta.where( user_id: current_user.id )
+  end
 
+  def edit
+    @set ||= SetMeta.find( params[:id] )
   end
 
   def create
     begin
-
       original_filename = params[:upload_file][:file].original_filename
       @io = StringIO.new( params[ :upload_file ][:file].read )
 
@@ -25,8 +27,6 @@ class SetMetasController < ApplicationController
       logger.debug "Started writing file #{original_filename} to db"
       @io.each_line do | line |
         iso_date, temp, kilowatts = line.split( "," )
-        logger.debug "Processing line #{line}"
-
         @set.samples << Sample.new( :sample_time => DateTime.parse( iso_date.strip ),
                              :temperature => temp.strip,
                              :generated_kilowatts => kilowatts.strip )
@@ -34,6 +34,7 @@ class SetMetasController < ApplicationController
 
       if @set.save
         flash[:notice] = "Uploaded #{@original_filename}"
+        redirect_to set_metas_path
       else
         render :action => "new" 
       end
@@ -44,5 +45,8 @@ class SetMetasController < ApplicationController
     end
   end
 
+  def show 
+    @set ||= SetMeta.find( params[:id] )
+  end
  
 end

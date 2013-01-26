@@ -1,0 +1,42 @@
+%h4 
+  Home Profile
+
+.row
+  .span4
+    Name:
+  .span8
+    = @profile.name
+.row
+  .span4
+    Description:
+  .span8
+    = @profile.description
+.row
+  .span4
+    BTU Factor:
+  .span8
+    = @profile.btu_factor
+.row
+  .span4
+    Total Units:
+  .span8
+    = @profile.home_count
+.row
+  .span4
+    Base Temperature (F):
+  .span8
+    = @profile.base_temperature
+.row 
+  .span4
+    Thermostat Temperature (F):  
+  .span8
+    = @profile.thermostat_temperature
+.row
+  .span12
+    &nbsp;
+.row
+  .span3
+    = link_to "Edit&nbsp;&nbsp;<i class='icon-edit icon-white'>&nbsp;</i>".html_safe, edit_home_profile_path( @profile.id ),  :class => "btn btn-block btn-success"
+  .span3
+    = link_to "Delete&nbsp;&nbsp;<i class='icon-remove icon-white'>&nbsp;</i>".html_safe, home_profile_path( @profile.id ), :method => :delete,  :class => "btn btn-block btn-danger"
+  .span6
