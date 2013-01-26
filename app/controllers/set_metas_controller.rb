@@ -45,8 +45,25 @@ class SetMetasController < ApplicationController
     end
   end
 
+  def destroy
+    SetMeta.delete( params[:id] )
+    redirect_to set_metas_path
+  end
+
   def show 
     @set ||= SetMeta.find( params[:id] )
+  end
+
+  def update
+    begin
+      @set ||= SetMeta.find( params[:set_meta][:id] )
+      @set.update_attributes!( params[:set_meta] )
+      flash[:notice] = 'Updated sample information'
+      redirect_to set_meta_path
+    rescue => e
+      flash[:alert] = 'Update failed'
+      render :action => :edit
+    end 
   end
  
 end
