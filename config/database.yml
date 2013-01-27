@@ -24,5 +24,5 @@ production:
   database: linknsynch_production
   username: linknsync
   password: 3zbQN0dxra
-  socket: /tmp/mysql.sock
+  socket: /run/mysqld/mysqld.sock
 
