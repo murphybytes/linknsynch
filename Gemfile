@@ -27,7 +27,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'simple_form'
 gem 'rb-readline'
-gem 'activerecord-mysql2-adapter'
+gem 'mysql2'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
