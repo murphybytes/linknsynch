@@ -1,14 +1,14 @@
 require 'bundler/capistrano'
 
-set :user, 'www-data'
+set :user, 'ubuntu'
 set :domain, 'link-and-sync.com'
 set :applicationdir, '/opt/linknsync'
 
 set :application, "Link And Sync"
-set :repository,  "ssh://git@github.com:murphybytes/linknsynch.git"
+set :repository,  "ssh://git@github.com/murphybytes/linknsynch.git"
 set :scm, :git
 set :branch, 'master'
-set :deploy_to applicationdir
+set :deploy_to, applicationdir
 set :deploy_via, :export
 
 
@@ -18,6 +18,7 @@ role :db,  domain, :primary => true # This is where Rails migrations will run
 
 default_run_options[:pty] = true
 ssh_options[:keys] = ["#{ENV['HOME']}/awskeys/linuxdevbox.pem"]
+ssh_options[:forward_agent] = true
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
