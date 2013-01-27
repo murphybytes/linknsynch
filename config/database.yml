@@ -22,7 +22,7 @@ production:
   adapter: mysql2
   encoding: utf8
   database: linknsynch_production
-  username: root
-  password: 
+  username: linknsync
+  password: 3zbQN0dxra
   socket: /tmp/mysql.sock
 
