@@ -1,0 +1,21 @@
+%h4 
+  Add Holiday
+%dl
+  %dd 
+    Define a holiday that will be used in calcuations.
+= form_for @holiday, :url => { :action => 'create' }, :html => {:class => 'form-horizontal'}  do |f|
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Holiday Name:
+    .controls
+      = f.text_field :name
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Date (YYYY-MM-DD):
+    .controls
+      = f.text_field :occurance
+
+ 
+  %div{ :class => 'control-group' }
+    .controls
+      = f.submit 'Add Holiday',  :class => 'btn btn-primary'  

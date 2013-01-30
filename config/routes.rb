@@ -6,6 +6,7 @@ Linknsynch::Application.routes.draw do
   resources :calculations
   resources :thermal_storage_profiles
   resources :home_profiles
+  resources :holidays
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,17 @@
+%h4 Holidays
+%dd
+  %dl
+    Enter holidays so that off-peak periods are correctly detected in calculations.
+.row
+  .span3
+    = link_to "Add Holiday&nbsp;&nbsp;<i class='icon-plus icon-white'>&nbsp;</i>".html_safe, new_holiday_path,  :class => "btn btn-block btn-primary"
+%table.table.table-bordered
+  %tr
+    %th
+      Holiday Name
+    %th
+      Date
+  - @holidays.each do |holiday|
+    %tr
+      %td= link_to holiday.name, holiday_path( holiday.id ) 
+      %td= holiday.occurance

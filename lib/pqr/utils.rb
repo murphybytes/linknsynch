@@ -8,7 +8,7 @@ module PQR
 
     def self.holiday?( yy, mm, dd )
       ts = Date.new( yy, mm, dd )
-      Holiday.where( date: ts ).exists?
+      Holiday.where( occurance: ts ).exists?
     end
 
     def self.is_peak?( ts )

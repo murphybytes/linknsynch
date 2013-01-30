@@ -4,24 +4,26 @@
       .well.sidebar-name
         %ul.nav.nav-list
           %li.nav-header Data Management
-          %li.active 
-            = link_to( 'Upload Temperature and Generation Samples', new_set_meta_path)
-          %li
-            = link_to( 'View Home Profiles', home_profiles_path)
-          %li
-            = link_to( 'View Thermal Storage Profiles', thermal_storage_profiles_path )
-          %li 
-            = link_to( 'View Samples', set_metas_path )
-          %li
-            = link_to( 'Create Homes Profile', new_home_profile_path )
-          %li
-            = link_to( 'Create Thermal Storage Profile', new_thermal_storage_profile_path )
+          - if user_signed_in?
+            %li.active 
+              = link_to( 'Upload Temperature and Generation Samples', new_set_meta_path)
+            %li
+              = link_to( 'View Home Profiles', home_profiles_path )
+            %li
+              = link_to( 'View Thermal Storage Profiles', thermal_storage_profiles_path )
+            %li 
+              = link_to( 'View Samples', set_metas_path )
+            %li
+              = link_to( 'Create Homes Profile', new_home_profile_path )
+            %li
+              = link_to( 'Create Thermal Storage Profile', new_thermal_storage_profile_path )
+            %li
+              = link_to( 'Manage Holidays', holidays_path )
 
           %li.nav-header Calculations 
           %li
             = link_to( 'Link And Sink Calculator', new_calculation_path )
        
     .span9
-      .hero-unit
-        %h1 Link And Sync
+      = image_tag( 'windimage.jpg' )
  

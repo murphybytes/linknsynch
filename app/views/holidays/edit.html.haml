@@ -1,0 +1,20 @@
+%h4 
+  Edit Holiday
+
+= form_for @holiday, :html => {:class => 'form-horizontal'}  do |f|
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Holiday Name:
+    .controls
+      = f.text_field :name
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Date (YYYY-MM-DD):
+    .controls
+      = f.text_field :occurance
+
+  = f.hidden_field :id
+ 
+  %div{ :class => 'control-group' }
+    .controls
+      = f.submit 'Save Holiday',  :class => 'btn btn-primary'  

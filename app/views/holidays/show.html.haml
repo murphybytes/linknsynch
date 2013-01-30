@@ -1,0 +1,22 @@
+%h4 
+  Holiday
+
+.row
+  .span4
+    Name:
+  .span8
+    = @holiday.name
+.row
+  .span4
+    Date:
+  .span8
+    = @holiday.occurance
+.row
+  .span12
+    &nbsp;
+.row
+  .span3
+    = link_to "Edit&nbsp;&nbsp;<i class='icon-edit icon-white'>&nbsp;</i>".html_safe, edit_holiday_path( @holiday.id ),  :class => "btn btn-block btn-success"
+  .span3
+    = link_to "Delete&nbsp;&nbsp;<i class='icon-remove icon-white'>&nbsp;</i>".html_safe, holiday_path( @holiday.id ), :method => :delete,  :class => "btn btn-block btn-danger"
+  .span6
