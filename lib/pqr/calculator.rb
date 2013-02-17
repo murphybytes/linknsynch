@@ -68,7 +68,10 @@ module PQR
     end
 
     private
-
+    ####################################################################
+    # Calculate the maximum amount of energy that we can use to 
+    # draw from thermal storage to reduce load unserved.
+    ####################################################################
     def get_load_unserved_adjustment( kw_load_unserved ) 
       available = @thermal_storage_model.get_available
       adjustment = [available,kw_load_unserved].min
@@ -76,14 +79,34 @@ module PQR
       adjustment
     end
 
+    ######################################################################
+    # Load unserved is the difference between the amount of power 
+    # we need and the amount of power we have if we need more than we have
+    ########################################################################
     def get_kw_load_unserved( kw_generated, kw_required_for_heating )
       result = 0.0
+      # TODO: we should probably use total kw required instead of just
+      # kw required for heating, specifically if thermal storage
+      # falls below base threshold we have to charge so this
+      # power should be included here
       if kw_generated < kw_required_for_heating
         result = kw_required_for_heating - kw_generated
       end
       result
     end
 
+    ####################################################################
+    # Calculate the energy required for heating during period
+    #
+    # Base temperature is set in home profiles.  If the air temperature
+    # is at or below this temp, homes in the sample will have their heaters
+    # turned on.  The air temperature must be at or below the base temperature
+    # in order for energy to be required for heating.  If this is true we calculate
+    # the energy required for home heating by applying the formula below, note
+    # btu factor would be the amount of energy required to keep an average home
+    # in the profile at thermal equilibrium for one hour.  We convert this to
+    # kiloWatts.
+    ########################################################################
     def get_kw_required_for_heating( sample )
       result = 0.0
 
