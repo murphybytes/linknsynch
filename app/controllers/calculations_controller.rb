@@ -16,6 +16,7 @@ class CalculationsController < ApplicationController
   def create
     logger.debug "CALCULATION CREATE WITH #{params}"
     begin
+      @dataset_id = params[:set]
       @set ||= SetMeta.find( params[:set] )
       @home_profile ||= HomeProfile.find( params[:home_profile] )
       @thermal_profiles ||= ThermalStorageProfile.find( :all, *params[:thermal_storage_profile] )

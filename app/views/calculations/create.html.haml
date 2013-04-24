@@ -25,8 +25,9 @@
       %td
         Total KW Excess Off Peak 
       %td= @calculation.total_kw_excess_off_peak_capacity
+#charts{ 'data-set-id' => @dataset_id }
 .row-fluid
-  #january-chart.span3
+  #january-chart.span3{ :style => 'height:250px;' }
     January
   #february-chart.span3
     Feb

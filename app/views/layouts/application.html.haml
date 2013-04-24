@@ -8,7 +8,7 @@
     %meta{:content => "", :name => "author" }
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
-    = javascript_include_tag 'http://code.highcharts.com/highcharts.js'
+
     = csrf_meta_tags
     = yield(:head)
   %body{ 'data-controller' => controller_name, 'data-action' => action_name }

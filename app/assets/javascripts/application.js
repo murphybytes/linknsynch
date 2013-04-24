@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require highcharts
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
@@ -24,7 +25,7 @@ SITENAME = {
 
     calculations: {
 	create: function() {
-	    
+	    calculations_create();
 	}
     }
 };
