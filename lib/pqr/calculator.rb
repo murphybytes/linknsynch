@@ -5,6 +5,7 @@ module PQR
   class Calculator
     attr_reader :total_kw_generated, :total_kw_required_for_heating, :total_kw_load_unserved
     attr_reader :total_kw_load_unserved_ls, :total_kw_excess_off_peak_capacity, :total_kw_required_for_heating_ls
+    attr_reader :begin_time, :end_time
 
     def initialize( opts = {}  )
       @total_kw_generated = 0
@@ -13,10 +14,30 @@ module PQR
      @total_kw_load_unserved = 0
       @total_kw_load_unserved_ls = 0
       @total_kw_excess_off_peak_capacity = 0
+      @begin_time = nil
+      @end_time = nil
 
       @samples = opts.fetch( :samples )
       @home_profile = opts.fetch( :home_profile )
       @thermal_storage_model = opts.fetch( :thermal_storage_model )
+    end
+
+    ######################################################################################
+    # Utility function returns an array of month and year of each month in sample
+    # in ascending order
+    ######################################################################################
+    def get_months
+      result = []
+
+      unless @begin_time.nil?
+        curr = @begin_time
+        while curr.year <= @end_time.year && curr.month <= @end_time.month
+          result << curr
+          curr = curr.next_month
+        end
+      end
+
+      result      
     end
 
     def run
@@ -30,6 +51,8 @@ module PQR
 
 
       @samples.each do |sample|
+
+        update_date_range( sample )
 
         kw_generated = sample.generated_kilowatts
         total_kw_generated += kw_generated
@@ -116,6 +139,11 @@ module PQR
       end
 
       result
+    end
+
+    def update_date_range( sample ) 
+      @begin_time = sample.sample_time if (@begin_time.nil? || @begin_time > sample.sample_time )
+      @end_time = sample.sample_time if ( @end_time.nil? || @end_time < sample.sample_time ) 
     end
 
   end

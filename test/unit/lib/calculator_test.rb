@@ -30,6 +30,26 @@ class CalculatorTest < ActiveSupport::TestCase
   test "Verify KW load unserved" do 
     assert_equal 0, @calculator.total_kw_load_unserved
   end
-  
+
+  test "Verify begin date" do 
+    assert_equal "2011-01-01 00:00:00", @calculator.begin_time.strftime( "%Y-%m-%d %H:%M:%S" )
+  end
+
+  test "Verify end date" do
+    assert_equal "2011-12-31 23:00:00", @calculator.end_time.strftime( "%Y-%m-%d %H:%M:%S" )
+  end
+
+  test "Verify month count" do
+    assert_equal 12, @calculator.get_months.count
+  end
+
+
+  test "Verify date range" do
+    months = @calculator.get_months
+    assert_equal months.first.month, 1
+    assert_equal months.first.year, 2011
+    assert_equal months.last.month, 12
+    assert_equal months.last.year, 2011
+  end
 
 end
