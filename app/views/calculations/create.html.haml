@@ -25,11 +25,15 @@
       %td
         Total KW Excess Off Peak 
       %td= @calculation.total_kw_excess_off_peak_capacity
-#charts{ 'data-set-id' => @dataset_id }
-.row-fluid
-  #january-chart.span3{ :style => 'height:250px;' }
-    January
-  #february-chart.span3
-    Feb
-  #march-chart.span3
-    Mar
+#charts{ :data_set_id => @dataset_id, :home_profile_id => @home_profile_id }
+- @thermal_storage_profile_ids.each do |id|
+  .thermal-storage-id{ :value => id }
+- @months.each do |m|  
+  .chart-month{ :month => m.month, :year => m.year }
+  .row-fluid
+    %div{ :id => "#{m.year}.#{m.month}.1", :style => 'height:250px;', :class => 'span3' }
+      January
+    #february-chart.span3
+      Feb
+    #march-chart.span3
+      Mar

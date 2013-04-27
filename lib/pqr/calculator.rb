@@ -21,6 +21,16 @@ module PQR
       @home_profile = opts.fetch( :home_profile )
       @thermal_storage_model = opts.fetch( :thermal_storage_model )
     end
+    
+    def date_in_range?( test )
+      return true if test.year < @end_time.year
+
+      if test.year == @end_time.year
+        return true if test.month <= @end_time.month
+      end
+
+      return false
+    end
 
     ######################################################################################
     # Utility function returns an array of month and year of each month in sample
@@ -31,7 +41,7 @@ module PQR
 
       unless @begin_time.nil?
         curr = @begin_time
-        while curr.year <= @end_time.year && curr.month <= @end_time.month
+        while date_in_range?( curr ) 
           result << curr
           curr = curr.next_month
         end
@@ -141,9 +151,20 @@ module PQR
       result
     end
 
-    def update_date_range( sample ) 
-      @begin_time = sample.sample_time if (@begin_time.nil? || @begin_time > sample.sample_time )
-      @end_time = sample.sample_time if ( @end_time.nil? || @end_time < sample.sample_time ) 
+    def update_date_range( sample )
+      unless sample.sample_time.nil?
+        if @begin_time.nil? 
+          @begin_time = sample.sample_time
+        end
+        
+        if @end_time.nil?
+          @end_time = sample.sample_time
+        end
+
+        @begin_time = sample.sample_time if @begin_time > sample.sample_time 
+        @end_time = sample.sample_time if @end_time < sample.sample_time 
+      end
+
     end
 
   end

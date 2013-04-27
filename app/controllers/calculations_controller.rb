@@ -17,12 +17,17 @@ class CalculationsController < ApplicationController
     logger.debug "CALCULATION CREATE WITH #{params}"
     begin
       @dataset_id = params[:set]
+      @home_profile_id = params[:home_profile]
+      @thermal_storage_profile_ids = params[:thermal_storage_profile]
+
       @set ||= SetMeta.find( params[:set] )
       @home_profile ||= HomeProfile.find( params[:home_profile] )
       @thermal_profiles ||= ThermalStorageProfile.find( :all, *params[:thermal_storage_profile] )
       @model ||= PQR::ThermalStorageModel.new( *@thermal_profiles ) 
       @calculation = PQR::Calculator.new( samples: @set.samples, home_profile: @home_profile, thermal_storage_model: @model )
       @calculation.run
+      @months = @calculation.get_months
+
     rescue => e
       flash[:alert] = 'Calculation failed'
       logger.error e.message
