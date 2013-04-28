@@ -52566,121 +52566,121 @@ hour8760:
   set_meta_id: 2
   sample_time: 2011-01-01 00:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour8761:
   set_meta_id: 2
   sample_time: 2011-01-01 01:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour8762:
   set_meta_id: 2
   sample_time: 2011-01-01 02:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour8763:
   set_meta_id: 2
   sample_time: 2011-01-01 03:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour8764:
   set_meta_id: 2
   sample_time: 2011-01-01 04:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour8765:
   set_meta_id: 2
   sample_time: 2011-01-01 05:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour8766:
   set_meta_id: 2
   sample_time: 2011-01-01 06:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour8767:
   set_meta_id: 2
   sample_time: 2011-01-01 07:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour8768:
   set_meta_id: 2
   sample_time: 2011-01-01 08:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour8769:
   set_meta_id: 2
   sample_time: 2011-01-01 09:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour8770:
   set_meta_id: 2
   sample_time: 2011-01-01 10:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour8771:
   set_meta_id: 2
   sample_time: 2011-01-01 11:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour8772:
   set_meta_id: 2
   sample_time: 2011-01-01 12:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour8773:
   set_meta_id: 2
   sample_time: 2011-01-01 13:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour8774:
   set_meta_id: 2
   sample_time: 2011-01-01 14:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour8775:
   set_meta_id: 2
   sample_time: 2011-01-01 15:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour8776:
   set_meta_id: 2
   sample_time: 2011-01-01 16:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour8777:
   set_meta_id: 2
   sample_time: 2011-01-01 17:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour8778:
   set_meta_id: 2
   sample_time: 2011-01-01 18:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour8779:
   set_meta_id: 2
   sample_time: 2011-01-01 19:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour8780:
   set_meta_id: 2
@@ -52692,235 +52692,235 @@ hour8781:
   set_meta_id: 2
   sample_time: 2011-01-01 21:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour8782:
   set_meta_id: 2
   sample_time: 2011-01-01 22:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour8783:
   set_meta_id: 2
   sample_time: 2011-01-01 23:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour8784:
   set_meta_id: 2
   sample_time: 2011-01-02 00:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour8785:
   set_meta_id: 2
   sample_time: 2011-01-02 01:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour8786:
   set_meta_id: 2
   sample_time: 2011-01-02 02:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour8787:
   set_meta_id: 2
   sample_time: 2011-01-02 03:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour8788:
   set_meta_id: 2
   sample_time: 2011-01-02 04:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour8789:
   set_meta_id: 2
   sample_time: 2011-01-02 05:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour8790:
   set_meta_id: 2
   sample_time: 2011-01-02 06:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour8791:
   set_meta_id: 2
   sample_time: 2011-01-02 07:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour8792:
   set_meta_id: 2
   sample_time: 2011-01-02 08:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour8793:
   set_meta_id: 2
   sample_time: 2011-01-02 09:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour8794:
   set_meta_id: 2
   sample_time: 2011-01-02 10:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour8795:
   set_meta_id: 2
   sample_time: 2011-01-02 11:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour8796:
   set_meta_id: 2
   sample_time: 2011-01-02 12:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour8797:
   set_meta_id: 2
   sample_time: 2011-01-02 13:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour8798:
   set_meta_id: 2
   sample_time: 2011-01-02 14:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour8799:
   set_meta_id: 2
   sample_time: 2011-01-02 15:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour8800:
   set_meta_id: 2
   sample_time: 2011-01-02 16:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour8801:
   set_meta_id: 2
   sample_time: 2011-01-02 17:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour8802:
   set_meta_id: 2
   sample_time: 2011-01-02 18:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour8803:
   set_meta_id: 2
   sample_time: 2011-01-02 19:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour8804:
   set_meta_id: 2
   sample_time: 2011-01-02 20:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour8805:
   set_meta_id: 2
   sample_time: 2011-01-02 21:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour8806:
   set_meta_id: 2
   sample_time: 2011-01-02 22:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour8807:
   set_meta_id: 2
   sample_time: 2011-01-02 23:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour8808:
   set_meta_id: 2
   sample_time: 2011-01-03 00:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour8809:
   set_meta_id: 2
   sample_time: 2011-01-03 01:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour8810:
   set_meta_id: 2
   sample_time: 2011-01-03 02:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour8811:
   set_meta_id: 2
   sample_time: 2011-01-03 03:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour8812:
   set_meta_id: 2
   sample_time: 2011-01-03 04:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour8813:
   set_meta_id: 2
   sample_time: 2011-01-03 05:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour8814:
   set_meta_id: 2
   sample_time: 2011-01-03 06:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour8815:
   set_meta_id: 2
   sample_time: 2011-01-03 07:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour8816:
   set_meta_id: 2
   sample_time: 2011-01-03 08:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour8817:
   set_meta_id: 2
   sample_time: 2011-01-03 09:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour8818:
   set_meta_id: 2
   sample_time: 2011-01-03 10:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour8819:
   set_meta_id: 2
   sample_time: 2011-01-03 11:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour8820:
   set_meta_id: 2
@@ -52932,235 +52932,235 @@ hour8821:
   set_meta_id: 2
   sample_time: 2011-01-03 13:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour8822:
   set_meta_id: 2
   sample_time: 2011-01-03 14:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour8823:
   set_meta_id: 2
   sample_time: 2011-01-03 15:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour8824:
   set_meta_id: 2
   sample_time: 2011-01-03 16:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour8825:
   set_meta_id: 2
   sample_time: 2011-01-03 17:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour8826:
   set_meta_id: 2
   sample_time: 2011-01-03 18:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour8827:
   set_meta_id: 2
   sample_time: 2011-01-03 19:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour8828:
   set_meta_id: 2
   sample_time: 2011-01-03 20:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour8829:
   set_meta_id: 2
   sample_time: 2011-01-03 21:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour8830:
   set_meta_id: 2
   sample_time: 2011-01-03 22:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour8831:
   set_meta_id: 2
   sample_time: 2011-01-03 23:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour8832:
   set_meta_id: 2
   sample_time: 2011-01-04 00:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour8833:
   set_meta_id: 2
   sample_time: 2011-01-04 01:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour8834:
   set_meta_id: 2
   sample_time: 2011-01-04 02:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour8835:
   set_meta_id: 2
   sample_time: 2011-01-04 03:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour8836:
   set_meta_id: 2
   sample_time: 2011-01-04 04:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour8837:
   set_meta_id: 2
   sample_time: 2011-01-04 05:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour8838:
   set_meta_id: 2
   sample_time: 2011-01-04 06:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour8839:
   set_meta_id: 2
   sample_time: 2011-01-04 07:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour8840:
   set_meta_id: 2
   sample_time: 2011-01-04 08:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour8841:
   set_meta_id: 2
   sample_time: 2011-01-04 09:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour8842:
   set_meta_id: 2
   sample_time: 2011-01-04 10:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour8843:
   set_meta_id: 2
   sample_time: 2011-01-04 11:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour8844:
   set_meta_id: 2
   sample_time: 2011-01-04 12:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour8845:
   set_meta_id: 2
   sample_time: 2011-01-04 13:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour8846:
   set_meta_id: 2
   sample_time: 2011-01-04 14:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour8847:
   set_meta_id: 2
   sample_time: 2011-01-04 15:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour8848:
   set_meta_id: 2
   sample_time: 2011-01-04 16:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour8849:
   set_meta_id: 2
   sample_time: 2011-01-04 17:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour8850:
   set_meta_id: 2
   sample_time: 2011-01-04 18:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour8851:
   set_meta_id: 2
   sample_time: 2011-01-04 19:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour8852:
   set_meta_id: 2
   sample_time: 2011-01-04 20:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour8853:
   set_meta_id: 2
   sample_time: 2011-01-04 21:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour8854:
   set_meta_id: 2
   sample_time: 2011-01-04 22:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour8855:
   set_meta_id: 2
   sample_time: 2011-01-04 23:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour8856:
   set_meta_id: 2
   sample_time: 2011-01-05 00:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour8857:
   set_meta_id: 2
   sample_time: 2011-01-05 01:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour8858:
   set_meta_id: 2
   sample_time: 2011-01-05 02:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour8859:
   set_meta_id: 2
   sample_time: 2011-01-05 03:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour8860:
   set_meta_id: 2
@@ -53172,235 +53172,235 @@ hour8861:
   set_meta_id: 2
   sample_time: 2011-01-05 05:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour8862:
   set_meta_id: 2
   sample_time: 2011-01-05 06:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour8863:
   set_meta_id: 2
   sample_time: 2011-01-05 07:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour8864:
   set_meta_id: 2
   sample_time: 2011-01-05 08:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour8865:
   set_meta_id: 2
   sample_time: 2011-01-05 09:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour8866:
   set_meta_id: 2
   sample_time: 2011-01-05 10:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour8867:
   set_meta_id: 2
   sample_time: 2011-01-05 11:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour8868:
   set_meta_id: 2
   sample_time: 2011-01-05 12:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour8869:
   set_meta_id: 2
   sample_time: 2011-01-05 13:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour8870:
   set_meta_id: 2
   sample_time: 2011-01-05 14:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour8871:
   set_meta_id: 2
   sample_time: 2011-01-05 15:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour8872:
   set_meta_id: 2
   sample_time: 2011-01-05 16:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour8873:
   set_meta_id: 2
   sample_time: 2011-01-05 17:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour8874:
   set_meta_id: 2
   sample_time: 2011-01-05 18:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour8875:
   set_meta_id: 2
   sample_time: 2011-01-05 19:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour8876:
   set_meta_id: 2
   sample_time: 2011-01-05 20:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour8877:
   set_meta_id: 2
   sample_time: 2011-01-05 21:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour8878:
   set_meta_id: 2
   sample_time: 2011-01-05 22:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour8879:
   set_meta_id: 2
   sample_time: 2011-01-05 23:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour8880:
   set_meta_id: 2
   sample_time: 2011-01-06 00:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour8881:
   set_meta_id: 2
   sample_time: 2011-01-06 01:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour8882:
   set_meta_id: 2
   sample_time: 2011-01-06 02:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour8883:
   set_meta_id: 2
   sample_time: 2011-01-06 03:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour8884:
   set_meta_id: 2
   sample_time: 2011-01-06 04:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour8885:
   set_meta_id: 2
   sample_time: 2011-01-06 05:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour8886:
   set_meta_id: 2
   sample_time: 2011-01-06 06:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour8887:
   set_meta_id: 2
   sample_time: 2011-01-06 07:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour8888:
   set_meta_id: 2
   sample_time: 2011-01-06 08:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour8889:
   set_meta_id: 2
   sample_time: 2011-01-06 09:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour8890:
   set_meta_id: 2
   sample_time: 2011-01-06 10:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour8891:
   set_meta_id: 2
   sample_time: 2011-01-06 11:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour8892:
   set_meta_id: 2
   sample_time: 2011-01-06 12:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour8893:
   set_meta_id: 2
   sample_time: 2011-01-06 13:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour8894:
   set_meta_id: 2
   sample_time: 2011-01-06 14:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour8895:
   set_meta_id: 2
   sample_time: 2011-01-06 15:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour8896:
   set_meta_id: 2
   sample_time: 2011-01-06 16:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour8897:
   set_meta_id: 2
   sample_time: 2011-01-06 17:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour8898:
   set_meta_id: 2
   sample_time: 2011-01-06 18:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour8899:
   set_meta_id: 2
   sample_time: 2011-01-06 19:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour8900:
   set_meta_id: 2
@@ -53412,235 +53412,235 @@ hour8901:
   set_meta_id: 2
   sample_time: 2011-01-06 21:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour8902:
   set_meta_id: 2
   sample_time: 2011-01-06 22:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour8903:
   set_meta_id: 2
   sample_time: 2011-01-06 23:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour8904:
   set_meta_id: 2
   sample_time: 2011-01-07 00:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour8905:
   set_meta_id: 2
   sample_time: 2011-01-07 01:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour8906:
   set_meta_id: 2
   sample_time: 2011-01-07 02:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour8907:
   set_meta_id: 2
   sample_time: 2011-01-07 03:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour8908:
   set_meta_id: 2
   sample_time: 2011-01-07 04:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour8909:
   set_meta_id: 2
   sample_time: 2011-01-07 05:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour8910:
   set_meta_id: 2
   sample_time: 2011-01-07 06:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour8911:
   set_meta_id: 2
   sample_time: 2011-01-07 07:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour8912:
   set_meta_id: 2
   sample_time: 2011-01-07 08:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour8913:
   set_meta_id: 2
   sample_time: 2011-01-07 09:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour8914:
   set_meta_id: 2
   sample_time: 2011-01-07 10:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour8915:
   set_meta_id: 2
   sample_time: 2011-01-07 11:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour8916:
   set_meta_id: 2
   sample_time: 2011-01-07 12:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour8917:
   set_meta_id: 2
   sample_time: 2011-01-07 13:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour8918:
   set_meta_id: 2
   sample_time: 2011-01-07 14:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour8919:
   set_meta_id: 2
   sample_time: 2011-01-07 15:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour8920:
   set_meta_id: 2
   sample_time: 2011-01-07 16:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour8921:
   set_meta_id: 2
   sample_time: 2011-01-07 17:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour8922:
   set_meta_id: 2
   sample_time: 2011-01-07 18:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour8923:
   set_meta_id: 2
   sample_time: 2011-01-07 19:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour8924:
   set_meta_id: 2
   sample_time: 2011-01-07 20:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour8925:
   set_meta_id: 2
   sample_time: 2011-01-07 21:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour8926:
   set_meta_id: 2
   sample_time: 2011-01-07 22:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour8927:
   set_meta_id: 2
   sample_time: 2011-01-07 23:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour8928:
   set_meta_id: 2
   sample_time: 2011-01-08 00:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour8929:
   set_meta_id: 2
   sample_time: 2011-01-08 01:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour8930:
   set_meta_id: 2
   sample_time: 2011-01-08 02:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour8931:
   set_meta_id: 2
   sample_time: 2011-01-08 03:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour8932:
   set_meta_id: 2
   sample_time: 2011-01-08 04:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour8933:
   set_meta_id: 2
   sample_time: 2011-01-08 05:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour8934:
   set_meta_id: 2
   sample_time: 2011-01-08 06:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour8935:
   set_meta_id: 2
   sample_time: 2011-01-08 07:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour8936:
   set_meta_id: 2
   sample_time: 2011-01-08 08:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour8937:
   set_meta_id: 2
   sample_time: 2011-01-08 09:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour8938:
   set_meta_id: 2
   sample_time: 2011-01-08 10:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour8939:
   set_meta_id: 2
   sample_time: 2011-01-08 11:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour8940:
   set_meta_id: 2
@@ -53652,235 +53652,235 @@ hour8941:
   set_meta_id: 2
   sample_time: 2011-01-08 13:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour8942:
   set_meta_id: 2
   sample_time: 2011-01-08 14:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour8943:
   set_meta_id: 2
   sample_time: 2011-01-08 15:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour8944:
   set_meta_id: 2
   sample_time: 2011-01-08 16:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour8945:
   set_meta_id: 2
   sample_time: 2011-01-08 17:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour8946:
   set_meta_id: 2
   sample_time: 2011-01-08 18:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour8947:
   set_meta_id: 2
   sample_time: 2011-01-08 19:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour8948:
   set_meta_id: 2
   sample_time: 2011-01-08 20:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour8949:
   set_meta_id: 2
   sample_time: 2011-01-08 21:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour8950:
   set_meta_id: 2
   sample_time: 2011-01-08 22:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour8951:
   set_meta_id: 2
   sample_time: 2011-01-08 23:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour8952:
   set_meta_id: 2
   sample_time: 2011-01-09 00:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour8953:
   set_meta_id: 2
   sample_time: 2011-01-09 01:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour8954:
   set_meta_id: 2
   sample_time: 2011-01-09 02:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour8955:
   set_meta_id: 2
   sample_time: 2011-01-09 03:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour8956:
   set_meta_id: 2
   sample_time: 2011-01-09 04:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour8957:
   set_meta_id: 2
   sample_time: 2011-01-09 05:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour8958:
   set_meta_id: 2
   sample_time: 2011-01-09 06:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour8959:
   set_meta_id: 2
   sample_time: 2011-01-09 07:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour8960:
   set_meta_id: 2
   sample_time: 2011-01-09 08:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour8961:
   set_meta_id: 2
   sample_time: 2011-01-09 09:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour8962:
   set_meta_id: 2
   sample_time: 2011-01-09 10:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour8963:
   set_meta_id: 2
   sample_time: 2011-01-09 11:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour8964:
   set_meta_id: 2
   sample_time: 2011-01-09 12:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour8965:
   set_meta_id: 2
   sample_time: 2011-01-09 13:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour8966:
   set_meta_id: 2
   sample_time: 2011-01-09 14:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour8967:
   set_meta_id: 2
   sample_time: 2011-01-09 15:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour8968:
   set_meta_id: 2
   sample_time: 2011-01-09 16:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour8969:
   set_meta_id: 2
   sample_time: 2011-01-09 17:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour8970:
   set_meta_id: 2
   sample_time: 2011-01-09 18:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour8971:
   set_meta_id: 2
   sample_time: 2011-01-09 19:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour8972:
   set_meta_id: 2
   sample_time: 2011-01-09 20:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour8973:
   set_meta_id: 2
   sample_time: 2011-01-09 21:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour8974:
   set_meta_id: 2
   sample_time: 2011-01-09 22:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour8975:
   set_meta_id: 2
   sample_time: 2011-01-09 23:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour8976:
   set_meta_id: 2
   sample_time: 2011-01-10 00:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour8977:
   set_meta_id: 2
   sample_time: 2011-01-10 01:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour8978:
   set_meta_id: 2
   sample_time: 2011-01-10 02:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour8979:
   set_meta_id: 2
   sample_time: 2011-01-10 03:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour8980:
   set_meta_id: 2
@@ -53892,235 +53892,235 @@ hour8981:
   set_meta_id: 2
   sample_time: 2011-01-10 05:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour8982:
   set_meta_id: 2
   sample_time: 2011-01-10 06:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour8983:
   set_meta_id: 2
   sample_time: 2011-01-10 07:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour8984:
   set_meta_id: 2
   sample_time: 2011-01-10 08:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour8985:
   set_meta_id: 2
   sample_time: 2011-01-10 09:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour8986:
   set_meta_id: 2
   sample_time: 2011-01-10 10:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour8987:
   set_meta_id: 2
   sample_time: 2011-01-10 11:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour8988:
   set_meta_id: 2
   sample_time: 2011-01-10 12:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour8989:
   set_meta_id: 2
   sample_time: 2011-01-10 13:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour8990:
   set_meta_id: 2
   sample_time: 2011-01-10 14:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour8991:
   set_meta_id: 2
   sample_time: 2011-01-10 15:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour8992:
   set_meta_id: 2
   sample_time: 2011-01-10 16:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour8993:
   set_meta_id: 2
   sample_time: 2011-01-10 17:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour8994:
   set_meta_id: 2
   sample_time: 2011-01-10 18:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour8995:
   set_meta_id: 2
   sample_time: 2011-01-10 19:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour8996:
   set_meta_id: 2
   sample_time: 2011-01-10 20:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour8997:
   set_meta_id: 2
   sample_time: 2011-01-10 21:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour8998:
   set_meta_id: 2
   sample_time: 2011-01-10 22:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour8999:
   set_meta_id: 2
   sample_time: 2011-01-10 23:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour9000:
   set_meta_id: 2
   sample_time: 2011-01-11 00:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour9001:
   set_meta_id: 2
   sample_time: 2011-01-11 01:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour9002:
   set_meta_id: 2
   sample_time: 2011-01-11 02:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour9003:
   set_meta_id: 2
   sample_time: 2011-01-11 03:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour9004:
   set_meta_id: 2
   sample_time: 2011-01-11 04:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour9005:
   set_meta_id: 2
   sample_time: 2011-01-11 05:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour9006:
   set_meta_id: 2
   sample_time: 2011-01-11 06:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour9007:
   set_meta_id: 2
   sample_time: 2011-01-11 07:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour9008:
   set_meta_id: 2
   sample_time: 2011-01-11 08:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour9009:
   set_meta_id: 2
   sample_time: 2011-01-11 09:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour9010:
   set_meta_id: 2
   sample_time: 2011-01-11 10:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour9011:
   set_meta_id: 2
   sample_time: 2011-01-11 11:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour9012:
   set_meta_id: 2
   sample_time: 2011-01-11 12:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour9013:
   set_meta_id: 2
   sample_time: 2011-01-11 13:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour9014:
   set_meta_id: 2
   sample_time: 2011-01-11 14:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour9015:
   set_meta_id: 2
   sample_time: 2011-01-11 15:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour9016:
   set_meta_id: 2
   sample_time: 2011-01-11 16:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour9017:
   set_meta_id: 2
   sample_time: 2011-01-11 17:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour9018:
   set_meta_id: 2
   sample_time: 2011-01-11 18:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour9019:
   set_meta_id: 2
   sample_time: 2011-01-11 19:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour9020:
   set_meta_id: 2
@@ -54132,235 +54132,235 @@ hour9021:
   set_meta_id: 2
   sample_time: 2011-01-11 21:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour9022:
   set_meta_id: 2
   sample_time: 2011-01-11 22:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour9023:
   set_meta_id: 2
   sample_time: 2011-01-11 23:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour9024:
   set_meta_id: 2
   sample_time: 2011-01-12 00:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour9025:
   set_meta_id: 2
   sample_time: 2011-01-12 01:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour9026:
   set_meta_id: 2
   sample_time: 2011-01-12 02:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour9027:
   set_meta_id: 2
   sample_time: 2011-01-12 03:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour9028:
   set_meta_id: 2
   sample_time: 2011-01-12 04:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour9029:
   set_meta_id: 2
   sample_time: 2011-01-12 05:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour9030:
   set_meta_id: 2
   sample_time: 2011-01-12 06:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour9031:
   set_meta_id: 2
   sample_time: 2011-01-12 07:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour9032:
   set_meta_id: 2
   sample_time: 2011-01-12 08:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour9033:
   set_meta_id: 2
   sample_time: 2011-01-12 09:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour9034:
   set_meta_id: 2
   sample_time: 2011-01-12 10:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour9035:
   set_meta_id: 2
   sample_time: 2011-01-12 11:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour9036:
   set_meta_id: 2
   sample_time: 2011-01-12 12:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour9037:
   set_meta_id: 2
   sample_time: 2011-01-12 13:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour9038:
   set_meta_id: 2
   sample_time: 2011-01-12 14:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour9039:
   set_meta_id: 2
   sample_time: 2011-01-12 15:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour9040:
   set_meta_id: 2
   sample_time: 2011-01-12 16:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour9041:
   set_meta_id: 2
   sample_time: 2011-01-12 17:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour9042:
   set_meta_id: 2
   sample_time: 2011-01-12 18:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour9043:
   set_meta_id: 2
   sample_time: 2011-01-12 19:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour9044:
   set_meta_id: 2
   sample_time: 2011-01-12 20:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour9045:
   set_meta_id: 2
   sample_time: 2011-01-12 21:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour9046:
   set_meta_id: 2
   sample_time: 2011-01-12 22:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour9047:
   set_meta_id: 2
   sample_time: 2011-01-12 23:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour9048:
   set_meta_id: 2
   sample_time: 2011-01-13 00:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour9049:
   set_meta_id: 2
   sample_time: 2011-01-13 01:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour9050:
   set_meta_id: 2
   sample_time: 2011-01-13 02:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour9051:
   set_meta_id: 2
   sample_time: 2011-01-13 03:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour9052:
   set_meta_id: 2
   sample_time: 2011-01-13 04:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour9053:
   set_meta_id: 2
   sample_time: 2011-01-13 05:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour9054:
   set_meta_id: 2
   sample_time: 2011-01-13 06:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour9055:
   set_meta_id: 2
   sample_time: 2011-01-13 07:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour9056:
   set_meta_id: 2
   sample_time: 2011-01-13 08:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour9057:
   set_meta_id: 2
   sample_time: 2011-01-13 09:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour9058:
   set_meta_id: 2
   sample_time: 2011-01-13 10:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour9059:
   set_meta_id: 2
   sample_time: 2011-01-13 11:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour9060:
   set_meta_id: 2
@@ -54372,235 +54372,235 @@ hour9061:
   set_meta_id: 2
   sample_time: 2011-01-13 13:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour9062:
   set_meta_id: 2
   sample_time: 2011-01-13 14:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour9063:
   set_meta_id: 2
   sample_time: 2011-01-13 15:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour9064:
   set_meta_id: 2
   sample_time: 2011-01-13 16:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour9065:
   set_meta_id: 2
   sample_time: 2011-01-13 17:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour9066:
   set_meta_id: 2
   sample_time: 2011-01-13 18:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour9067:
   set_meta_id: 2
   sample_time: 2011-01-13 19:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour9068:
   set_meta_id: 2
   sample_time: 2011-01-13 20:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour9069:
   set_meta_id: 2
   sample_time: 2011-01-13 21:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour9070:
   set_meta_id: 2
   sample_time: 2011-01-13 22:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour9071:
   set_meta_id: 2
   sample_time: 2011-01-13 23:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour9072:
   set_meta_id: 2
   sample_time: 2011-01-14 00:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour9073:
   set_meta_id: 2
   sample_time: 2011-01-14 01:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour9074:
   set_meta_id: 2
   sample_time: 2011-01-14 02:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour9075:
   set_meta_id: 2
   sample_time: 2011-01-14 03:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour9076:
   set_meta_id: 2
   sample_time: 2011-01-14 04:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour9077:
   set_meta_id: 2
   sample_time: 2011-01-14 05:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour9078:
   set_meta_id: 2
   sample_time: 2011-01-14 06:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour9079:
   set_meta_id: 2
   sample_time: 2011-01-14 07:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour9080:
   set_meta_id: 2
   sample_time: 2011-01-14 08:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour9081:
   set_meta_id: 2
   sample_time: 2011-01-14 09:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour9082:
   set_meta_id: 2
   sample_time: 2011-01-14 10:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour9083:
   set_meta_id: 2
   sample_time: 2011-01-14 11:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour9084:
   set_meta_id: 2
   sample_time: 2011-01-14 12:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour9085:
   set_meta_id: 2
   sample_time: 2011-01-14 13:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour9086:
   set_meta_id: 2
   sample_time: 2011-01-14 14:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour9087:
   set_meta_id: 2
   sample_time: 2011-01-14 15:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour9088:
   set_meta_id: 2
   sample_time: 2011-01-14 16:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour9089:
   set_meta_id: 2
   sample_time: 2011-01-14 17:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour9090:
   set_meta_id: 2
   sample_time: 2011-01-14 18:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour9091:
   set_meta_id: 2
   sample_time: 2011-01-14 19:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour9092:
   set_meta_id: 2
   sample_time: 2011-01-14 20:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour9093:
   set_meta_id: 2
   sample_time: 2011-01-14 21:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour9094:
   set_meta_id: 2
   sample_time: 2011-01-14 22:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour9095:
   set_meta_id: 2
   sample_time: 2011-01-14 23:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour9096:
   set_meta_id: 2
   sample_time: 2011-01-15 00:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour9097:
   set_meta_id: 2
   sample_time: 2011-01-15 01:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour9098:
   set_meta_id: 2
   sample_time: 2011-01-15 02:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour9099:
   set_meta_id: 2
   sample_time: 2011-01-15 03:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour9100:
   set_meta_id: 2
@@ -54612,235 +54612,235 @@ hour9101:
   set_meta_id: 2
   sample_time: 2011-01-15 05:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour9102:
   set_meta_id: 2
   sample_time: 2011-01-15 06:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour9103:
   set_meta_id: 2
   sample_time: 2011-01-15 07:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour9104:
   set_meta_id: 2
   sample_time: 2011-01-15 08:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour9105:
   set_meta_id: 2
   sample_time: 2011-01-15 09:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour9106:
   set_meta_id: 2
   sample_time: 2011-01-15 10:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour9107:
   set_meta_id: 2
   sample_time: 2011-01-15 11:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour9108:
   set_meta_id: 2
   sample_time: 2011-01-15 12:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour9109:
   set_meta_id: 2
   sample_time: 2011-01-15 13:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour9110:
   set_meta_id: 2
   sample_time: 2011-01-15 14:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour9111:
   set_meta_id: 2
   sample_time: 2011-01-15 15:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour9112:
   set_meta_id: 2
   sample_time: 2011-01-15 16:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour9113:
   set_meta_id: 2
   sample_time: 2011-01-15 17:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour9114:
   set_meta_id: 2
   sample_time: 2011-01-15 18:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour9115:
   set_meta_id: 2
   sample_time: 2011-01-15 19:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour9116:
   set_meta_id: 2
   sample_time: 2011-01-15 20:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour9117:
   set_meta_id: 2
   sample_time: 2011-01-15 21:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour9118:
   set_meta_id: 2
   sample_time: 2011-01-15 22:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour9119:
   set_meta_id: 2
   sample_time: 2011-01-15 23:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour9120:
   set_meta_id: 2
   sample_time: 2011-01-16 00:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour9121:
   set_meta_id: 2
   sample_time: 2011-01-16 01:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour9122:
   set_meta_id: 2
   sample_time: 2011-01-16 02:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour9123:
   set_meta_id: 2
   sample_time: 2011-01-16 03:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour9124:
   set_meta_id: 2
   sample_time: 2011-01-16 04:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour9125:
   set_meta_id: 2
   sample_time: 2011-01-16 05:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour9126:
   set_meta_id: 2
   sample_time: 2011-01-16 06:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour9127:
   set_meta_id: 2
   sample_time: 2011-01-16 07:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour9128:
   set_meta_id: 2
   sample_time: 2011-01-16 08:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour9129:
   set_meta_id: 2
   sample_time: 2011-01-16 09:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour9130:
   set_meta_id: 2
   sample_time: 2011-01-16 10:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour9131:
   set_meta_id: 2
   sample_time: 2011-01-16 11:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour9132:
   set_meta_id: 2
   sample_time: 2011-01-16 12:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour9133:
   set_meta_id: 2
   sample_time: 2011-01-16 13:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour9134:
   set_meta_id: 2
   sample_time: 2011-01-16 14:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour9135:
   set_meta_id: 2
   sample_time: 2011-01-16 15:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour9136:
   set_meta_id: 2
   sample_time: 2011-01-16 16:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour9137:
   set_meta_id: 2
   sample_time: 2011-01-16 17:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour9138:
   set_meta_id: 2
   sample_time: 2011-01-16 18:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour9139:
   set_meta_id: 2
   sample_time: 2011-01-16 19:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour9140:
   set_meta_id: 2
@@ -54852,235 +54852,235 @@ hour9141:
   set_meta_id: 2
   sample_time: 2011-01-16 21:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour9142:
   set_meta_id: 2
   sample_time: 2011-01-16 22:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour9143:
   set_meta_id: 2
   sample_time: 2011-01-16 23:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour9144:
   set_meta_id: 2
   sample_time: 2011-01-17 00:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour9145:
   set_meta_id: 2
   sample_time: 2011-01-17 01:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour9146:
   set_meta_id: 2
   sample_time: 2011-01-17 02:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour9147:
   set_meta_id: 2
   sample_time: 2011-01-17 03:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour9148:
   set_meta_id: 2
   sample_time: 2011-01-17 04:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour9149:
   set_meta_id: 2
   sample_time: 2011-01-17 05:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour9150:
   set_meta_id: 2
   sample_time: 2011-01-17 06:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour9151:
   set_meta_id: 2
   sample_time: 2011-01-17 07:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour9152:
   set_meta_id: 2
   sample_time: 2011-01-17 08:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour9153:
   set_meta_id: 2
   sample_time: 2011-01-17 09:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour9154:
   set_meta_id: 2
   sample_time: 2011-01-17 10:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour9155:
   set_meta_id: 2
   sample_time: 2011-01-17 11:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour9156:
   set_meta_id: 2
   sample_time: 2011-01-17 12:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour9157:
   set_meta_id: 2
   sample_time: 2011-01-17 13:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour9158:
   set_meta_id: 2
   sample_time: 2011-01-17 14:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour9159:
   set_meta_id: 2
   sample_time: 2011-01-17 15:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour9160:
   set_meta_id: 2
   sample_time: 2011-01-17 16:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour9161:
   set_meta_id: 2
   sample_time: 2011-01-17 17:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour9162:
   set_meta_id: 2
   sample_time: 2011-01-17 18:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour9163:
   set_meta_id: 2
   sample_time: 2011-01-17 19:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour9164:
   set_meta_id: 2
   sample_time: 2011-01-17 20:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour9165:
   set_meta_id: 2
   sample_time: 2011-01-17 21:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour9166:
   set_meta_id: 2
   sample_time: 2011-01-17 22:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour9167:
   set_meta_id: 2
   sample_time: 2011-01-17 23:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour9168:
   set_meta_id: 2
   sample_time: 2011-01-18 00:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour9169:
   set_meta_id: 2
   sample_time: 2011-01-18 01:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour9170:
   set_meta_id: 2
   sample_time: 2011-01-18 02:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour9171:
   set_meta_id: 2
   sample_time: 2011-01-18 03:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour9172:
   set_meta_id: 2
   sample_time: 2011-01-18 04:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour9173:
   set_meta_id: 2
   sample_time: 2011-01-18 05:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour9174:
   set_meta_id: 2
   sample_time: 2011-01-18 06:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour9175:
   set_meta_id: 2
   sample_time: 2011-01-18 07:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour9176:
   set_meta_id: 2
   sample_time: 2011-01-18 08:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour9177:
   set_meta_id: 2
   sample_time: 2011-01-18 09:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour9178:
   set_meta_id: 2
   sample_time: 2011-01-18 10:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour9179:
   set_meta_id: 2
   sample_time: 2011-01-18 11:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour9180:
   set_meta_id: 2
@@ -55092,235 +55092,235 @@ hour9181:
   set_meta_id: 2
   sample_time: 2011-01-18 13:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour9182:
   set_meta_id: 2
   sample_time: 2011-01-18 14:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour9183:
   set_meta_id: 2
   sample_time: 2011-01-18 15:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour9184:
   set_meta_id: 2
   sample_time: 2011-01-18 16:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour9185:
   set_meta_id: 2
   sample_time: 2011-01-18 17:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour9186:
   set_meta_id: 2
   sample_time: 2011-01-18 18:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour9187:
   set_meta_id: 2
   sample_time: 2011-01-18 19:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour9188:
   set_meta_id: 2
   sample_time: 2011-01-18 20:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour9189:
   set_meta_id: 2
   sample_time: 2011-01-18 21:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour9190:
   set_meta_id: 2
   sample_time: 2011-01-18 22:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour9191:
   set_meta_id: 2
   sample_time: 2011-01-18 23:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour9192:
   set_meta_id: 2
   sample_time: 2011-01-19 00:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour9193:
   set_meta_id: 2
   sample_time: 2011-01-19 01:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour9194:
   set_meta_id: 2
   sample_time: 2011-01-19 02:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour9195:
   set_meta_id: 2
   sample_time: 2011-01-19 03:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour9196:
   set_meta_id: 2
   sample_time: 2011-01-19 04:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour9197:
   set_meta_id: 2
   sample_time: 2011-01-19 05:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour9198:
   set_meta_id: 2
   sample_time: 2011-01-19 06:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour9199:
   set_meta_id: 2
   sample_time: 2011-01-19 07:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour9200:
   set_meta_id: 2
   sample_time: 2011-01-19 08:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour9201:
   set_meta_id: 2
   sample_time: 2011-01-19 09:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour9202:
   set_meta_id: 2
   sample_time: 2011-01-19 10:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour9203:
   set_meta_id: 2
   sample_time: 2011-01-19 11:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour9204:
   set_meta_id: 2
   sample_time: 2011-01-19 12:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour9205:
   set_meta_id: 2
   sample_time: 2011-01-19 13:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour9206:
   set_meta_id: 2
   sample_time: 2011-01-19 14:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour9207:
   set_meta_id: 2
   sample_time: 2011-01-19 15:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour9208:
   set_meta_id: 2
   sample_time: 2011-01-19 16:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour9209:
   set_meta_id: 2
   sample_time: 2011-01-19 17:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour9210:
   set_meta_id: 2
   sample_time: 2011-01-19 18:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour9211:
   set_meta_id: 2
   sample_time: 2011-01-19 19:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour9212:
   set_meta_id: 2
   sample_time: 2011-01-19 20:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour9213:
   set_meta_id: 2
   sample_time: 2011-01-19 21:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour9214:
   set_meta_id: 2
   sample_time: 2011-01-19 22:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour9215:
   set_meta_id: 2
   sample_time: 2011-01-19 23:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour9216:
   set_meta_id: 2
   sample_time: 2011-01-20 00:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour9217:
   set_meta_id: 2
   sample_time: 2011-01-20 01:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour9218:
   set_meta_id: 2
   sample_time: 2011-01-20 02:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour9219:
   set_meta_id: 2
   sample_time: 2011-01-20 03:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour9220:
   set_meta_id: 2
@@ -55332,235 +55332,235 @@ hour9221:
   set_meta_id: 2
   sample_time: 2011-01-20 05:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour9222:
   set_meta_id: 2
   sample_time: 2011-01-20 06:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour9223:
   set_meta_id: 2
   sample_time: 2011-01-20 07:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour9224:
   set_meta_id: 2
   sample_time: 2011-01-20 08:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour9225:
   set_meta_id: 2
   sample_time: 2011-01-20 09:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour9226:
   set_meta_id: 2
   sample_time: 2011-01-20 10:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour9227:
   set_meta_id: 2
   sample_time: 2011-01-20 11:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour9228:
   set_meta_id: 2
   sample_time: 2011-01-20 12:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour9229:
   set_meta_id: 2
   sample_time: 2011-01-20 13:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour9230:
   set_meta_id: 2
   sample_time: 2011-01-20 14:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour9231:
   set_meta_id: 2
   sample_time: 2011-01-20 15:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour9232:
   set_meta_id: 2
   sample_time: 2011-01-20 16:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour9233:
   set_meta_id: 2
   sample_time: 2011-01-20 17:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour9234:
   set_meta_id: 2
   sample_time: 2011-01-20 18:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour9235:
   set_meta_id: 2
   sample_time: 2011-01-20 19:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour9236:
   set_meta_id: 2
   sample_time: 2011-01-20 20:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour9237:
   set_meta_id: 2
   sample_time: 2011-01-20 21:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour9238:
   set_meta_id: 2
   sample_time: 2011-01-20 22:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour9239:
   set_meta_id: 2
   sample_time: 2011-01-20 23:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour9240:
   set_meta_id: 2
   sample_time: 2011-01-21 00:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour9241:
   set_meta_id: 2
   sample_time: 2011-01-21 01:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour9242:
   set_meta_id: 2
   sample_time: 2011-01-21 02:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour9243:
   set_meta_id: 2
   sample_time: 2011-01-21 03:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour9244:
   set_meta_id: 2
   sample_time: 2011-01-21 04:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour9245:
   set_meta_id: 2
   sample_time: 2011-01-21 05:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour9246:
   set_meta_id: 2
   sample_time: 2011-01-21 06:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour9247:
   set_meta_id: 2
   sample_time: 2011-01-21 07:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour9248:
   set_meta_id: 2
   sample_time: 2011-01-21 08:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour9249:
   set_meta_id: 2
   sample_time: 2011-01-21 09:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour9250:
   set_meta_id: 2
   sample_time: 2011-01-21 10:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour9251:
   set_meta_id: 2
   sample_time: 2011-01-21 11:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour9252:
   set_meta_id: 2
   sample_time: 2011-01-21 12:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour9253:
   set_meta_id: 2
   sample_time: 2011-01-21 13:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour9254:
   set_meta_id: 2
   sample_time: 2011-01-21 14:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour9255:
   set_meta_id: 2
   sample_time: 2011-01-21 15:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour9256:
   set_meta_id: 2
   sample_time: 2011-01-21 16:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour9257:
   set_meta_id: 2
   sample_time: 2011-01-21 17:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour9258:
   set_meta_id: 2
   sample_time: 2011-01-21 18:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour9259:
   set_meta_id: 2
   sample_time: 2011-01-21 19:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour9260:
   set_meta_id: 2
@@ -55572,235 +55572,235 @@ hour9261:
   set_meta_id: 2
   sample_time: 2011-01-21 21:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour9262:
   set_meta_id: 2
   sample_time: 2011-01-21 22:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour9263:
   set_meta_id: 2
   sample_time: 2011-01-21 23:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour9264:
   set_meta_id: 2
   sample_time: 2011-01-22 00:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour9265:
   set_meta_id: 2
   sample_time: 2011-01-22 01:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour9266:
   set_meta_id: 2
   sample_time: 2011-01-22 02:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour9267:
   set_meta_id: 2
   sample_time: 2011-01-22 03:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour9268:
   set_meta_id: 2
   sample_time: 2011-01-22 04:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour9269:
   set_meta_id: 2
   sample_time: 2011-01-22 05:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour9270:
   set_meta_id: 2
   sample_time: 2011-01-22 06:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour9271:
   set_meta_id: 2
   sample_time: 2011-01-22 07:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour9272:
   set_meta_id: 2
   sample_time: 2011-01-22 08:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour9273:
   set_meta_id: 2
   sample_time: 2011-01-22 09:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour9274:
   set_meta_id: 2
   sample_time: 2011-01-22 10:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour9275:
   set_meta_id: 2
   sample_time: 2011-01-22 11:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour9276:
   set_meta_id: 2
   sample_time: 2011-01-22 12:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour9277:
   set_meta_id: 2
   sample_time: 2011-01-22 13:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour9278:
   set_meta_id: 2
   sample_time: 2011-01-22 14:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour9279:
   set_meta_id: 2
   sample_time: 2011-01-22 15:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour9280:
   set_meta_id: 2
   sample_time: 2011-01-22 16:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour9281:
   set_meta_id: 2
   sample_time: 2011-01-22 17:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour9282:
   set_meta_id: 2
   sample_time: 2011-01-22 18:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour9283:
   set_meta_id: 2
   sample_time: 2011-01-22 19:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour9284:
   set_meta_id: 2
   sample_time: 2011-01-22 20:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour9285:
   set_meta_id: 2
   sample_time: 2011-01-22 21:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour9286:
   set_meta_id: 2
   sample_time: 2011-01-22 22:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour9287:
   set_meta_id: 2
   sample_time: 2011-01-22 23:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour9288:
   set_meta_id: 2
   sample_time: 2011-01-23 00:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour9289:
   set_meta_id: 2
   sample_time: 2011-01-23 01:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour9290:
   set_meta_id: 2
   sample_time: 2011-01-23 02:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour9291:
   set_meta_id: 2
   sample_time: 2011-01-23 03:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour9292:
   set_meta_id: 2
   sample_time: 2011-01-23 04:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour9293:
   set_meta_id: 2
   sample_time: 2011-01-23 05:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour9294:
   set_meta_id: 2
   sample_time: 2011-01-23 06:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour9295:
   set_meta_id: 2
   sample_time: 2011-01-23 07:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour9296:
   set_meta_id: 2
   sample_time: 2011-01-23 08:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour9297:
   set_meta_id: 2
   sample_time: 2011-01-23 09:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour9298:
   set_meta_id: 2
   sample_time: 2011-01-23 10:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour9299:
   set_meta_id: 2
   sample_time: 2011-01-23 11:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour9300:
   set_meta_id: 2
@@ -55812,235 +55812,235 @@ hour9301:
   set_meta_id: 2
   sample_time: 2011-01-23 13:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour9302:
   set_meta_id: 2
   sample_time: 2011-01-23 14:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour9303:
   set_meta_id: 2
   sample_time: 2011-01-23 15:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour9304:
   set_meta_id: 2
   sample_time: 2011-01-23 16:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour9305:
   set_meta_id: 2
   sample_time: 2011-01-23 17:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour9306:
   set_meta_id: 2
   sample_time: 2011-01-23 18:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour9307:
   set_meta_id: 2
   sample_time: 2011-01-23 19:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour9308:
   set_meta_id: 2
   sample_time: 2011-01-23 20:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour9309:
   set_meta_id: 2
   sample_time: 2011-01-23 21:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour9310:
   set_meta_id: 2
   sample_time: 2011-01-23 22:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour9311:
   set_meta_id: 2
   sample_time: 2011-01-23 23:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour9312:
   set_meta_id: 2
   sample_time: 2011-01-24 00:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour9313:
   set_meta_id: 2
   sample_time: 2011-01-24 01:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour9314:
   set_meta_id: 2
   sample_time: 2011-01-24 02:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour9315:
   set_meta_id: 2
   sample_time: 2011-01-24 03:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour9316:
   set_meta_id: 2
   sample_time: 2011-01-24 04:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour9317:
   set_meta_id: 2
   sample_time: 2011-01-24 05:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour9318:
   set_meta_id: 2
   sample_time: 2011-01-24 06:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour9319:
   set_meta_id: 2
   sample_time: 2011-01-24 07:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour9320:
   set_meta_id: 2
   sample_time: 2011-01-24 08:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour9321:
   set_meta_id: 2
   sample_time: 2011-01-24 09:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour9322:
   set_meta_id: 2
   sample_time: 2011-01-24 10:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour9323:
   set_meta_id: 2
   sample_time: 2011-01-24 11:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour9324:
   set_meta_id: 2
   sample_time: 2011-01-24 12:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour9325:
   set_meta_id: 2
   sample_time: 2011-01-24 13:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour9326:
   set_meta_id: 2
   sample_time: 2011-01-24 14:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour9327:
   set_meta_id: 2
   sample_time: 2011-01-24 15:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour9328:
   set_meta_id: 2
   sample_time: 2011-01-24 16:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour9329:
   set_meta_id: 2
   sample_time: 2011-01-24 17:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour9330:
   set_meta_id: 2
   sample_time: 2011-01-24 18:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour9331:
   set_meta_id: 2
   sample_time: 2011-01-24 19:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour9332:
   set_meta_id: 2
   sample_time: 2011-01-24 20:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour9333:
   set_meta_id: 2
   sample_time: 2011-01-24 21:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour9334:
   set_meta_id: 2
   sample_time: 2011-01-24 22:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour9335:
   set_meta_id: 2
   sample_time: 2011-01-24 23:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour9336:
   set_meta_id: 2
   sample_time: 2011-01-25 00:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour9337:
   set_meta_id: 2
   sample_time: 2011-01-25 01:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour9338:
   set_meta_id: 2
   sample_time: 2011-01-25 02:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour9339:
   set_meta_id: 2
   sample_time: 2011-01-25 03:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour9340:
   set_meta_id: 2
@@ -56052,235 +56052,235 @@ hour9341:
   set_meta_id: 2
   sample_time: 2011-01-25 05:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour9342:
   set_meta_id: 2
   sample_time: 2011-01-25 06:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour9343:
   set_meta_id: 2
   sample_time: 2011-01-25 07:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour9344:
   set_meta_id: 2
   sample_time: 2011-01-25 08:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour9345:
   set_meta_id: 2
   sample_time: 2011-01-25 09:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour9346:
   set_meta_id: 2
   sample_time: 2011-01-25 10:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour9347:
   set_meta_id: 2
   sample_time: 2011-01-25 11:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour9348:
   set_meta_id: 2
   sample_time: 2011-01-25 12:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour9349:
   set_meta_id: 2
   sample_time: 2011-01-25 13:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour9350:
   set_meta_id: 2
   sample_time: 2011-01-25 14:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour9351:
   set_meta_id: 2
   sample_time: 2011-01-25 15:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour9352:
   set_meta_id: 2
   sample_time: 2011-01-25 16:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour9353:
   set_meta_id: 2
   sample_time: 2011-01-25 17:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour9354:
   set_meta_id: 2
   sample_time: 2011-01-25 18:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour9355:
   set_meta_id: 2
   sample_time: 2011-01-25 19:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour9356:
   set_meta_id: 2
   sample_time: 2011-01-25 20:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour9357:
   set_meta_id: 2
   sample_time: 2011-01-25 21:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour9358:
   set_meta_id: 2
   sample_time: 2011-01-25 22:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour9359:
   set_meta_id: 2
   sample_time: 2011-01-25 23:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour9360:
   set_meta_id: 2
   sample_time: 2011-01-26 00:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour9361:
   set_meta_id: 2
   sample_time: 2011-01-26 01:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour9362:
   set_meta_id: 2
   sample_time: 2011-01-26 02:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour9363:
   set_meta_id: 2
   sample_time: 2011-01-26 03:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour9364:
   set_meta_id: 2
   sample_time: 2011-01-26 04:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour9365:
   set_meta_id: 2
   sample_time: 2011-01-26 05:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour9366:
   set_meta_id: 2
   sample_time: 2011-01-26 06:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour9367:
   set_meta_id: 2
   sample_time: 2011-01-26 07:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour9368:
   set_meta_id: 2
   sample_time: 2011-01-26 08:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour9369:
   set_meta_id: 2
   sample_time: 2011-01-26 09:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour9370:
   set_meta_id: 2
   sample_time: 2011-01-26 10:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour9371:
   set_meta_id: 2
   sample_time: 2011-01-26 11:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour9372:
   set_meta_id: 2
   sample_time: 2011-01-26 12:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour9373:
   set_meta_id: 2
   sample_time: 2011-01-26 13:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour9374:
   set_meta_id: 2
   sample_time: 2011-01-26 14:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour9375:
   set_meta_id: 2
   sample_time: 2011-01-26 15:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour9376:
   set_meta_id: 2
   sample_time: 2011-01-26 16:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour9377:
   set_meta_id: 2
   sample_time: 2011-01-26 17:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour9378:
   set_meta_id: 2
   sample_time: 2011-01-26 18:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour9379:
   set_meta_id: 2
   sample_time: 2011-01-26 19:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour9380:
   set_meta_id: 2
@@ -56292,235 +56292,235 @@ hour9381:
   set_meta_id: 2
   sample_time: 2011-01-26 21:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour9382:
   set_meta_id: 2
   sample_time: 2011-01-26 22:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour9383:
   set_meta_id: 2
   sample_time: 2011-01-26 23:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour9384:
   set_meta_id: 2
   sample_time: 2011-01-27 00:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour9385:
   set_meta_id: 2
   sample_time: 2011-01-27 01:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour9386:
   set_meta_id: 2
   sample_time: 2011-01-27 02:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour9387:
   set_meta_id: 2
   sample_time: 2011-01-27 03:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour9388:
   set_meta_id: 2
   sample_time: 2011-01-27 04:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour9389:
   set_meta_id: 2
   sample_time: 2011-01-27 05:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour9390:
   set_meta_id: 2
   sample_time: 2011-01-27 06:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour9391:
   set_meta_id: 2
   sample_time: 2011-01-27 07:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour9392:
   set_meta_id: 2
   sample_time: 2011-01-27 08:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour9393:
   set_meta_id: 2
   sample_time: 2011-01-27 09:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour9394:
   set_meta_id: 2
   sample_time: 2011-01-27 10:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour9395:
   set_meta_id: 2
   sample_time: 2011-01-27 11:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour9396:
   set_meta_id: 2
   sample_time: 2011-01-27 12:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour9397:
   set_meta_id: 2
   sample_time: 2011-01-27 13:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour9398:
   set_meta_id: 2
   sample_time: 2011-01-27 14:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour9399:
   set_meta_id: 2
   sample_time: 2011-01-27 15:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour9400:
   set_meta_id: 2
   sample_time: 2011-01-27 16:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour9401:
   set_meta_id: 2
   sample_time: 2011-01-27 17:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour9402:
   set_meta_id: 2
   sample_time: 2011-01-27 18:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour9403:
   set_meta_id: 2
   sample_time: 2011-01-27 19:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour9404:
   set_meta_id: 2
   sample_time: 2011-01-27 20:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour9405:
   set_meta_id: 2
   sample_time: 2011-01-27 21:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour9406:
   set_meta_id: 2
   sample_time: 2011-01-27 22:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour9407:
   set_meta_id: 2
   sample_time: 2011-01-27 23:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour9408:
   set_meta_id: 2
   sample_time: 2011-01-28 00:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour9409:
   set_meta_id: 2
   sample_time: 2011-01-28 01:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour9410:
   set_meta_id: 2
   sample_time: 2011-01-28 02:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour9411:
   set_meta_id: 2
   sample_time: 2011-01-28 03:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour9412:
   set_meta_id: 2
   sample_time: 2011-01-28 04:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour9413:
   set_meta_id: 2
   sample_time: 2011-01-28 05:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour9414:
   set_meta_id: 2
   sample_time: 2011-01-28 06:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour9415:
   set_meta_id: 2
   sample_time: 2011-01-28 07:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour9416:
   set_meta_id: 2
   sample_time: 2011-01-28 08:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour9417:
   set_meta_id: 2
   sample_time: 2011-01-28 09:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour9418:
   set_meta_id: 2
   sample_time: 2011-01-28 10:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour9419:
   set_meta_id: 2
   sample_time: 2011-01-28 11:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour9420:
   set_meta_id: 2
@@ -56532,235 +56532,235 @@ hour9421:
   set_meta_id: 2
   sample_time: 2011-01-28 13:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour9422:
   set_meta_id: 2
   sample_time: 2011-01-28 14:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour9423:
   set_meta_id: 2
   sample_time: 2011-01-28 15:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour9424:
   set_meta_id: 2
   sample_time: 2011-01-28 16:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour9425:
   set_meta_id: 2
   sample_time: 2011-01-28 17:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour9426:
   set_meta_id: 2
   sample_time: 2011-01-28 18:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour9427:
   set_meta_id: 2
   sample_time: 2011-01-28 19:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour9428:
   set_meta_id: 2
   sample_time: 2011-01-28 20:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour9429:
   set_meta_id: 2
   sample_time: 2011-01-28 21:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour9430:
   set_meta_id: 2
   sample_time: 2011-01-28 22:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour9431:
   set_meta_id: 2
   sample_time: 2011-01-28 23:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour9432:
   set_meta_id: 2
   sample_time: 2011-01-29 00:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour9433:
   set_meta_id: 2
   sample_time: 2011-01-29 01:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour9434:
   set_meta_id: 2
   sample_time: 2011-01-29 02:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour9435:
   set_meta_id: 2
   sample_time: 2011-01-29 03:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour9436:
   set_meta_id: 2
   sample_time: 2011-01-29 04:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour9437:
   set_meta_id: 2
   sample_time: 2011-01-29 05:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour9438:
   set_meta_id: 2
   sample_time: 2011-01-29 06:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour9439:
   set_meta_id: 2
   sample_time: 2011-01-29 07:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour9440:
   set_meta_id: 2
   sample_time: 2011-01-29 08:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour9441:
   set_meta_id: 2
   sample_time: 2011-01-29 09:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour9442:
   set_meta_id: 2
   sample_time: 2011-01-29 10:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour9443:
   set_meta_id: 2
   sample_time: 2011-01-29 11:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour9444:
   set_meta_id: 2
   sample_time: 2011-01-29 12:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour9445:
   set_meta_id: 2
   sample_time: 2011-01-29 13:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour9446:
   set_meta_id: 2
   sample_time: 2011-01-29 14:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour9447:
   set_meta_id: 2
   sample_time: 2011-01-29 15:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour9448:
   set_meta_id: 2
   sample_time: 2011-01-29 16:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour9449:
   set_meta_id: 2
   sample_time: 2011-01-29 17:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour9450:
   set_meta_id: 2
   sample_time: 2011-01-29 18:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour9451:
   set_meta_id: 2
   sample_time: 2011-01-29 19:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour9452:
   set_meta_id: 2
   sample_time: 2011-01-29 20:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour9453:
   set_meta_id: 2
   sample_time: 2011-01-29 21:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour9454:
   set_meta_id: 2
   sample_time: 2011-01-29 22:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour9455:
   set_meta_id: 2
   sample_time: 2011-01-29 23:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour9456:
   set_meta_id: 2
   sample_time: 2011-01-30 00:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour9457:
   set_meta_id: 2
   sample_time: 2011-01-30 01:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour9458:
   set_meta_id: 2
   sample_time: 2011-01-30 02:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour9459:
   set_meta_id: 2
   sample_time: 2011-01-30 03:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour9460:
   set_meta_id: 2
@@ -56772,235 +56772,235 @@ hour9461:
   set_meta_id: 2
   sample_time: 2011-01-30 05:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour9462:
   set_meta_id: 2
   sample_time: 2011-01-30 06:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour9463:
   set_meta_id: 2
   sample_time: 2011-01-30 07:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 
 hour9464:
   set_meta_id: 2
   sample_time: 2011-01-30 08:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 54
 
 hour9465:
   set_meta_id: 2
   sample_time: 2011-01-30 09:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 55
 
 hour9466:
   set_meta_id: 2
   sample_time: 2011-01-30 10:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 56
 
 hour9467:
   set_meta_id: 2
   sample_time: 2011-01-30 11:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 57
 
 hour9468:
   set_meta_id: 2
   sample_time: 2011-01-30 12:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 58
 
 hour9469:
   set_meta_id: 2
   sample_time: 2011-01-30 13:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 59
 
 hour9470:
   set_meta_id: 2
   sample_time: 2011-01-30 14:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 60
 
 hour9471:
   set_meta_id: 2
   sample_time: 2011-01-30 15:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 61
 
 hour9472:
   set_meta_id: 2
   sample_time: 2011-01-30 16:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 62
 
 hour9473:
   set_meta_id: 2
   sample_time: 2011-01-30 17:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 63
 
 hour9474:
   set_meta_id: 2
   sample_time: 2011-01-30 18:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 64
 
 hour9475:
   set_meta_id: 2
   sample_time: 2011-01-30 19:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 65
 
 hour9476:
   set_meta_id: 2
   sample_time: 2011-01-30 20:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 66
 
 hour9477:
   set_meta_id: 2
   sample_time: 2011-01-30 21:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 67
 
 hour9478:
   set_meta_id: 2
   sample_time: 2011-01-30 22:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 68
 
 hour9479:
   set_meta_id: 2
   sample_time: 2011-01-30 23:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 69
 
 hour9480:
   set_meta_id: 2
   sample_time: 2011-01-31 00:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 30
 
 hour9481:
   set_meta_id: 2
   sample_time: 2011-01-31 01:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 31
 
 hour9482:
   set_meta_id: 2
   sample_time: 2011-01-31 02:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 32
 
 hour9483:
   set_meta_id: 2
   sample_time: 2011-01-31 03:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 33
 
 hour9484:
   set_meta_id: 2
   sample_time: 2011-01-31 04:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 34
 
 hour9485:
   set_meta_id: 2
   sample_time: 2011-01-31 05:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 35
 
 hour9486:
   set_meta_id: 2
   sample_time: 2011-01-31 06:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 36
 
 hour9487:
   set_meta_id: 2
   sample_time: 2011-01-31 07:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 37
 
 hour9488:
   set_meta_id: 2
   sample_time: 2011-01-31 08:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 38
 
 hour9489:
   set_meta_id: 2
   sample_time: 2011-01-31 09:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 39
 
 hour9490:
   set_meta_id: 2
   sample_time: 2011-01-31 10:00:00
   generated_kilowatts: 0
-  temperature: 50
+  temperature: 40
 
 hour9491:
   set_meta_id: 2
   sample_time: 2011-01-31 11:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 41
 
 hour9492:
   set_meta_id: 2
   sample_time: 2011-01-31 12:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 42
 
 hour9493:
   set_meta_id: 2
   sample_time: 2011-01-31 13:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 43
 
 hour9494:
   set_meta_id: 2
   sample_time: 2011-01-31 14:00:00
   generated_kilowatts: 4
-  temperature: 50
+  temperature: 44
 
 hour9495:
   set_meta_id: 2
   sample_time: 2011-01-31 15:00:00
   generated_kilowatts: 5
-  temperature: 50
+  temperature: 45
 
 hour9496:
   set_meta_id: 2
   sample_time: 2011-01-31 16:00:00
   generated_kilowatts: 6
-  temperature: 50
+  temperature: 46
 
 hour9497:
   set_meta_id: 2
   sample_time: 2011-01-31 17:00:00
   generated_kilowatts: 7
-  temperature: 50
+  temperature: 47
 
 hour9498:
   set_meta_id: 2
   sample_time: 2011-01-31 18:00:00
   generated_kilowatts: 8
-  temperature: 50
+  temperature: 48
 
 hour9499:
   set_meta_id: 2
   sample_time: 2011-01-31 19:00:00
   generated_kilowatts: 9
-  temperature: 50
+  temperature: 49
 
 hour9500:
   set_meta_id: 2
@@ -57012,17 +57012,17 @@ hour9501:
   set_meta_id: 2
   sample_time: 2011-01-31 21:00:00
   generated_kilowatts: 1
-  temperature: 50
+  temperature: 51
 
 hour9502:
   set_meta_id: 2
   sample_time: 2011-01-31 22:00:00
   generated_kilowatts: 2
-  temperature: 50
+  temperature: 52
 
 hour9503:
   set_meta_id: 2
   sample_time: 2011-01-31 23:00:00
   generated_kilowatts: 3
-  temperature: 50
+  temperature: 53
 

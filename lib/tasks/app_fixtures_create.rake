@@ -30,7 +30,7 @@ namespace :app do
           f.puts "  set_meta_id: 2"
           f.puts "  sample_time: #{curr.strftime( "%Y-%m-%d %H:00:00" )}"
           f.puts "  generated_kilowatts: #{counter % 10}"
-          f.puts "  temperature: 50"
+          f.puts "  temperature: #{ 30 + (counter % 40)}"
           f.puts 
 	  counter += 1
         end
