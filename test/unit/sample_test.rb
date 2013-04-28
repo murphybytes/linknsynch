@@ -6,7 +6,7 @@ class SampleTest < ActiveSupport::TestCase
   # end
 
   test "sample by month query" do
-    result =  Sample.samples_for_month( 1, 2011, 1 )
+    result =  Sample.samples_for_month( '1', '2011', '1' )
     assert_not_nil result
     assert_equal result.count, 744
     assert_equal result.first.sample_time.day, 1

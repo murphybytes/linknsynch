@@ -74,7 +74,7 @@ function calculations_create() {
 		    },
 
 		    title: {
-			text: 'kW Generated'
+			text: 'Generation'
 		    },
 		    subtitle: {
 			text: to_month_name( data.month ) + ' ' + data.year
@@ -83,12 +83,21 @@ function calculations_create() {
 			enabled: false
 		    },
 		    xAxis: {
-			categories: [ 'Duration' ]
+			categories: [ 'Hour Count' ],
+			labels : {
+			    step: 50,
+			    rotation: 90
+			}
 		    },
 
 		    yAxis: { 
+			endOnTick: false,
+			labels: {
+			    enabled: false
+			},
 			title: {
-			    text: 'kW'
+			    text: '% Generation',
+			    max: 10
 			}
 		    },
 		    series: [ {

@@ -1,10 +1,14 @@
-
+require 'pqr/series_calculator'
 
 class GraphsController < ApplicationController 
   before_filter :authenticate_user!
 
   def generation
-    series = [[0,10],[1,9],[2,7],[3,4],[4,2]]
+    samples = Sample.samples_for_month( params[:set_id], params[:year], params[:month] )
+    calculator = PQR::SeriesCalculator.new( samples: samples )
+    series = calculator.get_generation_series
+
+    logger.debug "SERIES #{series}"
 
     respond_to do |format|
       format.json { render :json => { 
@@ -12,6 +16,9 @@ class GraphsController < ApplicationController
           year: params[:year], 
           series: series }.to_json }
     end
+  end
+
+  def demand
   end
 
   def duration
