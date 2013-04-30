@@ -57,6 +57,59 @@ function calculations_create() {
 	var year = $(this).attr('year');
 
 	$.get(
+	    'graphs/demand.json',
+	    {
+		month: month,
+		year: year,
+		set_id: set_id,
+		home_profile_id: home_profile_id,
+		'thermal_storage_ids[]': thermal_storage_ids
+	    },
+	    function(data) {
+		//console.info( data );
+		var chart = new Highcharts.Chart({
+		    chart: {
+			renderTo: data.year + '.' + data.month + '.2',
+			type: 'areaspline'
+		    },
+
+		    title: {
+			text: 'Demand'
+		    },
+		    subtitle: {
+			text: to_month_name( data.month ) + ' ' + data.year
+		    },
+		    legend: {
+			enabled: false
+		    },
+		    xAxis: {
+			//categories: [ 'Hour Count' ],
+			labels : {
+			    step: 50,
+			    rotation: 90
+			}
+		    },
+
+		    yAxis: { 
+			endOnTick: false,
+			labels: {
+			    enabled: false
+			},
+			title: {
+			    text: '% Demand',
+			    max: 10
+			}
+		    },
+		    series: [ {
+			data: data.series
+		    }
+			    ]
+		});
+	    }
+	);
+
+
+	$.get(
 	    'graphs/generation.json',
 	    {
 		month: month,

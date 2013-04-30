@@ -29,15 +29,21 @@ module PQR
         normalized_value = (((sample.generated_kilowatts - min).to_f / ( max - min ).to_f) * @partition_count).to_i
         counts[normalized_value] += 1
       end
-      
-      
+
       ( 0 .. @partition_count ).each do |n|
 
         result << [counts[n], n  ]
 
       end
 
-      result.sort { |x,y| x.first <=> y.first }
+      result.sort! { |x,y| y.first <=> x.first }
+      count = 0
+      series = []
+      result.each do |x|
+        series << [ count, x.first ] if count > 0
+        count += 1
+      end
+      series
     end
 
     def get_demand_series
@@ -54,16 +60,21 @@ module PQR
         normalized_value = (((kwr - min).to_f / ( max - min ).to_f) * @partition_count).to_i
         counts[normalized_value] += 1
       end
-      
-      
+
       ( 0 .. @partition_count ).each do |n|
 
         result << [counts[n], n  ]
 
       end
 
-      result.sort { |x,y| x.first <=> y.first }
-      
+      result.sort! { |x,y| y.first <=> x.first }
+      count = 0
+      series = []
+      result.each do |x|
+        series << [count,x.first] if count > 0
+        count +=1
+      end
+      series
     end
 
   end
