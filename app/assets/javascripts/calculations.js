@@ -57,6 +57,57 @@ function calculations_create() {
 	var year = $(this).attr('year');
 
 	$.get(
+	    'graphs/summary.json',
+	    {
+		month: month,
+		year: year,
+		set_id: set_id,
+		home_profile_id: home_profile_id,
+		'thermal_storage_ids[]': thermal_storage_ids
+	    },
+	    function(data) {
+		//console.info( data );
+		var chart = new Highcharts.Chart({
+		    chart: {
+			renderTo: data.year + '.' + data.month + '.3',
+			type: 'column'
+		    },
+
+		    title: {
+			text: 'Summary'
+		    },
+		    subtitle: {
+			text: to_month_name( data.month ) + ' ' + data.year
+		    },
+		    legend: {
+			enabled: false
+		    },
+		    xAxis: {
+			categories: [ 'kW Heating', 'kW Heating LS', 'kW Unserved', 'kW Unserved LS' ]
+		    },
+
+		    yAxis: { 
+			endOnTick: false,
+			labels: {
+			    enabled: false
+			},
+			title: {
+			    text: 'kW'
+			}
+		    },
+		    series: [ {
+			data: [data.total_kw_required_for_heating,
+			       data.total_kw_required_for_heating_ls,
+			       data.total_kw_load_unserved,
+			       data.total_kw_load_unserved_ls]
+		    }
+			    ]
+		});
+	    }
+	);
+
+
+	$.get(
 	    'graphs/demand.json',
 	    {
 		month: month,

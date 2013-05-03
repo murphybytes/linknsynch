@@ -17,6 +17,7 @@ Linknsynch::Application.routes.draw do
   match 'graphs/:id/duration' => 'graphs#duration', :as => :duration_graphs
   match 'graphs/generation' => 'graphs#generation', :as => :generation_graphs
   match 'graphs/demand' => 'graphs#demand', :as => :demand_graph
+  match 'graphs/summary' => 'graphs#summary', :as => :summary_graph
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
