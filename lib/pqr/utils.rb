@@ -5,6 +5,13 @@ module PQR
   LB_PER_GALLON=8.33
 
   class Utils
+    
+    def self.get_month_day_year( val )
+      val.strip!
+      val.split( '/' ).map do |s|
+        s.to_i
+      end
+    end
 
     def self.holiday?( yy, mm, dd )
       ts = Date.new( yy, mm, dd )

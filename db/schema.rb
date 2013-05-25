@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130128030651) do
+ActiveRecord::Schema.define(:version => 20130525180520) do
 
   create_table "holidays", :force => true do |t|
     t.string   "name"
@@ -31,6 +31,26 @@ ActiveRecord::Schema.define(:version => 20130128030651) do
     t.datetime "updated_at",             :null => false
     t.integer  "thermostat_temperature"
   end
+
+  create_table "location_marginal_prices", :force => true do |t|
+    t.datetime "period"
+    t.decimal  "value"
+    t.integer  "node_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "location_marginal_prices", ["period"], :name => "index_location_marginal_prices_on_period"
+
+  create_table "nodes", :force => true do |t|
+    t.string   "name"
+    t.string   "node_type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "nodes", ["name"], :name => "index_nodes_on_name"
+  add_index "nodes", ["node_type"], :name => "index_nodes_on_node_type"
 
   create_table "samples", :force => true do |t|
     t.integer  "set_meta_id"

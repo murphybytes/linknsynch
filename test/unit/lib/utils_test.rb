@@ -1,6 +1,14 @@
 require 'test_helper'
 
 class UtilsTest < ActiveSupport::TestCase
+  
+  test "should parse integer month, day, year from string date of m/d/yyyy" do
+    month,day,year = PQR::Utils.get_month_day_year( "3/4/2011\n" )
+    assert_equal month, 3
+    assert_equal day, 4
+    assert_equal year, 2011
+    
+  end
 
   test "should detect if a date is a holiday" do
     assert PQR::Utils.holiday?( 2012, 12, 25 ) 

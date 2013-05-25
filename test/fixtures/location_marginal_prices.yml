@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  period: 2013-05-25 13:05:20
+  value: 9.99
+  node_id: 1
+
+two:
+  period: 2013-05-25 13:05:20
+  value: 9.99
+  node_id: 1

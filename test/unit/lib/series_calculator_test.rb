@@ -12,15 +12,15 @@ class SeriesCalculatorTest < ActiveSupport::TestCase
     calculator = PQR::SeriesCalculator.new( samples: @@set.samples )
    
     series = calculator.get_generation_series
-    assert_equal series.count, 11
-    assert_equal sum_series( series ), 744  
+    assert_equal series.count, 10
+    assert_equal sum_series( series ), 55  
   end
 
   test "Verify Demand Duration Data" do
     calculator = PQR::SeriesCalculator.new( samples: @@set.samples, home_profile: @home_profile )
    
     series = calculator.get_demand_series
-    assert_equal series.count, 11
+    assert_equal series.count, 10
   end
 
   def sum_series( series )
