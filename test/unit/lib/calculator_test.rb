@@ -2,15 +2,17 @@ require 'test_helper'
 
 
 class CalculatorTest < ActiveSupport::TestCase
+
   def setup
     @@set ||= SetMeta.where( :name => 'TestSample' ).first
+    begin_date, end_date =  [DateTime. parse( "2011-01-01 00:00:00" ), DateTime. parse( "2012-01-01 00:00:00" )] 
     @home_profile ||= HomeProfile.where( :name => 'TestHomeProfile' ).first
 
     @water_heaters ||= ThermalStorageProfile.where( name: 'WaterHeaters' ).first
     @slab_heaters ||= ThermalStorageProfile.where( name: 'SlabHeaters' ).first
     @model ||= PQR::ThermalStorageModel.new( @water_heaters, @slab_heaters )
-    
-    @calculator ||= PQR::Calculator.new( samples: @@set.samples, home_profile: @home_profile, thermal_storage_model: @model )
+    @prices ||= LocationMarginalPrice.get_prices_for_node_in_range( 'OTP.HOOTL2', begin_date, end_date )
+    @calculator ||= PQR::Calculator.new( prices: @prices, samples: @@set.samples, home_profile: @home_profile, thermal_storage_model: @model )
     @calculator.run
 
   end
@@ -50,6 +52,11 @@ class CalculatorTest < ActiveSupport::TestCase
     assert_equal months.first.year, 2011
     assert_equal months.last.month, 12
     assert_equal months.last.year, 2011
+  end
+
+  test "price of total generated kw" do
+    expected = @calculator.total_kw_generated * ( 10.10 / 1000.0 )
+    assert_equal expected, @calculator.total_kw_generated_price
   end
 
 end
