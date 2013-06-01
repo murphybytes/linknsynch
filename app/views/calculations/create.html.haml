@@ -3,8 +3,11 @@
   %tr
     %tr
       %td
-        Total kWh Generated
-      %td= @calculation.total_kw_generated
+        Total Energy Generated (MWh)
+      %td= @calculation.total_mw_generated
+    %tr
+      %td 
+        LMP Price of Energy
       %td= number_to_currency( @calculation.total_kw_generated_price, :precision => 0 )
     %tr
       %td

@@ -12,10 +12,12 @@ module PQR
 
     def initialize( opts = {}  )
       @total_kw_generated = 0
-      @total_kw_generated_price = 0
+      @total_kw_generated_price = BigDecimal.new('0')
       @total_kw_required_for_heating = 0
+      @total_kw_required_for_heating_price = BigDecimal.new('0')
       @total_kw_required_for_heating_ls = 0
-     @total_kw_load_unserved = 0
+      @total_kw_required_for_heating_ls_price = BigDecimal.new('0')
+      @total_kw_load_unserved = 0
       @total_kw_load_unserved_ls = 0
       @total_kw_excess_off_peak_capacity = 0
       @begin_time = nil
@@ -26,7 +28,27 @@ module PQR
       @thermal_storage_model = opts.fetch( :thermal_storage_model )
       @prices = hashify( opts.fetch( :prices, nil ) )
     end
-    
+
+    def total_mw_generated
+      @total_kw_generated / 1000
+    end
+
+    def total_mw_required_for_heating
+      @total_kw_required_for_heating / 1000
+    end
+
+    def total_mw_required_for_heating_ls
+      @total_kw_required_for_heating_ls / 1000
+    end
+
+    def total_mw_load_unserved
+      @total_kw_load_unserved / 1000
+    end
+
+    def total_mw_load_unserved_ls
+      @total_kw_load_unserved_ls / 1000
+    end
+
     def date_in_range?( test )
       return true if test.year < @end_time.year
 
@@ -55,9 +77,9 @@ module PQR
       result      
     end
 
+    # TODO: Use BigDecimals here
     def run
       total_kw_generated = 0
-      total_kw_generated_price = 0
       # use a float to avoid rounding errors accruing
       total_kw_required_for_heating = 0.0
       total_kw_required_for_heating_ls = 0.0
@@ -72,7 +94,7 @@ module PQR
 
         kw_generated = sample.generated_kilowatts
         total_kw_generated += kw_generated
-        total_kw_generated_price += get_price( sample, kw_generated )
+        @total_kw_generated_price += get_price( sample, kw_generated )
         kw_required_for_heating = get_kw_required_for_heating( sample )
         total_kw_required_for_heating_ls += kw_required_for_heating
         total_kw_required_for_heating += kw_required_for_heating
@@ -96,10 +118,11 @@ module PQR
           end
         end
 
+
+
       end
 
       @total_kw_generated = total_kw_generated
-      @total_kw_generated_price = total_kw_generated_price
       @total_kw_required_for_heating = total_kw_required_for_heating.round 
       @total_kw_load_unserved = total_kw_load_unserved.round
       @total_kw_load_unserved_ls = total_kw_load_unserved_ls.round
@@ -109,11 +132,15 @@ module PQR
 
     private
 
+    ##################################################################################
+    #  Makes things faster, prices in hash table with O(1) instead of O(n)
+    #  lookups
+    ##################################################################################
     def hashify( prices )
       result = nil
       if prices
         result = {}
-        prices.each do | p | 
+        prices.each do | p |
           result[p.period] = p
         end
       end
@@ -121,7 +148,7 @@ module PQR
     end
  
     def get_price( sample, kws )
-      result = 0
+      result = BigDecimal.new( '0' )
       if @prices
         hit = @prices[sample.sample_time]
         if hit
