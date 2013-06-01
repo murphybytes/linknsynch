@@ -1,9 +1,12 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-  node_type: MyString
+  id: 1
+  name: OTP.HOOTL2
+  node_type: LMP
 
 two:
-  name: MyString
-  node_type: MyString
+  id: 2
+  name: OTP.HOOTL3
+  node_type: LMP
+

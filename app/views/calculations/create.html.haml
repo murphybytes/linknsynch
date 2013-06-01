@@ -5,6 +5,7 @@
       %td
         Total kWh Generated
       %td= @calculation.total_kw_generated
+      %td= number_to_currency( @calculation.total_kw_generated_price, :precision => 0 )
     %tr
       %td
         Total kWh Required for Heating

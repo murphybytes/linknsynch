@@ -4,6 +4,7 @@ module PQR
 
   class Calculator
     attr_reader :total_kw_generated, :total_kw_required_for_heating, :total_kw_load_unserved
+    attr_reader :total_kw_generated_price
     attr_reader :total_kw_load_unserved_ls, :total_kw_excess_off_peak_capacity, :total_kw_required_for_heating_ls
     attr_reader :begin_time, :end_time
 
@@ -11,6 +12,7 @@ module PQR
 
     def initialize( opts = {}  )
       @total_kw_generated = 0
+      @total_kw_generated_price = 0
       @total_kw_required_for_heating = 0
       @total_kw_required_for_heating_ls = 0
      @total_kw_load_unserved = 0
@@ -22,6 +24,7 @@ module PQR
       @samples = opts.fetch( :samples )
       @home_profile = opts.fetch( :home_profile )
       @thermal_storage_model = opts.fetch( :thermal_storage_model )
+      @prices = hashify( opts.fetch( :prices, nil ) )
     end
     
     def date_in_range?( test )
@@ -54,6 +57,7 @@ module PQR
 
     def run
       total_kw_generated = 0
+      total_kw_generated_price = 0
       # use a float to avoid rounding errors accruing
       total_kw_required_for_heating = 0.0
       total_kw_required_for_heating_ls = 0.0
@@ -68,7 +72,7 @@ module PQR
 
         kw_generated = sample.generated_kilowatts
         total_kw_generated += kw_generated
-
+        total_kw_generated_price += get_price( sample, kw_generated )
         kw_required_for_heating = get_kw_required_for_heating( sample )
         total_kw_required_for_heating_ls += kw_required_for_heating
         total_kw_required_for_heating += kw_required_for_heating
@@ -95,6 +99,7 @@ module PQR
       end
 
       @total_kw_generated = total_kw_generated
+      @total_kw_generated_price = total_kw_generated_price
       @total_kw_required_for_heating = total_kw_required_for_heating.round 
       @total_kw_load_unserved = total_kw_load_unserved.round
       @total_kw_load_unserved_ls = total_kw_load_unserved_ls.round
@@ -103,6 +108,29 @@ module PQR
     end
 
     private
+
+    def hashify( prices )
+      result = nil
+      if prices
+        result = {}
+        prices.each do | p | 
+          result[p.period] = p
+        end
+      end
+      result
+    end
+ 
+    def get_price( sample, kws )
+      result = 0
+      if @prices
+        hit = @prices[sample.sample_time]
+        if hit
+          result = kws * ( hit.value / 1000.0 ).to_f
+        end
+      end
+      result
+    end
+
     ####################################################################
     # Calculate the maximum amount of energy that we can use to 
     # draw from thermal storage to reduce load unserved.

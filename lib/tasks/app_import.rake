@@ -26,27 +26,35 @@ namespace :app do
 
         month,day,year = PQR::Utils.get_month_day_year( contents[1][0] )
         puts "Processing #{contents[1][0]}"
+        ####################################################
+        # change year so it matches our generation sample
+        ####################################################
+        year += 2  
+
 
         ( 5...contents.size ).each do |row|
           node_name = contents[row][0]
-          
+          node_type = contents[row][2]
+
           if ["OTP.HOOTL2","OTP.HOOTL3"].include?( node_name ) 
-            
-            node = Node.find_or_create_by_name( contents[row][0] )
+            if "LMP" == node_type 
+              node = Node.find_or_create_by_name( contents[row][0] )
 
-            ( 3...contents[row].size).each do |col|
-              lmp = LocationMarginalPrice.new
-              hour = col - 2
-              lmp.period = DateTime.new( year, month, day, hour, 0, 0, tz_offset )
-              puts "Processing #{node_name} for #{lmp.period}"
-              lmp.value = contents[row][col].to_f
-              node.location_marginal_prices << lmp            
+              ( 3...contents[row].size).each do |col|
+                lmp = LocationMarginalPrice.new
+                hour = col - 2
+                lmp.period = DateTime.new( year, month, day, hour, 0, 0, tz_offset )
+                puts "Processing #{node_name} for #{lmp.period}"
+                lmp.value = contents[row][col].to_f
+                node.location_marginal_prices << lmp
+              end 
+              
+              puts "Saving %s for %.2d/%.2d/%.4d" % [node_name,month,day,year]
+              node.save
+
             end
-            puts "Saving %s for %.2d/%.2d/%.4d" % [node_name,month,day,year]
-            node.save
 
-          else
-            #puts "Skipping #{node_name}"
+
           end
           
         end
