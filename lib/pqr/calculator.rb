@@ -4,22 +4,28 @@ module PQR
 
   class Calculator
     attr_reader :total_kw_generated, :total_kw_required_for_heating, :total_kw_load_unserved
-    attr_reader :total_kw_generated_price
+    attr_reader :total_kw_generated_price, :total_kw_required_for_heating_price, :total_kw_load_unserved_price
     attr_reader :total_kw_load_unserved_ls, :total_kw_excess_off_peak_capacity, :total_kw_required_for_heating_ls
+    attr_reader :total_kw_load_unserved_ls_price, :total_kw_excess_off_peak_capacity_price, :total_kw_required_for_heating_ls_price
     attr_reader :begin_time, :end_time
 
     include PQR::Common
 
+    KW_TO_MW = BigDecimal.new('1000')
+
     def initialize( opts = {}  )
-      @total_kw_generated = 0
+      @total_kw_generated = BigDecimal.new('0')
       @total_kw_generated_price = BigDecimal.new('0')
-      @total_kw_required_for_heating = 0
+      @total_kw_required_for_heating = BigDecimal.new('0')
       @total_kw_required_for_heating_price = BigDecimal.new('0')
-      @total_kw_required_for_heating_ls = 0
+      @total_kw_required_for_heating_ls = BigDecimal.new('0')
       @total_kw_required_for_heating_ls_price = BigDecimal.new('0')
-      @total_kw_load_unserved = 0
-      @total_kw_load_unserved_ls = 0
-      @total_kw_excess_off_peak_capacity = 0
+      @total_kw_load_unserved = BigDecimal.new('0')
+      @total_kw_load_unserved_price = BigDecimal.new('0')
+      @total_kw_load_unserved_ls = BigDecimal.new('0')
+      @total_kw_load_unserved_ls_price = BigDecimal.new('0')
+      @total_kw_excess_off_peak_capacity = BigDecimal.new('0')
+      @total_kw_excess_off_peak_capacity_price = BigDecimal.new('0')
       @begin_time = nil
       @end_time = nil
 
@@ -30,23 +36,27 @@ module PQR
     end
 
     def total_mw_generated
-      @total_kw_generated / 1000
+      (@total_kw_generated / KW_TO_MW).round
     end
 
     def total_mw_required_for_heating
-      @total_kw_required_for_heating / 1000
+      (@total_kw_required_for_heating / KW_TO_MW).round
     end
 
     def total_mw_required_for_heating_ls
-      @total_kw_required_for_heating_ls / 1000
+      (@total_kw_required_for_heating_ls / KW_TO_MW).round
     end
 
     def total_mw_load_unserved
-      @total_kw_load_unserved / 1000
+      (@total_kw_load_unserved / KW_TO_MW).round
     end
 
     def total_mw_load_unserved_ls
-      @total_kw_load_unserved_ls / 1000
+      (@total_kw_load_unserved_ls / KW_TO_MW).round
+    end
+
+    def total_mw_excess_off_peak_capacity
+      (@total_kw_excess_off_peak_capacity / KW_TO_MW).round
     end
 
     def date_in_range?( test )
@@ -77,57 +87,54 @@ module PQR
       result      
     end
 
-    # TODO: Use BigDecimals here
+
     def run
-      total_kw_generated = 0
-      # use a float to avoid rounding errors accruing
-      total_kw_required_for_heating = 0.0
-      total_kw_required_for_heating_ls = 0.0
       total_kw_load_unserved = 0.0
       total_kw_load_unserved_ls = 0.0
-      total_kw_excess_off_peak_capacity = 0.0
-
 
       @samples.each do |sample|
 
         update_date_range( sample )
 
         kw_generated = sample.generated_kilowatts
-        total_kw_generated += kw_generated
+        @total_kw_generated += kw_generated
         @total_kw_generated_price += get_price( sample, kw_generated )
         kw_required_for_heating = get_kw_required_for_heating( sample )
-        total_kw_required_for_heating_ls += kw_required_for_heating
-        total_kw_required_for_heating += kw_required_for_heating
+
+        kw_required_for_heating_ls = kw_required_for_heating
+        @total_kw_required_for_heating += kw_required_for_heating
+        @total_kw_required_for_heating_price += get_price( sample, kw_required_for_heating )
 
         kw_load_unserved = get_kw_load_unserved( kw_generated, kw_required_for_heating )
-        total_kw_load_unserved += kw_load_unserved
-        total_kw_load_unserved_ls += kw_load_unserved
+        kw_load_unserved_ls = kw_load_unserved
+        @total_kw_load_unserved += kw_load_unserved
+        @total_kw_load_unserved_price += get_price( sample, kw_load_unserved )
+
 
         if kw_load_unserved > 0.0
           adjustment = get_load_unserved_adjustment( kw_load_unserved )
-          total_kw_load_unserved_ls -= adjustment
-          total_kw_required_for_heating_ls += adjustment
+          kw_load_unserved_ls -= adjustment
+          kw_required_for_heating_ls += adjustment
         else
           # if off peak charge thermal storage
           unless Utils.is_peak?( sample.sample_time )
             excess_capacity = [ kw_generated - kw_required_for_heating, 0.0 ].max
             if excess_capacity > 0.0
               used = @thermal_storage_model.charge( excess_capacity )
-              total_kw_excess_off_peak_capacity += ( excess_capacity - used )
+              kw_excess_off_peak_capacity = ( excess_capacity - used )
+              @total_kw_excess_off_peak_capacity += kw_excess_off_peak_capacity
+              @total_kw_excess_off_peak_capacity_price = get_price( sample, kw_excess_off_peak_capacity )
             end
           end
         end
 
-
+        @total_kw_load_unserved_ls              += kw_load_unserved_ls
+        @total_kw_load_unserved_ls_price        += get_price( sample, kw_load_unserved_ls )
+        @total_kw_required_for_heating_ls       += kw_required_for_heating_ls
+        @total_kw_required_for_heating_ls_price += get_price( sample, kw_required_for_heating_ls )
 
       end
 
-      @total_kw_generated = total_kw_generated
-      @total_kw_required_for_heating = total_kw_required_for_heating.round 
-      @total_kw_load_unserved = total_kw_load_unserved.round
-      @total_kw_load_unserved_ls = total_kw_load_unserved_ls.round
-      @total_kw_excess_off_peak_capacity = total_kw_excess_off_peak_capacity.round
-      @total_kw_required_for_heating_ls = total_kw_required_for_heating_ls.round
     end
 
     private
@@ -152,7 +159,7 @@ module PQR
       if @prices
         hit = @prices[sample.sample_time]
         if hit
-          result = kws * ( hit.value / 1000.0 ).to_f
+          result = kws * ( hit.value / KW_TO_MW ).to_f
         end
       end
       result

@@ -41,9 +41,9 @@ class GraphsController < ApplicationController
     thermal_storage_model  = PQR::ThermalStorageModel.new( *thermal_profiles )
     calculator = PQR::Calculator.new( samples: samples, home_profile: home_profile, thermal_storage_model: thermal_storage_model )
     calculator.run
-    
-    required_for_heating = calculator.total_kw_required_for_heating - (calculator.total_kw_required_for_heating & calculator.total_kw_required_for_heating_ls )
-    required_for_heating_ls = calculator.total_kw_required_for_heating_ls - (calculator.total_kw_required_for_heating & calculator.total_kw_required_for_heating_ls )
+
+    required_for_heating = calculator.total_kw_required_for_heating - (calculator.total_kw_required_for_heating.to_i & calculator.total_kw_required_for_heating_ls.to_i )
+    required_for_heating_ls = calculator.total_kw_required_for_heating_ls - (calculator.total_kw_required_for_heating.to_i & calculator.total_kw_required_for_heating_ls.to_i )
     logger.debug "required for heating #{calculator.total_kw_required_for_heating} with ls #{calculator.total_kw_required_for_heating_ls}"
     logger.debug "required for heating #{required_for_heating} with ls #{required_for_heating_ls}"
 
@@ -51,11 +51,11 @@ class GraphsController < ApplicationController
       format.json { render :json => {
           month: params[:month],
           year: params[:year],
-          total_kw_required_for_heating: required_for_heating,  
+          total_kw_required_for_heating: required_for_heating,
           total_kw_required_for_heating_ls: required_for_heating_ls,
-          total_kw_load_unserved: calculator.total_kw_load_unserved - (calculator.total_kw_load_unserved & calculator.total_kw_load_unserved_ls) ,
-          total_kw_load_unserved_ls: calculator.total_kw_load_unserved_ls- (calculator.total_kw_load_unserved & calculator.total_kw_load_unserved_ls)
-        }.to_json }      
+          total_kw_load_unserved: calculator.total_kw_load_unserved - (calculator.total_kw_load_unserved.to_i & calculator.total_kw_load_unserved_ls.to_i) ,
+          total_kw_load_unserved_ls: calculator.total_kw_load_unserved_ls- (calculator.total_kw_load_unserved.to_i & calculator.total_kw_load_unserved_ls.to_i)
+        }.to_json }
     end
 
   end

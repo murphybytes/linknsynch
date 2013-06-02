@@ -25,8 +25,16 @@ class CalculatorTest < ActiveSupport::TestCase
     assert_equal 8760 * 10000, @calculator.total_kw_generated
   end
 
+  test "Verify Total MW Generation" do
+    assert_equal 8760 * 10, @calculator.total_mw_generated
+  end
+
+  test "Verify Total Generation LMP" do
+    assert_equal 87600 * 10.10, @calculator.total_kw_generated_price
+  end 
+
   test "Verify KW required for home heating" do
-    assert_equal 36625624, @calculator.total_kw_required_for_heating    
+    assert_equal 36625624, @calculator.total_kw_required_for_heating.round
   end
 
   test "Verify KW load unserved" do 

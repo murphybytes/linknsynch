@@ -7,28 +7,48 @@
       %td= @calculation.total_mw_generated
     %tr
       %td 
-        LMP Price of Energy
+        LMP Total Energy Generated
       %td= number_to_currency( @calculation.total_kw_generated_price, :precision => 0 )
     %tr
       %td
-        Total kWh Required for Heating
-      %td= @calculation.total_kw_required_for_heating
+        Energy Required for Heating (MWh)
+      %td= @calculation.total_mw_required_for_heating
     %tr
       %td
-        Total kWh Required for Heating LS
-      %td= @calculation.total_kw_required_for_heating_ls
+        LMP Energy Required for Heating  
+      %td= number_to_currency( @calculation.total_kw_required_for_heating_price, :precision => 0 )
     %tr
       %td
-        Total kWh Load Unserved
-      %td= @calculation.total_kw_load_unserved
+        Energy Required for Heating LS (MWh)
+      %td= @calculation.total_mw_required_for_heating_ls
+    %tr
+      %td 
+        LMP Energy Required for Heating LS
+      %td= number_to_currency( @calculation.total_kw_required_for_heating_ls_price, :precision => 0 )        
     %tr
       %td
-        Total kWh Load Unserved LS
-      %td= @calculation.total_kw_load_unserved_ls
+        Load Unserved (MWh)
+      %td= @calculation.total_mw_load_unserved
+    %tr 
+      %td
+        LMP Load Unserved
+      %td= number_to_currency( @calculation.total_kw_load_unserved_price, :precision => 0 ) 
     %tr
       %td
-        Total KW Excess Off Peak 
-      %td= @calculation.total_kw_excess_off_peak_capacity
+        Load Unserved LS (MWh) 
+      %td= @calculation.total_mw_load_unserved_ls
+    %tr 
+      %td
+        LMP Load Unserved LS
+      %td= number_to_currency( @calculation.total_kw_load_unserved_ls_price, :precision => 0 )
+    %tr
+      %td
+        Excess Off Peak (MWh) 
+      %td= @calculation.total_mw_excess_off_peak_capacity
+    %tr 
+      %td 
+        LMP Excess Off Peak
+      %td= number_to_currency( @calculation.total_kw_excess_off_peak_capacity_price, :precision =>0 ) 
 #charts{ :data_set_id => @dataset_id, :home_profile_id => @home_profile_id }
 - @thermal_storage_profile_ids.each do |id|
   .thermal-storage-id{ :value => id }
