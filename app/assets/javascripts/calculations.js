@@ -56,8 +56,61 @@ function calculations_create() {
 	var month = $(this).attr('month');
 	var year = $(this).attr('year');
 
+
 	$.get(
-	    'graphs/summary.json',
+	    'graphs/unservedsummary.json',
+	    {
+		month: month,
+		year: year,
+		set_id: set_id,
+		home_profile_id: home_profile_id,
+		'thermal_storage_ids[]': thermal_storage_ids
+	    },
+
+	    function(data) {
+		//console.info( data );
+		var chart = new Highcharts.Chart({
+		    chart: {
+			renderTo: data.year + '.' + data.month + '.4',
+			type: 'column'
+		    },
+
+		    title: {
+			text: 'Load Unserved'
+		    },
+		    subtitle: {
+			text: to_month_name( data.month ) + ' ' + data.year
+		    },
+		    legend: {
+			enabled: false
+		    },
+		    xAxis: {
+			categories: [ 'Unserved', 'Unserved LS' ]
+		    },
+
+		    yAxis: { 
+			endOnTick: false,
+			min: data.min_y,
+			labels: {
+			    enabled: true
+			},
+			title: {
+			    text: 'kWh'
+			}
+		    },
+		    series: [ {
+			data: [data.load_unserved, data.load_unserved_ls ]
+
+
+		    }
+			    ]
+		});
+	    }
+	);
+
+
+	$.get(
+	    'graphs/heatingsummary.json',
 	    {
 		month: month,
 		year: year,
@@ -74,7 +127,7 @@ function calculations_create() {
 		    },
 
 		    title: {
-			text: 'Summary'
+			text: 'Heating'
 		    },
 		    subtitle: {
 			text: to_month_name( data.month ) + ' ' + data.year
@@ -83,23 +136,23 @@ function calculations_create() {
 			enabled: false
 		    },
 		    xAxis: {
-			categories: [ 'kW Heating', 'kW Heating LS', 'kW Unserved', 'kW Unserved LS' ]
+			categories: [ 'Heating', 'Heating LS' ]
 		    },
 
 		    yAxis: { 
 			endOnTick: false,
+			min: data.min_y,
 			labels: {
-			    enabled: false
+			    enabled: true
 			},
 			title: {
-			    text: 'kW'
+			    text: 'kWh'
 			}
 		    },
 		    series: [ {
 			data: [data.total_kw_required_for_heating,
-			       data.total_kw_required_for_heating_ls,
-			       data.total_kw_load_unserved,
-			       data.total_kw_load_unserved_ls]
+			       data.total_kw_required_for_heating_ls ]
+
 		    }
 			    ]
 		});

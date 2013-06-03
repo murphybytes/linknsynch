@@ -34,7 +34,8 @@ class GraphsController < ApplicationController
     end
   end
 
-  def summary
+  
+  def unservedsummary
     samples = Sample.samples_for_month( params[:set_id], params[:year], params[:month] )
     home_profile = HomeProfile.find( params[:home_profile_id] ) 
     thermal_profiles = ThermalStorageProfile.find( :all, *params[:thermal_storage_ids] )
@@ -42,21 +43,46 @@ class GraphsController < ApplicationController
     calculator = PQR::Calculator.new( samples: samples, home_profile: home_profile, thermal_storage_model: thermal_storage_model )
     calculator.run
 
-    required_for_heating = calculator.total_kw_required_for_heating - (calculator.total_kw_required_for_heating.to_i & calculator.total_kw_required_for_heating_ls.to_i )
-    required_for_heating_ls = calculator.total_kw_required_for_heating_ls - (calculator.total_kw_required_for_heating.to_i & calculator.total_kw_required_for_heating_ls.to_i )
-    logger.debug "required for heating #{calculator.total_kw_required_for_heating} with ls #{calculator.total_kw_required_for_heating_ls}"
-    logger.debug "required for heating #{required_for_heating} with ls #{required_for_heating_ls}"
+    load_unserved = calculator.total_kw_load_unserved.to_i
+    load_unserved_ls = calculator.total_kw_load_unserved_ls.to_i
+    min_y = ([load_unserved, load_unserved_ls ].min * 0.99 ).to_i
 
     respond_to do | format |
       format.json { render :json => {
           month: params[:month],
           year: params[:year],
-          total_kw_required_for_heating: required_for_heating,
-          total_kw_required_for_heating_ls: required_for_heating_ls,
-          total_kw_load_unserved: calculator.total_kw_load_unserved - (calculator.total_kw_load_unserved.to_i & calculator.total_kw_load_unserved_ls.to_i) ,
-          total_kw_load_unserved_ls: calculator.total_kw_load_unserved_ls- (calculator.total_kw_load_unserved.to_i & calculator.total_kw_load_unserved_ls.to_i)
+          load_unserved: load_unserved,
+          load_unserved_ls: load_unserved_ls,
+          min_y: min_y
         }.to_json }
     end
+
+  end
+
+  def heatingsummary
+    samples = Sample.samples_for_month( params[:set_id], params[:year], params[:month] )
+    home_profile = HomeProfile.find( params[:home_profile_id] ) 
+    thermal_profiles = ThermalStorageProfile.find( :all, *params[:thermal_storage_ids] )
+    thermal_storage_model  = PQR::ThermalStorageModel.new( *thermal_profiles )
+    calculator = PQR::Calculator.new( samples: samples, home_profile: home_profile, thermal_storage_model: thermal_storage_model )
+    calculator.run
+
+  
+
+    min_y = ([calculator.total_kw_required_for_heating, calculator.total_kw_required_for_heating_ls ].min * 0.99 ).to_i
+
+
+    respond_to do | format |
+      format.json { render :json => {
+          month: params[:month],
+          year: params[:year],
+          total_kw_required_for_heating: calculator.total_kw_required_for_heating,
+          total_kw_required_for_heating_ls: calculator.total_kw_required_for_heating_ls,
+          min_y: min_y
+        }.to_json }
+    end
+
+
 
   end
 

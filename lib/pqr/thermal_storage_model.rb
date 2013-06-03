@@ -6,44 +6,56 @@ module PQR
     def initialize( *thermal_storages )
       @thermal_storages = thermal_storages
       @unit_count = 0.0
-      @thermal_storages.each { | ts | @unit_count += ts.units }
+      @agg_storage = []
+      @thermal_storages.each do | ts | 
+        @unit_count += ts.units
+        @agg_storage << {
+          units: ts.units,
+          storage: ts.units * ts.storage,
+          capacity: ts.units * ts.capacity,
+          base_threshold: ts.units * ts.base_threshold,
+          charge_rate: ts.charge_rate * ts.units,
+          usage: ts.usage * ts.units
+        }
+      end
     end
 
     def get_available
-      response = 0.0
-      @thermal_storages.each do | ts |
-        response += [( ts.storage - ts.base_threshold ), 0 ].max
+      response = 0.0      
+      @agg_storage.each do | s |
+        response += [s[:storage] - s[:base_threshold], 0 ].max
       end
       response 
     end
 
     def reduce_available( adjustment )
-      @thermal_storages.each do | ts |
-        portion = ( ts.units / @unit_count ) * adjustment
-        ts.storage -= portion
+      @agg_storage.each do | s |
+        portion = ( s[:units] / @unit_count ) * adjustment
+        s[:storage] -= portion
       end
     end
 
     def apply_normal_usage
-      @thermal_storages.each do | ts |
-        if ts.storage >= ts.usage
-          ts.storage -= ts.usage
+      @agg_storage.each do | s |
+        if s[:storage] > 0
+          s[:storage] -= s[:usage]
+          s[:storage] = 0 if s[:storage] < 0
         end
       end
     end
 
     def total_capacity 
       total_capacity = 0.0
-      @thermal_storages.each do | ts |
-        total_capacity += ts.capacity
+      @agg_storage.each do | s |
+        total_capacity += s[:capacity]
       end
       total_capacity
     end
 
     def total_storage
       total_storage = 0.0
-      @thermal_storages.each do | ts |
-        total_storage += ts.storage
+      @agg_storage.each do | s |
+        total_storage += s[:storage]
       end
       total_storage
     end
@@ -53,11 +65,11 @@ module PQR
     def charge( kw )
       total_charge = 0.0
 
-      @thermal_storages.each do | ts |
-        charge = [kw, ts.charge_rate].min
-        storage_available = ts.capacity - ts.storage
+      @agg_storage.each do | s |
+        charge = [kw, s[:charge_rate]].min
+        storage_available = s[:capacity] - s[:storage] 
         charge = [charge, storage_available].min
-        ts.storage += charge
+        s[:storage] += charge
         total_charge += charge
       end
 
