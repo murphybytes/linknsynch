@@ -71,6 +71,7 @@ module PQR
         charge = [charge, storage_available].min
         s[:storage] += charge
         total_charge += charge
+        kw -= charge
       end
 
       total_charge
