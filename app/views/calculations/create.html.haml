@@ -41,6 +41,22 @@
       %td{ :title => 'Dollar value of excess off peak energy calculated using locational marginal price' }
         Locational Marginal Price of Excess Off Peak
       %td= number_to_currency( @calculation.total_kw_excess_off_peak_capacity_price, :precision =>0 ) 
+    %tr 
+      %td{ :title => 'Excess peak energy' }
+        Excess Peak Energy (MWh)
+      %td= @calculation.total_mw_excess_capacity 
+    %tr 
+      %td{ :title => 'Dollar value of excess peak energy calculated using locational marginal price' }
+        Locational Marginal Price of Excess Peak
+      %td= number_to_currency( @calculation.total_kw_excess_capacity_price, :precision =>0 ) 
+    %tr 
+      %td{ :title => 'Off peak energy that was used to charge up thermal storage' }
+        Off Peak Used to Charge Thermal Storage (MWh)
+      %td= @calculation.total_mw_off_peak_sunk
+    %tr 
+      %td{ :title => 'Dollar value of off peak energy used to charge thermal storage calculated using locational marginal price' }
+        Off Peak Used to Charge Thermal Storage Price
+      %td= number_to_currency( @calculation.total_kw_off_peak_sunk_price, :precision =>0 ) 
 #charts{ :data_set_id => @dataset_id, :home_profile_id => @home_profile_id }
 - @thermal_storage_profile_ids.each do |id|
   .thermal-storage-id{ :value => id }
@@ -51,7 +67,5 @@
       Generation
     %div{ :id => "#{m.year}.#{m.month}.2", :style => 'height:250px;', :class => 'span4' } 
       Demand
-    %div{ :id => "#{m.year}.#{m.month}.3", :style => 'height:250px;', :class => 'span2' }
-      Heating
-    %div{ :id => "#{m.year}.#{m.month}.4", :style => 'height:250px;', :class => 'span2' }
+    %div{ :id => "#{m.year}.#{m.month}.4", :style => 'height:250px;', :class => 'span4' }
       Load Unserved

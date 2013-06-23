@@ -14,7 +14,7 @@ namespace :app do
           f.puts "hour#{hour}:"
           f.puts "  set_meta_id: 1"
           f.puts "  sample_time: #{curr.strftime( "%Y-%m-%d %H:00:00" )}"
-          f.puts "  generated_kilowatts: 10000"
+          f.puts "  generated_kilowatts: 100"
           f.puts "  temperature: 50"
           f.puts 
         end

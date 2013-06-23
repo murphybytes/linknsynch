@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130525180520) do
+ActiveRecord::Schema.define(:version => 20130621211921) do
 
   create_table "holidays", :force => true do |t|
     t.string   "name"

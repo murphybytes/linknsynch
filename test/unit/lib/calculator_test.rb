@@ -22,15 +22,15 @@ class CalculatorTest < ActiveSupport::TestCase
   end
 
   test "Verify Total KW Generation" do
-    assert_equal 8760 * 10000, @calculator.total_kw_generated
+    assert_equal 8760 * 100, @calculator.total_kw_generated
   end
 
   test "Verify Total MW Generation" do
-    assert_equal 8760 * 10, @calculator.total_mw_generated
+    assert_equal 8760 * 0.1, @calculator.total_mw_generated
   end
 
   test "Verify Total Generation LMP" do
-    assert_equal 87600 * 10.10, @calculator.total_kw_generated_price
+    assert_equal 876 * 10.10, @calculator.total_kw_generated_price.round( 1 )
   end 
 
   test "Verify KW required for home heating" do
@@ -38,7 +38,7 @@ class CalculatorTest < ActiveSupport::TestCase
   end
 
   test "Verify KW load unserved" do 
-    assert_equal 0, @calculator.total_kw_load_unserved
+    assert_equal 35749624, @calculator.total_kw_load_unserved.round
   end
 
   test "Verify begin date" do 
@@ -64,7 +64,7 @@ class CalculatorTest < ActiveSupport::TestCase
 
   test "price of total generated kw" do
     expected = @calculator.total_kw_generated * ( 10.10 / 1000.0 )
-    assert_equal expected, @calculator.total_kw_generated_price
+    assert_equal expected, @calculator.total_kw_generated_price.round( 1 )
   end
 
 end
