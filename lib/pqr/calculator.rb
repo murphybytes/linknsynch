@@ -85,6 +85,14 @@ module PQR
     end
 
 
+    def run_with_detail
+      initialize_
+      @samples.each do |sample|
+        update_date_range( sample )
+        
+      end
+    end
+
     def run
       initialize_
       @samples.each do |sample|
@@ -94,7 +102,7 @@ module PQR
         kw_generated = sample.generated_kilowatts
         @total_kw_generated +=  kw_generated
         @total_kw_generated_price += get_price( sample, kw_generated )
-        kw_required_for_heating = get_kw_required_for_heating( sample )
+        kw_required_for_heating = get_kw_required_for_heating(@home_profile, sample )
 
         kw_required_for_heating_ls = kw_required_for_heating
         @total_kw_required_for_heating += kw_required_for_heating

@@ -48,7 +48,7 @@ module PQR
 
     def get_demand_series
       result = []
-      kw_requireds = @samples.map { |s| get_kw_required_for_heating( s ) }
+      kw_requireds = @samples.map { |s| get_kw_required_for_heating( @home_profile, s ) }
       kw_requireds.sort!
 
       max = kw_requireds.last

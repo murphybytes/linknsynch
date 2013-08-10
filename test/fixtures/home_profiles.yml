@@ -15,10 +15,10 @@ one:
 two:
   name: MyString
   description: MyText
-  home_count: 1
+  home_count: 500
   user_id: 1
-  btu_factor: 9.99
-  base_temperature: 1
+  btu_factor: 713.4889
+  base_temperature: 60
   thermostat_temperature: 70
   created_at: <%= DateTime.now %>
   updated_at: <%= DateTime.now %>

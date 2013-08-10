@@ -11,7 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130621211921) do
+ActiveRecord::Schema.define(:version => 20130809161136) do
+
+  create_table "calculations", :force => true do |t|
+    t.string  "name"
+    t.string  "description"
+    t.integer "user_id"
+    t.integer "set_meta_id"
+    t.integer "node_id"
+  end
+
+  create_table "calculations_home_profiles", :id => false, :force => true do |t|
+    t.integer "calculation_id"
+    t.integer "home_profile_id"
+  end
+
+  add_index "calculations_home_profiles", ["calculation_id", "home_profile_id"], :name => "chp_index"
+
+  create_table "calculations_thermal_storage_profiles", :id => false, :force => true do |t|
+    t.integer "calculation_id"
+    t.integer "thermal_storage_profile_id"
+  end
+
+  add_index "calculations_thermal_storage_profiles", ["calculation_id", "thermal_storage_profile_id"], :name => "ctsp_index"
 
   create_table "holidays", :force => true do |t|
     t.string   "name"
@@ -30,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20130621211921) do
     t.datetime "created_at",             :null => false
     t.datetime "updated_at",             :null => false
     t.integer  "thermostat_temperature"
+    t.integer  "priority"
   end
 
   create_table "location_marginal_prices", :force => true do |t|
@@ -84,6 +107,7 @@ ActiveRecord::Schema.define(:version => 20130621211921) do
     t.decimal  "usage"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "priority"
   end
 
   create_table "users", :force => true do |t|

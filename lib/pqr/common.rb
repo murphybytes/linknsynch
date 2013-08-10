@@ -15,12 +15,12 @@ module PQR
     # in the profile at thermal equilibrium for one hour.  We convert this to
     # kiloWatts.
     ########################################################################
-    def get_kw_required_for_heating( sample )
+    def get_kw_required_for_heating( interruptable_profile, sample )
       result = 0.0
 
-      if @home_profile.base_temperature > sample.temperature 
-        result = ((@home_profile.thermostat_temperature - sample.temperature ) * @home_profile.btu_factor * 
-                  @home_profile.home_count )/BTU_TO_KW_CONVERSION_FACTOR
+      if interruptable_profile.base_temperature > sample.temperature 
+        result = ((interruptable_profile.thermostat_temperature - sample.temperature ) * interruptable_profile.btu_factor * 
+                  interruptable_profile.home_count )/BTU_TO_KW_CONVERSION_FACTOR
       end
 
       result
