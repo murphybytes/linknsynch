@@ -10,7 +10,7 @@ module PQR
     include PQR::Common
 
     attr_reader :interruptables, :total_energy_used, :total_energy_needed
-
+    attr_reader :total_energy_used_ls, :total_load_unserved, :total_load_unserved_ls
     
     def initialize( interruptables )
       @interruptables = interruptables.each_with_object([]) do | interruptable_profile, arr |
@@ -33,7 +33,7 @@ module PQR
     end
 
     def update_interruptables( available_energy, available_energy_ls, sample )
-      remaining_energy, remaining_energy_ls = available_energy, available_energy_ls
+      #remaining_energy, remaining_energy_ls = available_energy, available_energy_ls
 
       @interruptables.each do | interruptable |
         interruptable[:energy_needed] = get_kw_required_for_heating( interruptable[:profile], sample )
@@ -46,32 +46,21 @@ module PQR
 
         interruptable[:energy_used]   = result[:energy_used]
         interruptable[:load_unserved] = result [:load_unserved]
-        remaining_energy              = result[:remaining_energy]
+        available_energy              = result[:energy_remaining]
 
         result_ls = calculate_energy_used( available_energy_ls, interruptable[:energy_needed] )
 
-        @total_energy_used_ls               += result[:energy_used]
-        @total_load_unserved_ls             += result[:load_unserved]
+        @total_energy_used_ls               += result_ls[:energy_used]
+        @total_load_unserved_ls             += result_ls[:load_unserved]
 
         interruptable[:energy_used_with_ls] = result_ls[:energy_used]
         interruptable[:load_unserved_ls]    = result_ls[:load_unserved]
 
-        remaining_energy_ls                 = result_ls[:remaining_energy]
+        available_energy_ls                 = result_ls[:energy_remaining]
       end
 
-      {remaining_energy: remaining_energy, remaining_energy_ls: remaining_energy_ls}
+      [ available_energy,  available_energy_ls ]
     end
-
-
-    
-
-    # def total_energy_needed
-    #   result = BigDecimal.new( "0" )
-    #   @interruptables.each do | i |
-    #     result += i[:energy_needed]
-    #   end
-    #   result
-    # end
 
     private
 
