@@ -33,7 +33,6 @@ module PQR
     end
 
     def update_interruptables( available_energy, available_energy_ls, sample )
-      #remaining_energy, remaining_energy_ls = available_energy, available_energy_ls
 
       @interruptables.each do | interruptable |
         interruptable[:energy_needed] = get_kw_required_for_heating( interruptable[:profile], sample )
