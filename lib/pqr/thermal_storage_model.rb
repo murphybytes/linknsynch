@@ -5,7 +5,10 @@ module PQR
     attr_reader :unit_count
     def initialize( *thermal_storages )
 
+      @unit_count = 0
+
       @thermal_storages = thermal_storages.each_with_object([]) do |profile, arr|
+        @unit_count += profile.units
         arr << {
           profile: profile,
           available_energy: profile.units * profile.storage,
