@@ -19,9 +19,8 @@ module PQR
     def initialize( opts = {}  )
       initialize_
       @samples = opts.fetch( :samples )
-      @home_profile = opts.fetch( :home_profile )
+      @interruptable_model = opts.fetch( :interruptable_model ) 
       @thermal_storage_model = opts.fetch( :thermal_storage_model )
-      @prices = hashify( opts.fetch( :prices, nil ) )
     end
 
     def total_mw_excess_capacity
@@ -85,16 +84,9 @@ module PQR
     end
 
 
-    def run_with_detail
-      initialize_
-      @samples.each do |sample|
-        update_date_range( sample )
-        
-      end
-    end
 
     def run
-      initialize_
+
       @samples.each do |sample|
 
         update_date_range( sample )
@@ -102,104 +94,30 @@ module PQR
         kw_generated = sample.generated_kilowatts
         @total_kw_generated +=  kw_generated
         @total_kw_generated_price += get_price( sample, kw_generated )
-        kw_required_for_heating = get_kw_required_for_heating(@home_profile, sample )
-
-        kw_required_for_heating_ls = kw_required_for_heating
-        @total_kw_required_for_heating += kw_required_for_heating
-        @total_kw_required_for_heating_price += get_price( sample, kw_required_for_heating )
-
-        kw_load_unserved = get_kw_load_unserved( kw_generated, kw_required_for_heating )
-        kw_load_unserved_ls = kw_load_unserved
-        
-        @total_kw_load_unserved += kw_load_unserved
-
-        @total_kw_load_unserved_price += get_price( sample, kw_load_unserved )
-
-        if kw_load_unserved > 0.0
-          adjustment = get_load_unserved_adjustment( kw_load_unserved )
-          kw_load_unserved_ls -= adjustment
-          kw_required_for_heating_ls += adjustment
-        else
-          excess_capacity = [ kw_generated - kw_required_for_heating, 0.0 ].max
-
-          if excess_capacity > 0.0 
-
-            # if off peak charge thermal storage
-            unless Utils.is_peak?( sample.sample_time )
-              used = @thermal_storage_model.charge( excess_capacity )
-              excess_capacity -= used
-              @total_kw_off_peak_sunk += used
-              @total_kw_off_peak_sunk_price += get_price( sample, used )
-              @total_kw_excess_off_peak_capacity += excess_capacity
-              @total_kw_excess_off_peak_capacity_price += get_price( sample, excess_capacity )
-            else
-              @total_kw_excess_capacity        += excess_capacity
-              @total_kw_excess_capacity_price  += get_price( sample, excess_capacity ) 
-            end
-
-          end
-
-        end
-
-        @total_kw_load_unserved_ls              += kw_load_unserved_ls
-        @total_kw_load_unserved_ls_price        += get_price( sample, kw_load_unserved_ls )
-        @total_kw_required_for_heating_ls       += kw_required_for_heating_ls
-        @total_kw_required_for_heating_ls_price += get_price( sample, kw_required_for_heating_ls )
-
+   
+        kw_available, kw_available_ls = @thermal_storage_model.update( kw_generated, sample )
+        kw_available, kw_available_ls = @interruptable_model.update( kw_generated, kw_generated_ls, 
+                                                                     sample, @thermal_storage_model )
+        @total_kw_surplus_energy += kw_available if kw_available > 0
+        @total_kw_surplus_energy_ls += kw_available_ls if kw_available_ls > 0
       end
+           
+      @total_kw_required_for_heating = @interruptable_model.total_energy_needed
+      @total_kw_required_for_heating_price = @interruptable_model.price_total_energy_needed
+      @total_kw_load_unserved = @interruptable_model.total_kw_load_unserved
+      @total_kw_load_unserved_price = @interruptable_model.price_total_load_unserved
+      
+      @total_kw_load_unserved_ls = @interruptable_model.total_kw_load_unserved_ls
+      @total_kw_load_unserved_price_ls = @interruptable_model.total_kw_load_unserved_ls_price
+
 
 
     end
 
     private
 
-    def initialize_
-      @total_kw_generated = BigDecimal.new('0')
-      @total_kw_generated_price = BigDecimal.new('0')
-      @total_kw_required_for_heating = BigDecimal.new('0')
-      @total_kw_required_for_heating_price = BigDecimal.new('0')
-      @total_kw_required_for_heating_ls = BigDecimal.new('0')
-      @total_kw_required_for_heating_ls_price = BigDecimal.new('0')
-      @total_kw_load_unserved = BigDecimal.new('0')
-      @total_kw_load_unserved_price = BigDecimal.new('0')
-      @total_kw_load_unserved_ls = BigDecimal.new('0')
-      @total_kw_load_unserved_ls_price = BigDecimal.new('0')
-      @total_kw_excess_off_peak_capacity = BigDecimal.new('0')
-      @total_kw_excess_off_peak_capacity_price = BigDecimal.new('0')
-      @begin_time = nil
-      @end_time = nil
-      @total_kw_excess_capacity = BigDecimal.new( '0' )
-      @total_kw_excess_capacity_price = BigDecimal.new( '0' )
-      @total_kw_off_peak_sunk = BigDecimal.new( '0' )
-      @total_kw_off_peak_sunk_price = BigDecimal.new( '0' )
 
-    end
 
-    ##################################################################################
-    #  Makes things faster, prices in hash table with O(1) instead of O(n)
-    #  lookups
-    ##################################################################################
-    def hashify( prices )
-      result = nil
-      if prices
-        result = {}
-        prices.each do | p |
-          result[p.period] = p
-        end
-      end
-      result
-    end
- 
-    def get_price( sample, kws )
-      result = BigDecimal.new( '0' )
-      if @prices
-        hit = @prices[sample.sample_time]
-        if hit
-          result = kws * ( hit.value / KW_TO_MW ).to_f
-        end
-      end
-      result
-    end
 
     ####################################################################
     # Calculate the maximum amount of energy that we can use to 

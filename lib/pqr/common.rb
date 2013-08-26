@@ -1,8 +1,10 @@
 module PQR
 
   BTU_TO_KW_CONVERSION_FACTOR=3413.0
+  KW_TO_MW=BigDecimal.new("1000.0")
 
   module Common
+    
     ####################################################################
     # Calculate the energy required for heating during period
     #
@@ -24,6 +26,16 @@ module PQR
       end
 
       result
+    end
+
+
+    def get_price( sample, prices, kws )
+      price = prices[sample.sample_time]
+      if price.nil?
+        BigDecimal.new("0")
+      else
+        kws * ( price.value / KW_TO_MW ).to_f
+      end      
     end
     
   end
