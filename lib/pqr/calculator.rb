@@ -16,11 +16,15 @@ module PQR
 
     KW_TO_MW = BigDecimal.new('1000.0')
 
-    def initialize( opts = {}  )
-      initialize_
-      @samples = opts.fetch( :samples )
-      @interruptable_model = opts.fetch( :interruptable_model ) 
-      @thermal_storage_model = opts.fetch( :thermal_storage_model )
+    def initialize( samples, interruptable_model  )
+      @total_kw_generated         = BigDecimal.new( '0' )
+      @total_kw_generated_price   = BigDecimal.new( '0' )
+      @total_kw_surplus_energy    = BigDecimal.new( '0' )
+      @total_kw_surplus_energy_ls = BigDecimal.new( '0' )
+      @total_kw_load_unserved     = BigDecimal.new( '0' )
+
+      @samples = samples
+      @interruptable_model = interruptable_model
     end
 
     def total_mw_excess_capacity
@@ -93,22 +97,22 @@ module PQR
 
         kw_generated = sample.generated_kilowatts
         @total_kw_generated +=  kw_generated
-        @total_kw_generated_price += get_price( sample, kw_generated )
+        @total_kw_generated_price += get_price( sample, @interruptable_model.prices, kw_generated )
    
-        kw_available, kw_available_ls = @thermal_storage_model.update( kw_generated, sample )
-        kw_available, kw_available_ls = @interruptable_model.update( kw_generated, kw_generated_ls, 
-                                                                     sample, @thermal_storage_model )
+        kw_available, kw_available_ls = @interruptable_model.thermal_storage_model.update( kw_generated, sample )
+        kw_available, kw_available_ls = @interruptable_model.update( kw_available, kw_available_ls, sample )  
+
         @total_kw_surplus_energy += kw_available if kw_available > 0
         @total_kw_surplus_energy_ls += kw_available_ls if kw_available_ls > 0
       end
            
       @total_kw_required_for_heating = @interruptable_model.total_energy_needed
       @total_kw_required_for_heating_price = @interruptable_model.price_total_energy_needed
-      @total_kw_load_unserved = @interruptable_model.total_kw_load_unserved
+      @total_kw_load_unserved = @interruptable_model.total_load_unserved
       @total_kw_load_unserved_price = @interruptable_model.price_total_load_unserved
       
-      @total_kw_load_unserved_ls = @interruptable_model.total_kw_load_unserved_ls
-      @total_kw_load_unserved_price_ls = @interruptable_model.total_kw_load_unserved_ls_price
+      @total_kw_load_unserved_ls = @interruptable_model.total_load_unserved_ls
+      @total_kw_load_unserved_price_ls = @interruptable_model.total_load_unserved_ls_price
 
 
 

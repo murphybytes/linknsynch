@@ -12,7 +12,10 @@ module PQR
     attr_reader :interruptables, :total_energy_used, :price_total_energy_used, :total_energy_needed
     attr_reader :price_total_energy_needed
     attr_reader :total_energy_used_ls, :price_total_load_unserved, :total_load_unserved, :total_load_unserved_ls
-    
+    attr_reader :total_load_unserved_ls_price
+    attr_reader :thermal_storage_model
+    attr_reader :prices
+
     def initialize( interruptables, prices, thermal_storage_model )
       @prices = prices
       @thermal_storage_model = thermal_storage_model
@@ -24,7 +27,8 @@ module PQR
           energy_used_with_ls: BigDecimal.new( "0" ),
           energy_needed: BigDecimal.new("0"),
           load_unserved: BigDecimal.new("0"),
-          load_unserved_with_link_sync: BigDecimal.new("0")
+          load_unserved_ls: BigDecimal.new("0")
+          
           
         }
       end
@@ -36,16 +40,21 @@ module PQR
       @total_load_unserved            = BigDecimal.new("0")
       @price_total_load_unserved      = BigDecimal.new("0")
       @total_load_unserved_ls         = BigDecimal.new("0")
+      @price_total_energy_used        = BigDecimal.new("0")
+      @total_load_unserved_ls_price   = BigDecimal.new("0")
     end
 
-    def update_interruptables( available_energy, available_energy_ls, sample )
+    def update( available_energy, available_energy_ls, sample )
 
       @interruptables.each do | interruptable |
-        interruptable[:energy_needed] = get_kw_required_for_heating( interruptable[:profile], sample )
-        @total_energy_needed          += interruptable[:energy_needed]
-        @price_total_energy_needed    += get_price( sample, @prices, result[:energy_needed] )
+        required_for_heating           = get_kw_required_for_heating( interruptable[:profile], sample )
 
-        result = calculate_energy_used( available_energy, interruptable[:energy_needed] )
+        interruptable[:energy_needed] += required_for_heating 
+        @total_energy_needed          += required_for_heating
+
+        @price_total_energy_needed    += get_price( sample, @prices, required_for_heating )
+
+        result = calculate_energy_used( available_energy, required_for_heating )
 
         @total_energy_used            += result[:energy_used]
         @price_total_energy_used      += get_price( sample, @prices, result[:energy_used] )
@@ -53,17 +62,19 @@ module PQR
         @total_load_unserved          += result[:load_unserved]
         @price_total_load_unserved    += get_price( sample, @prices, result[:load_unserved] )
 
-        interruptable[:energy_used]   = result[:energy_used]
-        interruptable[:load_unserved] = result [:load_unserved]
+        interruptable[:energy_used]   += result[:energy_used]
+        
+        interruptable[:load_unserved] += result [:load_unserved]
         available_energy              = result[:energy_remaining]
 
-        result_ls = calculate_energy_used_ls( available_energy_ls, interruptable[:energy_needed] )
+        result_ls = calculate_energy_used_ls( available_energy_ls, required_for_heating )
 
         @total_energy_used_ls               += result_ls[:energy_used]
         @total_load_unserved_ls             += result_ls[:load_unserved]
+        @total_load_unserved_ls_price       += get_price( sample, @prices, result_ls[:load_unserved] )
 
-        interruptable[:energy_used_with_ls] = result_ls[:energy_used]
-        interruptable[:load_unserved_ls]    = result_ls[:load_unserved]
+        interruptable[:energy_used_with_ls] += result_ls[:energy_used]
+        interruptable[:load_unserved_ls]    += result_ls[:load_unserved]
 
         available_energy_ls                 = result_ls[:energy_remaining]
       end
@@ -103,6 +114,7 @@ module PQR
         energy_used = energy_available + thermal_storage_reduction
         energy_remaining = BigDecimal.new( "0" )
         load_unserved = energy_needed - energy_used
+
       end
 
       {energy_used: energy_used, load_unserved: load_unserved, energy_remaining: energy_remaining}
