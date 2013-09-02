@@ -26,6 +26,7 @@ module PQR
           energy_used: BigDecimal.new( "0" ),
           energy_used_with_ls: BigDecimal.new( "0" ),
           energy_needed: BigDecimal.new("0"),
+          energy_needed_lmp: BigDecimal.new("0"),
           load_unserved: BigDecimal.new("0"),
           load_unserved_ls: BigDecimal.new("0")
           
@@ -49,8 +50,9 @@ module PQR
       @interruptables.each do | interruptable |
         required_for_heating           = get_kw_required_for_heating( interruptable[:profile], sample )
 
-        interruptable[:energy_needed] += required_for_heating 
-        @total_energy_needed          += required_for_heating
+        interruptable[:energy_needed]     += required_for_heating
+        interruptable[:energy_needed_lmp] += get_price( sample, @prices, required_for_heating )
+        @total_energy_needed              += required_for_heating
 
         @price_total_energy_needed    += get_price( sample, @prices, required_for_heating )
 

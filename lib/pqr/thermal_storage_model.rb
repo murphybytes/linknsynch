@@ -3,6 +3,8 @@
 module PQR
   class ThermalStorageModel
     attr_reader :unit_count
+    attr_reader :thermal_storages 
+
     def initialize( thermal_storages, prices )
       @prices = prices
       @unit_count = 0

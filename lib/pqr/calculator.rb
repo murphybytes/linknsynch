@@ -3,13 +3,15 @@ require 'pqr/common'
 module PQR
 
   class Calculator
-    attr_reader :total_kw_generated, :total_kw_required_for_heating, :total_kw_load_unserved
-    attr_reader :total_kw_generated_price, :total_kw_required_for_heating_price, :total_kw_load_unserved_price
-    attr_reader :total_kw_load_unserved_ls, :total_kw_excess_off_peak_capacity, :total_kw_required_for_heating_ls
-    attr_reader :total_kw_load_unserved_ls_price, :total_kw_excess_off_peak_capacity_price, :total_kw_required_for_heating_ls_price
+    attr_reader :total_kw_generated, :total_kw_generated_price
+    attr_reader :total_kw_required_for_heating, :total_kw_required_for_heating_price 
+    attr_reader :total_kw_load_unserved, :total_kw_load_unserved_price
+    attr_reader :total_kw_load_unserved_ls, :total_kw_required_for_heating_ls
+    attr_reader :total_kw_load_unserved_ls_price, :total_kw_required_for_heating_ls_price
     attr_reader :begin_time, :end_time
     attr_reader :total_kw_excess_capacity, :total_kw_excess_capacity_price
     attr_reader :total_kw_off_peak_sunk, :total_kw_off_peak_sunk_price
+    attr_reader :total_kw_surplus_energy_op_price
 
 
     include PQR::Common
@@ -17,14 +19,33 @@ module PQR
     KW_TO_MW = BigDecimal.new('1000.0')
 
     def initialize( samples, interruptable_model  )
-      @total_kw_generated         = BigDecimal.new( '0' )
-      @total_kw_generated_price   = BigDecimal.new( '0' )
-      @total_kw_surplus_energy    = BigDecimal.new( '0' )
-      @total_kw_surplus_energy_ls = BigDecimal.new( '0' )
-      @total_kw_load_unserved     = BigDecimal.new( '0' )
-
+      @total_kw_generated                = BigDecimal.new( '0' )
+      @total_kw_generated_price          = BigDecimal.new( '0' )
+      @total_kw_surplus_energy_op        = BigDecimal.new( '0' )
+      @total_kw_surplus_energy_op_price  = BigDecimal.new( '0' )
+      @total_kw_surplus_energy_op_ls     = BigDecimal.new( '0' )
+      @total_kw_surplus_energy           = BigDecimal.new( '0' )
+      @total_kw_surplus_energy_ls        = BigDecimal.new( '0' )
+      @total_kw_load_unserved            = BigDecimal.new( '0' )
+   
       @samples = samples
       @interruptable_model = interruptable_model
+    end
+
+    def interruptable_profiles
+      @interruptable_model.interruptables
+    end
+
+    def thermal_storage_profiles
+      @interruptable_model.thermal_storage_model.thermal_storages
+    end
+
+    def total_mw_surplus_energy_off_peak
+      (@total_kw_surplus_energy_op / KW_TO_MW).round
+    end
+
+    def total_mw_surplus_energy_off_peak_ls
+      (@total_kw_surplus_energy_op_ls / KW_TO_MW).round
     end
 
     def total_mw_excess_capacity
@@ -55,8 +76,8 @@ module PQR
       (@total_kw_load_unserved_ls / KW_TO_MW).round
     end
 
-    def total_mw_excess_off_peak_capacity
-      (@total_kw_excess_off_peak_capacity / KW_TO_MW).round
+    def total_mw_surplus_off_peak
+      (@total_kw_surplus_energy_off_peak / KW_TO_MW).round
     end
 
     def date_in_range?( test )

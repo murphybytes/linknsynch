@@ -1,65 +1,38 @@
 %h4 Calculation Results
-%table.table.table-bordered
-  %tr
-    %tr
-      %td{ :title => 'Sum of energy generated for the selected sample.' }
-        Total Energy Generated (MWh)
-      %td= @calculation.total_mw_generated
-    %tr
-      %td{ :title => 'Dollar value of energy generated calculated using locational marginal price.' } 
-        Locational Marginal Price of Energy Generated
-      %td= number_to_currency( @calculation.total_kw_generated_price, :precision => 0 )
-    %tr
-      %td{ :title => 'Energy required to heat the homes in the sample.' } 
-        Energy Required for Heating (MWh)
-      %td= @calculation.total_mw_required_for_heating
-    %tr
-      %td{ :title => 'Dollar value of the energy required for home heating calculated using locational marginal price.' }
-        Locational Marginal Price of Energy Required for Heating  
-      %td= number_to_currency( @calculation.total_kw_required_for_heating_price, :precision => 0 )
-    %tr
-      %td{ :title => 'Sum of energy when the heating load is in excess of what is available from wind generation in the sample' }
-        Load Unserved (MWh)
-      %td= @calculation.total_mw_load_unserved
-    %tr 
-      %td{ :title => 'Dollar value of load unserved calculated using location marginal price' }
-        Locational Marginal Price of Load Unserved
-      %td= number_to_currency( @calculation.total_kw_load_unserved_price, :precision => 0 ) 
-    %tr
-      %td{ :title => 'Load unserved using Link and Sinc thermal storage' }
-        Load Unserved with Link and Sync (MWh) 
-      %td= @calculation.total_mw_load_unserved_ls
-    %tr 
-      %td{ :title => 'Dollar value of load unserved calculated using location marginal price' }
-        Locational Marginal Price Load Unserved with Link Sync
-      %td= number_to_currency( @calculation.total_kw_load_unserved_ls_price, :precision => 0 )
-    %tr
-      %td{ :title => 'Sum of off peak energy that is in excess of demand' }
-        Excess Off Peak (MWh) 
-      %td= @calculation.total_mw_excess_off_peak_capacity
-    %tr 
-      %td{ :title => 'Dollar value of excess off peak energy calculated using locational marginal price' }
-        Locational Marginal Price of Excess Off Peak
-      %td= number_to_currency( @calculation.total_kw_excess_off_peak_capacity_price, :precision =>0 ) 
-    %tr 
-      %td{ :title => 'Excess peak energy' }
-        Excess Peak Energy (MWh)
-      %td= @calculation.total_mw_excess_capacity 
-    %tr 
-      %td{ :title => 'Dollar value of excess peak energy calculated using locational marginal price' }
-        Locational Marginal Price of Excess Peak
-      %td= number_to_currency( @calculation.total_kw_excess_capacity_price, :precision =>0 ) 
-    %tr 
-      %td{ :title => 'Off peak energy that was used to charge up thermal storage' }
-        Off Peak Used to Charge Thermal Storage (MWh)
-      %td= @calculation.total_mw_off_peak_sunk
-    %tr 
-      %td{ :title => 'Dollar value of off peak energy used to charge thermal storage calculated using locational marginal price' }
-        Off Peak Used to Charge Thermal Storage Price
-      %td= number_to_currency( @calculation.total_kw_off_peak_sunk_price, :precision =>0 ) 
+.row-fluid
+  .span6
+    %strong
+      Description
+  .span3
+    %strong
+      MWh
+  .span3
+    %strong
+      LMP
+.row-fluid
+  .span6
+    Energy Generated
+  .span3= @calculation.total_mw_generated  
+  .span3= number_to_currency( @calculation.total_kw_generated_price, precision: 0  )
+.row-fluid
+  .span12
+    Energy Required for Heating
+%small
+  - @calculation.interruptable_profiles.each do |ip|
+    .row-fluid
+      .span5.offset1= ip[:profile].name        
+      .span3= kwh2mwh( ip[:energy_needed] )        
+      .span3= number_to_currency( ip[:energy_needed_lmp], precision: 0 )
+.row-fluid
+  .span6
+    %strong
+      Total
+  .span3= @calculation.total_mw_required_for_heating
+  .span3= number_to_currency( @calculation.total_kw_required_for_heating_price, precision: 0 )
+ 
 #charts{ :data_set_id => @dataset_id, :home_profile_id => @home_profile_id }
-- @thermal_storage_profile_ids.each do |id|
-  .thermal-storage-id{ :value => id }
+- @thermal_profiles.each do |ts|
+  .thermal-storage-id{ :value => ts.id }
 - @months.each do |m|  
   .chart-month{ :month => m.month, :year => m.year }
   .row-fluid
