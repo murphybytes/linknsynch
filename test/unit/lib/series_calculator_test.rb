@@ -4,7 +4,7 @@ class SeriesCalculatorTest < ActiveSupport::TestCase
 
   def setup
     @@set ||= SetMeta.where( :name => 'MyString' ).first
-    @home_profile ||= HomeProfile.where( :name => 'TestHomeProfile' ).first    
+    @home_profiles ||= HomeProfile.where( :name => 'TestHomeProfile' )    
   end
 
   
@@ -17,7 +17,7 @@ class SeriesCalculatorTest < ActiveSupport::TestCase
   end
 
   test "Verify Demand Duration Data" do
-    calculator = PQR::SeriesCalculator.new( samples: @@set.samples, home_profile: @home_profile )
+    calculator = PQR::SeriesCalculator.new( samples: @@set.samples, home_profiles: @home_profiles )
    
     series = calculator.get_demand_series
     assert_equal series.count, 10

@@ -45,7 +45,12 @@ function to_month_name( n ) {
 
 function calculations_create() {
     var set_id = $('#charts').attr('data_set_id');
-    var home_profile_id = $('#charts').attr('home_profile_id');
+    var home_profile_ids = new Array();
+    $('.home-profile-id').each(function() { 
+	home_profile_ids.push( $(this).attr('value') );
+    });
+
+//    var home_profile_id = $('#charts').attr('home_profile_id');
     var thermal_storage_ids = new Array();
     $('.thermal-storage-id').each(function() { 
 	thermal_storage_ids.push( $(this).attr('value') );
@@ -63,7 +68,7 @@ function calculations_create() {
 		month: month,
 		year: year,
 		set_id: set_id,
-		home_profile_id: home_profile_id,
+		'home_profile_ids[]': home_profile_ids,
 		'thermal_storage_ids[]': thermal_storage_ids
 	    },
 
@@ -115,7 +120,7 @@ function calculations_create() {
 		month: month,
 		year: year,
 		set_id: set_id,
-		home_profile_id: home_profile_id,
+		'home_profile_ids[]': home_profile_ids,
 		'thermal_storage_ids[]': thermal_storage_ids
 	    },
 	    function(data) {
@@ -166,7 +171,7 @@ function calculations_create() {
 		month: month,
 		year: year,
 		set_id: set_id,
-		home_profile_id: home_profile_id,
+		'home_profile_ids[]': home_profile_ids,
 		'thermal_storage_ids[]': thermal_storage_ids
 	    },
 	    function(data) {
@@ -219,7 +224,7 @@ function calculations_create() {
 		month: month,
 		year: year,
 		set_id: set_id,
-		home_profile_id: home_profile_id,
+		'home_profile_ids[]': home_profile_ids,
 		'thermal_storage_ids[]': thermal_storage_ids
 	    },
 	    function(data) {

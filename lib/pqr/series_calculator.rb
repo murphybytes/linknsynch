@@ -8,7 +8,7 @@ module PQR
     def initialize( opts = {} )
       @samples = opts.fetch( :samples )
       @partition_count = opts.fetch( :partition_count, 10 )
-      @home_profile = opts.fetch( :home_profile, nil )
+      @home_profiles = opts.fetch( :home_profiles, nil )
     end
 
 
@@ -46,9 +46,19 @@ module PQR
       series
     end
 
+    def sum_kw_required_for_heating( profiles, sample )
+      sum = BigDecimal.new( '0' )
+      profiles.each do |profile|
+        sum += get_kw_required_for_heating( profile, sample ) 
+      end
+      sum
+    end
+
     def get_demand_series
       result = []
-      kw_requireds = @samples.map { |s| get_kw_required_for_heating( @home_profile, s ) }
+      kw_requireds = @samples.map do |sample| 
+        sum_kw_required_for_heating( @home_profiles, sample ) 
+      end
       kw_requireds.sort!
 
       max = kw_requireds.last

@@ -33,6 +33,8 @@
 #charts{ :data_set_id => @dataset_id, :home_profile_id => @home_profile_id }
 - @thermal_profiles.each do |ts|
   .thermal-storage-id{ :value => ts.id }
+- @home_profiles.each do |hp|
+  .home-profile-id{ :value => hp.id }
 - @months.each do |m|  
   .chart-month{ :month => m.month, :year => m.year }
   .row-fluid
