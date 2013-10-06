@@ -76,8 +76,8 @@ class GraphsController < ApplicationController
     calculator = PQR::Calculator.new( samples, interruptable_model ) 
     calculator.run    
 
-    min_y = ([calculator.total_kw_required_for_heating, calculator.total_kw_required_for_heating_ls ].min * 0.99 ).to_i
-
+  #  min_y = ([calculator.total_kw_required_for_heating, calculator.total_kw_required_for_heating_ls ].min * 0.99 ).to_i
+    min_y = 0
     respond_to do | format |
       format.json { render :json => {
           month: params[:month],

@@ -17,15 +17,23 @@ class CalculationsController < ApplicationController
   def create
     logger.debug "CALCULATION CREATE WITH #{params}"
     begin
+      @scenario = Calculation.new
+      @scenario.name = params[:name]
+      @scenario.user = current_user
       @dataset_id = params[:set]
 
       @set = SetMeta.find( params[:set] )
+      @scenario.set_meta = @set
+
       @prices = LocationMarginalPrice.get_prices_for_node_in_range( 'OTP.HOOTL2', @set.get_first_sample_date, @set.get_ceiling_sample_date )
-      @thermal_profiles = ThermalStorageProfile.find( :all, *params[:thermal_storage_profile] )
+      @scenario.node = Node.name_is( 'OTP.HOOTL2' ).first 
+      @thermal_profiles = ThermalStorageProfile.find( params[:thermal_storage_profile] )
+      @scenario.thermal_storage_profiles.concat @thermal_profiles
       @thermal_storage_model = PQR::ThermalStorageModel.new( @thermal_profiles, @prices ) 
  
-     @home_profiles = HomeProfile.find( :all, *params[:home_profile] )
-      
+     @home_profiles = HomeProfile.find( params[:home_profile] )
+      @scenario.home_profiles.concat @home_profiles
+      @scenario.save!
       @interruptable_model = PQR::InterruptableModel.new( @home_profiles, @prices, @thermal_storage_model )
       @calculation = PQR::Calculator.new( @set.samples, @interruptable_model )
       @calculation.run

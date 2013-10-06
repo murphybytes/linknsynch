@@ -12,7 +12,9 @@ module PQR
     attr_reader :total_kw_excess_capacity, :total_kw_excess_capacity_price
     attr_reader :total_kw_off_peak_sunk, :total_kw_off_peak_sunk_price
     attr_reader :total_kw_surplus_energy_op_price
-
+    attr_reader :interruptable_model
+    attr_reader :total_kw_surplus_energy, :total_kw_surplus_energy_ls
+    attr_reader :total_surplus_price, :total_surplus_price_ls
 
     include PQR::Common
 
@@ -27,6 +29,8 @@ module PQR
       @total_kw_surplus_energy           = BigDecimal.new( '0' )
       @total_kw_surplus_energy_ls        = BigDecimal.new( '0' )
       @total_kw_load_unserved            = BigDecimal.new( '0' )
+      @total_surplus_price               = BigDecimal.new( '0' )
+      @total_surplus_price_ls            = BigDecimal.new( '0' )
    
       @samples = samples
       @interruptable_model = interruptable_model
@@ -80,6 +84,24 @@ module PQR
       (@total_kw_surplus_energy_off_peak / KW_TO_MW).round
     end
 
+    def total_mw_sunk
+      #(@interruptable_model.total_energy_used/KW_TO_MW).round
+      ((@total_kw_generated - @total_kw_surplus_energy)/ KW_TO_MW).round
+    end
+
+    def total_mw_sunk_ls
+      #(@interruptable_model.total_energy_used_ls / KW_TO_MW).round
+     ((@total_kw_generated - @total_kw_surplus_energy_ls)/KW_TO_MW).round 
+    end
+
+    def pct_sunk
+      "#{((1.0 - (@total_kw_surplus_energy / @total_kw_generated)) * 100.0).round( 1 )}%"
+    end
+
+    def pct_sunk_ls
+      "#{((1.0 - (@total_kw_surplus_energy_ls / @total_kw_generated)) * 100.0).round( 1 )}%"
+    end
+
     def date_in_range?( test )
       return true if test.year < @end_time.year
 
@@ -124,7 +146,9 @@ module PQR
         kw_available, kw_available_ls = @interruptable_model.update( kw_available, kw_available_ls, sample )  
 
         @total_kw_surplus_energy += kw_available if kw_available > 0
+        @total_surplus_price += get_price( sample, @interruptable_model.prices, kw_available ) if kw_available > 0
         @total_kw_surplus_energy_ls += kw_available_ls if kw_available_ls > 0
+        @total_surplus_price_ls += get_price( sample, @interruptable_model.prices, kw_available_ls ) if kw_available_ls > 0
       end
            
       @total_kw_required_for_heating = @interruptable_model.total_energy_needed

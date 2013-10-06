@@ -1,3 +1,4 @@
+%h2= @scenario.name
 %h4 Calculation Results
 .row-fluid
   .span6
@@ -15,6 +16,26 @@
   .span3= @calculation.total_mw_generated  
   .span3= number_to_currency( @calculation.total_kw_generated_price, precision: 0  )
 .row-fluid
+  .span6
+    Generated Energy Sunk
+  .span3= @calculation.total_mw_sunk    
+  .span3= number_to_currency( @calculation.total_kw_generated_price - @calculation.total_surplus_price, precision: 0 )
+.row-fluid
+  .span6
+    Percent Generated Energy Sunk
+  .span3= @calculation.pct_sunk
+  .span3= '-'
+.row-fluid
+  .span6
+    Generated Energy Sunk with Link and Sync
+  .span3= @calculation.total_mw_sunk_ls
+  .span3= number_to_currency( @calculation.total_kw_generated_price - @calculation.total_surplus_price_ls, precision: 0 )
+.row-fluid
+  .span6
+    Percent Generated Energy Sunk with Link and Sync
+  .span3= @calculation.pct_sunk_ls
+  .span3= '-'    
+.row-fluid.label
   .span12
     Energy Required for Heating
 %small
@@ -29,7 +50,98 @@
       Total
   .span3= @calculation.total_mw_required_for_heating
   .span3= number_to_currency( @calculation.total_kw_required_for_heating_price, precision: 0 )
- 
+.row-fluid.label
+  .span12
+    Load Unserved
+%small
+  - @calculation.interruptable_profiles.each do |ip| 
+    .row-fluid
+      .span5.offset1= ip[:profile].name
+      .span3= kwh2mwh( ip[:load_unserved] )
+      .span3= number_to_currency( ip[:price_load_unserved], precision: 0 )
+.row-fluid
+  .span6
+    %strong
+      Total
+  .span3= kwh2mwh( @calculation.interruptable_model.total_load_unserved )
+  .span3= number_to_currency( @calculation.interruptable_model.price_total_load_unserved, precision: 0 ) 
+
+.row-fluid.label
+  .span12
+    Load Unserved with Link and Sync
+%small
+  - @calculation.interruptable_profiles.each do |ip| 
+    .row-fluid
+      .span5.offset1= ip[:profile].name
+      .span3= kwh2mwh( ip[:load_unserved_ls] )
+      .span3= number_to_currency( ip[:price_load_unserved_ls], precision: 0  )
+.row-fluid
+  .span6
+    %strong
+      Total
+  .span3= kwh2mwh( @calculation.interruptable_model.total_load_unserved_ls )
+  .span3= number_to_currency( @calculation.interruptable_model.total_load_unserved_ls_price, precision: 0 ) 
+.row-fluid.label
+  .span12
+    Thermal Storage On Peak Sunk
+%small
+  - @calculation.interruptable_model.thermal_storage_model.thermal_storages.each do |ts|
+    .row-fluid
+      .span5.offset1= ts[:profile].name
+      .span3= kwh2mwh( ts[:sunk_on_peak] ) 
+      .span3= '-'
+.row-fluid
+  .span6
+    %strong
+      Total
+  .span3= kwh2mwh( @calculation.interruptable_model.thermal_storage_model.total_on_peak_sunk )
+  .span3= '-'
+.row-fluid.label
+  .span12
+    Thermal Storage Off Peak Sunk
+%small
+  - @calculation.interruptable_model.thermal_storage_model.thermal_storages.each do |ts|
+    .row-fluid
+      .span5.offset1= ts[:profile].name
+      .span3= kwh2mwh( ts[:sunk_off_peak] ) 
+      .span3= '-'
+.row-fluid
+  .span6
+    %strong
+      Total
+  .span3= kwh2mwh( @calculation.interruptable_model.thermal_storage_model.total_off_peak_sunk )
+  .span3= '-'
+.row-fluid.label
+  .span12
+    Thermal Storage On Peak Sunk with Link and Sync
+%small
+  - @calculation.interruptable_model.thermal_storage_model.thermal_storages.each do |ts|
+    .row-fluid
+      .span5.offset1= ts[:profile].name
+      .span3= kwh2mwh( ts[:sunk_on_peak_ls] ) 
+      .span3= '-'
+.row-fluid
+  .span6
+    %strong
+      Total
+  .span3= kwh2mwh( @calculation.interruptable_model.thermal_storage_model.total_on_peak_sunk_ls )
+  .span3= '-'
+.row-fluid.label
+  .span12
+    Thermal Storage Off Peak Sunk with Link and Sync
+%small
+  - @calculation.interruptable_model.thermal_storage_model.thermal_storages.each do |ts|
+    .row-fluid
+      .span5.offset1= ts[:profile].name
+      .span3= kwh2mwh( ts[:sunk_off_peak_ls] ) 
+      .span3= '-'
+.row-fluid
+  .span6
+    %strong
+      Total
+  .span3= kwh2mwh( @calculation.interruptable_model.thermal_storage_model.total_off_peak_sunk_ls )
+  .span3= '-'
+
 #charts{ :data_set_id => @dataset_id, :home_profile_id => @home_profile_id }
 - @thermal_profiles.each do |ts|
   .thermal-storage-id{ :value => ts.id }

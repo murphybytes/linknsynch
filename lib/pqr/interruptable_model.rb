@@ -28,7 +28,9 @@ module PQR
           energy_needed: BigDecimal.new("0"),
           energy_needed_lmp: BigDecimal.new("0"),
           load_unserved: BigDecimal.new("0"),
-          load_unserved_ls: BigDecimal.new("0")
+          load_unserved_ls: BigDecimal.new("0"),
+          price_load_unserved: BigDecimal.new("0"),
+          price_load_unserved_ls: BigDecimal.new( "0" )
           
           
         }
@@ -62,8 +64,9 @@ module PQR
         @price_total_energy_used      += get_price( sample, @prices, result[:energy_used] )
 
         @total_load_unserved          += result[:load_unserved]
-        @price_total_load_unserved    += get_price( sample, @prices, result[:load_unserved] )
-
+        price_load_unserved           =  get_price( sample, @prices, result[:load_unserved] )
+        @price_total_load_unserved    += price_load_unserved
+        interruptable[:price_load_unserved] += price_load_unserved
         interruptable[:energy_used]   += result[:energy_used]
         
         interruptable[:load_unserved] += result [:load_unserved]
@@ -73,7 +76,9 @@ module PQR
 
         @total_energy_used_ls               += result_ls[:energy_used]
         @total_load_unserved_ls             += result_ls[:load_unserved]
-        @total_load_unserved_ls_price       += get_price( sample, @prices, result_ls[:load_unserved] )
+        price_load_unserved_ls              = get_price( sample, @prices, result_ls[:load_unserved] )
+        @total_load_unserved_ls_price       += price_load_unserved_ls
+        interruptable[:price_load_unserved_ls] += price_load_unserved_ls
 
         interruptable[:energy_used_with_ls] += result_ls[:energy_used]
         interruptable[:load_unserved_ls]    += result_ls[:load_unserved]

@@ -8,7 +8,7 @@ class ThermalStorageProfile < ActiveRecord::Base
   validates :base_threshold, presence: true, numericality: true
   before_save :on_before_save
   belongs_to :user
-
+  has_and_belongs_to_many :calculations
   private
 
   def on_before_save

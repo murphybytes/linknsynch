@@ -4,10 +4,18 @@ module PQR
   class ThermalStorageModel
     attr_reader :unit_count
     attr_reader :thermal_storages 
+    attr_reader :total_on_peak_sunk
+    attr_reader :total_off_peak_sunk
+    attr_reader :total_on_peak_sunk_ls
+    attr_reader :total_off_peak_sunk_ls
 
     def initialize( thermal_storages, prices )
       @prices = prices
       @unit_count = 0
+      @total_on_peak_sunk = BigDecimal.new( "0" )
+      @total_off_peak_sunk = BigDecimal.new( "0" )
+      @total_on_peak_sunk_ls = BigDecimal.new( "0" )
+      @total_off_peak_sunk_ls = BigDecimal.new( "0" )
 
       @thermal_storages = thermal_storages.each_with_object([]) do |profile, arr|
         @unit_count += profile.units
@@ -21,7 +29,12 @@ module PQR
           usage: profile.units * profile.usage,
           energy_used: BigDecimal.new("0"),
           energy_used_ls: BigDecimal.new("0"),
-          energy_used_for_heating: BigDecimal.new("0")  # used to cover unserved interruptable needs
+          sunk_on_peak: BigDecimal.new("0"),
+          sunk_off_peak: BigDecimal.new( "0" ),
+
+          energy_used_for_heating: BigDecimal.new("0"),  # used to cover unserved interruptable needs
+          sunk_off_peak_ls: BigDecimal.new("0"),
+          sunk_on_peak_ls: BigDecimal.new( "0" )
         }
       end
     end
@@ -41,6 +54,7 @@ module PQR
       end
       response 
     end
+
 
     ###########################################################
     # Used to indicate that we've used some energy from
@@ -117,7 +131,7 @@ module PQR
     def update( available_energy, sample )
       apply_normal_usage
       apply_normal_usage_ls
-      remaining_energy     = update_( available_energy )
+      remaining_energy     = update_( available_energy, sample )
       remaining_energy_ls  = update_ls_( available_energy, sample )
       [remaining_energy, remaining_energy_ls]
     end
@@ -127,7 +141,7 @@ module PQR
     # it up as much as we can, and reduce the amount of 
     # energy that is available
     #############################################################
-    def update_( available_energy )
+    def update_( available_energy, sample )
       remaining_energy = available_energy
       @thermal_storages.each do | ts |
         if ts[:available_energy] < ts[:capacity]
@@ -136,6 +150,15 @@ module PQR
           remaining_energy -= charge
           ts[:available_energy] += charge
           ts[:energy_used] += charge
+
+          if Utils.is_peak?( sample.sample_time ) 
+            ts[:sunk_on_peak] += charge
+            @total_on_peak_sunk += charge
+          else
+            ts[:sunk_off_peak] += charge
+            @total_off_peak_sunk += charge
+          end
+
         end
       end
       remaining_energy      
@@ -145,28 +168,40 @@ module PQR
     # on peak we only charge if we have to 
     ##############################################################
     def update_ls_( available_energy, sample )
-      remaining_energy = available_energy
-
-      @thermal_storages.each do |ts|
-        if Utils.is_peak?( sample.sample_time )
-          if ts[:available_energy_ls] < ts[:base_threshold]
-            charge = [remaining_energy, ts[:charge_rate]].min
-            remaining_energy -= charge
-            ts[:available_energy_ls] += charge
-            ts[:energy_used_ls] += charge
-          end
-        else
-          @thermal_storages.each do | ts |
-            possible_charge = [ts[:capacity] - ts[:available_energy], ts[:charge_rate], remaining_energy ].min
-            remaining_energy -= possible_charge
-            ts[:available_energy_ls] += possible_charge 
-            ts[:energy_used_ls] += possible_charge
-          end      
-        end
+      if Utils.is_peak?( sample.sample_time ) 
+        update_ls_peak_( available_energy, sample ) 
+      else
+        update_ls_off_peak_( available_energy, sample ) 
       end
-      remaining_energy
     end
 
+    #
+    # on peak ls 
+    #
+    def update_ls_peak_( available_energy, sample )
+      @thermal_storages.each do |ts|
+        if ts[:available_energy_ls] < ts[:base_threshold]
+          charge = [available_energy, ts[:charge_rate], ts[:capacity] - ts[:available_energy_ls] ].min
+          available_energy -= charge
+          ts[:available_energy_ls] += charge
+          ts[:sunk_on_peak_ls] += charge
+          @total_on_peak_sunk_ls += charge
+        end
+      end
+      available_energy 
+    end
+
+
+    def update_ls_off_peak_( available_energy, sample ) 
+      @thermal_storages.each do |ts|
+        charge = [ts[:capacity] - ts[:available_energy_ls], ts[:charge_rate], available_energy ].min
+        available_energy -= charge
+        ts[:available_energy_ls] += charge
+        ts[:sunk_off_peak_ls] += charge
+        @total_off_peak_sunk_ls += charge
+      end
+      available_energy
+    end
 
     #
     # charges storage as much as possible, returns amount of power used
