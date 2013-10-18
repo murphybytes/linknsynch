@@ -29,8 +29,8 @@ module PQR
     end
 
 
-    def get_price( sample, prices, kws )
-      price = prices[sample.sample_time]
+    def get_price( sample_time, prices, kws )
+      price = prices[sample_time]
       if price.nil?
         BigDecimal.new("0")
       else

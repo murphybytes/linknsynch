@@ -1,7 +1,10 @@
-
+require 'pqr/common'
 
 module PQR
   class ThermalStorageModel
+
+    include PQR::Common
+
     attr_reader :unit_count
     attr_reader :thermal_storages 
     attr_reader :total_on_peak_sunk
@@ -9,7 +12,8 @@ module PQR
     attr_reader :total_on_peak_sunk_ls
     attr_reader :total_off_peak_sunk_ls
 
-    def initialize( thermal_storages, prices )
+    def initialize( thermal_storages, prices, log = nil )
+      @log = log
       @prices = prices
       @unit_count = 0
       @total_on_peak_sunk = BigDecimal.new( "0" )
@@ -32,10 +36,31 @@ module PQR
           sunk_on_peak: BigDecimal.new("0"),
           sunk_off_peak: BigDecimal.new( "0" ),
 
-          energy_used_for_heating: BigDecimal.new("0"),  # used to cover unserved interruptable needs
+          off_peak_supplement: BigDecimal.new("0"),  # used to cover unserved interruptable needs
+          price_off_peak_supplement: BigDecimal.new("0"),
+          off_peak_supplement_ls: BigDecimal.new( "0" ),
+          price_off_peak_supplement_ls: BigDecimal.new( "0" ),
           sunk_off_peak_ls: BigDecimal.new("0"),
           sunk_on_peak_ls: BigDecimal.new( "0" )
         }
+      end
+    end
+
+
+
+    def log_debug( msg )
+      if @log
+        @log.debug msg
+      else
+        puts "INFO #{msg}"
+      end
+    end
+
+    def log_info( msg )
+      if @log
+        @log.info msg
+      else
+        puts "INFO #{msg}"
       end
     end
 
@@ -62,7 +87,7 @@ module PQR
     # the amount of energy we have available, and exception
     # will be thrown
     #############################################################
-    def reduce_available( requested_energy )
+    def reduce_available( sample_time, requested_energy )
       available_energy = get_available
       raise "Cannot use more energy than we have. Available #{ available_energy }. Requested #{ requested_energy}" if requested_energy > available_energy
       return if available_energy <= 0
@@ -70,12 +95,15 @@ module PQR
       @thermal_storages.each do | profile |
         available_for_unit = get_available_for_unit( profile )
         unit_portion = available_for_unit / available_energy
-        profile[:available_energy] -= ( unit_portion * requested_energy )
+        energy_portion = ( unit_portion * requested_energy )
+        profile[:available_energy] -= energy_portion
+        profile[:off_peak_supplement] += energy_portion
+        profile[:price_off_peak_supplement] += get_price( sample_time, @prices, energy_portion ) 
       end
 
     end
 
-    def reduce_available_ls( requested_energy )
+    def reduce_available_ls( sample_time, requested_energy )
       available_energy = get_available_ls
       raise "Cannot use more energy than we have. Available #{ available_energy }. Requested #{ requested_energy}" if requested_energy > available_energy
       return if available_energy <= 0
@@ -83,7 +111,10 @@ module PQR
       @thermal_storages.each do | profile |
         available_for_unit = get_available_for_unit_ls( profile )
         unit_portion = available_for_unit / available_energy
-        profile[:available_energy_ls] -= ( unit_portion * requested_energy )
+        energy_portion = ( unit_portion * requested_energy )
+        profile[:available_energy_ls] -= energy_portion
+        profile[:off_peak_supplement_ls] += energy_portion 
+        profile[:price_off_peak_supplement_ls] += get_price( sample_time, @prices, energy_portion )
       end
 
     end
@@ -111,6 +142,37 @@ module PQR
       end
     end
 
+    def total_off_peak_supplement
+      result = BigDecimal.new("0")
+      @thermal_storages.each do |ts|
+        result += ts[:off_peak_supplement]
+      end
+      result 
+    end
+
+    def total_off_peak_supplement_ls
+      result = BigDecimal.new( "0" )
+      @thermal_storages.each do |ts|
+        result += ts[:off_peak_supplement_ls]
+      end
+      result
+    end 
+
+    def price_total_off_peak_supplement
+      result = BigDecimal.new( "0" )
+      @thermal_storages.each do |ts|
+        result += ts[:price_off_peak_supplement]
+      end
+      result
+    end
+
+    def price_total_off_peak_supplement_ls
+      result = BigDecimal.new("0")
+      @thermal_storages.each do |ts|
+        result += ts[:price_off_peak_supplement_ls]
+      end
+      result 
+    end
 
     def total_capacity 
       total_capacity = 0.0
@@ -217,6 +279,7 @@ module PQR
         charge_ls = [charge, storage_available_ls].min
         s[:available_energy] += charge
         s[:available_energy_ls] += charge_ls
+        #s[:available_energy_ls] = charge_ls
         total_charge += charge
         
         kw -= charge

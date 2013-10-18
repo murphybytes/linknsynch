@@ -140,15 +140,15 @@ module PQR
 
         kw_generated = sample.generated_kilowatts
         @total_kw_generated +=  kw_generated
-        @total_kw_generated_price += get_price( sample, @interruptable_model.prices, kw_generated )
+        @total_kw_generated_price += get_price( sample.sample_time, @interruptable_model.prices, kw_generated )
    
         kw_available, kw_available_ls = @interruptable_model.thermal_storage_model.update( kw_generated, sample )
         kw_available, kw_available_ls = @interruptable_model.update( kw_available, kw_available_ls, sample )  
 
         @total_kw_surplus_energy += kw_available if kw_available > 0
-        @total_surplus_price += get_price( sample, @interruptable_model.prices, kw_available ) if kw_available > 0
+        @total_surplus_price += get_price( sample.sample_time, @interruptable_model.prices, kw_available ) if kw_available > 0
         @total_kw_surplus_energy_ls += kw_available_ls if kw_available_ls > 0
-        @total_surplus_price_ls += get_price( sample, @interruptable_model.prices, kw_available_ls ) if kw_available_ls > 0
+        @total_surplus_price_ls += get_price( sample.sample_time, @interruptable_model.prices, kw_available_ls ) if kw_available_ls > 0
       end
            
       @total_kw_required_for_heating = @interruptable_model.total_energy_needed

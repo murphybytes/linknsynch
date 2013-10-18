@@ -53,18 +53,18 @@ module PQR
         required_for_heating           = get_kw_required_for_heating( interruptable[:profile], sample )
 
         interruptable[:energy_needed]     += required_for_heating
-        interruptable[:energy_needed_lmp] += get_price( sample, @prices, required_for_heating )
+        interruptable[:energy_needed_lmp] += get_price( sample.sample_time, @prices, required_for_heating )
         @total_energy_needed              += required_for_heating
 
-        @price_total_energy_needed    += get_price( sample, @prices, required_for_heating )
+        @price_total_energy_needed    += get_price( sample.sample_time, @prices, required_for_heating )
 
-        result = calculate_energy_used( available_energy, required_for_heating )
+        result = calculate_energy_used( sample, available_energy, required_for_heating )
 
         @total_energy_used            += result[:energy_used]
-        @price_total_energy_used      += get_price( sample, @prices, result[:energy_used] )
+        @price_total_energy_used      += get_price( sample.sample_time, @prices, result[:energy_used] )
 
         @total_load_unserved          += result[:load_unserved]
-        price_load_unserved           =  get_price( sample, @prices, result[:load_unserved] )
+        price_load_unserved           =  get_price( sample.sample_time, @prices, result[:load_unserved] )
         @price_total_load_unserved    += price_load_unserved
         interruptable[:price_load_unserved] += price_load_unserved
         interruptable[:energy_used]   += result[:energy_used]
@@ -72,11 +72,11 @@ module PQR
         interruptable[:load_unserved] += result [:load_unserved]
         available_energy              = result[:energy_remaining]
 
-        result_ls = calculate_energy_used_ls( available_energy_ls, required_for_heating )
+        result_ls = calculate_energy_used_ls( sample, available_energy_ls, required_for_heating )
 
         @total_energy_used_ls               += result_ls[:energy_used]
         @total_load_unserved_ls             += result_ls[:load_unserved]
-        price_load_unserved_ls              = get_price( sample, @prices, result_ls[:load_unserved] )
+        price_load_unserved_ls              = get_price( sample.sample_time, @prices, result_ls[:load_unserved] )
         @total_load_unserved_ls_price       += price_load_unserved_ls
         interruptable[:price_load_unserved_ls] += price_load_unserved_ls
 
@@ -91,7 +91,7 @@ module PQR
 
     private
 
-    def calculate_energy_used( energy_available, energy_needed )
+    def calculate_energy_used( sample, energy_available, energy_needed )
       energy_used, load_unserved, energy_remaininig = nil, nil, nil
 
       if energy_available >= energy_needed 
@@ -99,7 +99,10 @@ module PQR
         load_unserved = BigDecimal.new( "0" )
         energy_remaining = energy_available - energy_used
       else
-        energy_used = energy_available
+        thermal_storage_available = @thermal_storage_model.get_available
+        thermal_storage_reduction = [ thermal_storage_available, energy_needed - energy_available ].min
+        @thermal_storage_model.reduce_available( sample.sample_time, thermal_storage_reduction )
+        energy_used = energy_available + thermal_storage_reduction 
         energy_remaining = BigDecimal.new( "0" )
         load_unserved = energy_needed - energy_available
       end
@@ -107,7 +110,7 @@ module PQR
       {energy_used: energy_used, load_unserved: load_unserved, energy_remaining: energy_remaining}
     end
 
-    def calculate_energy_used_ls( energy_available, energy_needed )
+    def calculate_energy_used_ls( sample, energy_available, energy_needed )
       energy_used, load_unserved, energy_remaininig = nil, nil, nil
 
       if energy_available >= energy_needed 
@@ -117,7 +120,7 @@ module PQR
       else
         thermal_storage_available = @thermal_storage_model.get_available_ls
         thermal_storage_reduction = [ thermal_storage_available, energy_needed - energy_available ].min
-        @thermal_storage_model.reduce_available_ls( thermal_storage_reduction ) 
+        @thermal_storage_model.reduce_available_ls( sample.sample_time, thermal_storage_reduction ) 
         energy_used = energy_available + thermal_storage_reduction
         energy_remaining = BigDecimal.new( "0" )
         load_unserved = energy_needed - energy_used
