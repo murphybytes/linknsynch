@@ -1,0 +1,51 @@
+%h4= "Scenario - #{ @scenario.name }" 
+
+
+= form_tag( calculations_path, :method => :post,  :html => {:class => 'form-horizontal'} )  do
+  = hidden_field_tag 'id', @scenario.id
+  .row
+    .span3
+      Description:
+    .span3
+      = @scenario.description
+    .span6
+  .row
+    .span3
+      Sample Name:
+    .span3
+      = @scenario.set_meta.name
+    .span6
+  .row
+    .span12
+      &nbsp;
+  - profile_type='Interruptable Profile(s)'
+  - @scenario.home_profiles.each do |ip|
+    .row
+      .span3
+        = profile_type
+        - profile_type=""
+      .span3
+        = link_to ip.name, home_profile_path( ip.id )
+      .span6
+  .row
+    .span12
+      &nbsp;
+  - profile_type='Thermal Storage Profile(s)'
+  - @scenario.thermal_storage_profiles.each do |tsp|
+    .row
+      .span3
+        = profile_type
+        - profile_type=""
+      .span3
+        = link_to tsp.name, thermal_storage_profile_path( tsp.id )
+      .span6
+  .row
+    .span12
+      &nbsp;
+  .row
+    .span3
+      = link_to "Edit&nbsp;&nbsp;<i class='icon-edit icon-white'>&nbsp;</i>".html_safe, edit_calculation_path( @scenario.id ),  :class => "btn btn-block btn-success"
+    .span3
+      = link_to "Delete&nbsp;&nbsp;<i class='icon-remove icon-white'>&nbsp;</i>".html_safe, calculation_path( @scenario.id ), :method => :delete,  :class => "btn btn-block btn-danger"
+    .span6
+      = button_tag 'Calculate',  :class => 'btn btn-primary'

@@ -1,7 +1,5 @@
-= hidden_field_tag 'name', @scenario.name
-= hidden_field_tag 'set', @dataset_id
-= hidden_field_tag 'thermal_storage_profile', @thermal_storage_profile_ids
-= hidden_field_tag 'home_profile', @home_profile_ids
+= hidden_field_tag 'id', @scenario.id
+
 
 %h2= @scenario.name
 %h4 Calculation Results
@@ -180,9 +178,9 @@
   .span3= number_to_currency(@calculation.interruptable_model.thermal_storage_model.price_total_off_peak_supplement_ls, precision: 0 )
 
 #charts{ :data_set_id => @dataset_id, :home_profile_id => @home_profile_id }
-- @thermal_profiles.each do |ts|
+- @scenario.thermal_storage_profiles.each do |ts|
   .thermal-storage-id{ :value => ts.id }
-- @home_profiles.each do |hp|
+- @scenario.home_profiles.each do |hp|
   .home-profile-id{ :value => hp.id }
 - @months.each do |m|  
   .chart-month{ :month => m.month, :year => m.year }

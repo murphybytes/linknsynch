@@ -1,0 +1,11 @@
+%h4 Scenarios 
+%table.table.table-bordered
+  %tr
+    %th
+      Scenario Name
+    %th
+      Description
+  - @calculations.each do |calc|
+    %tr
+      %td= link_to calc.name, calculation_path( calc.id ) 
+      %td= calc.description
