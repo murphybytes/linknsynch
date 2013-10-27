@@ -92,4 +92,20 @@ class CalculationTest < ActiveSupport::TestCase
     end
   end
 
+
+  test "mass assignment" do
+    calc = Calculation.new 
+    calc.user = User.all.first
+    calc.name = 'TestHProfile'
+    calc.node = Node.all.first
+    calc.set_meta = SetMeta.all.first
+
+    assert calc.save, 'save with home profiles'
+
+    hpids = HomeProfile.all.map( &:id) 
+    tpids = ThermalStorageProfile.all.map( &:id)
+
+    assert calc.update_attributes( {name: 'foo', description: 'bar', thermal_storage_profiles: ThermalStorageProfile.all, home_profiles: HomeProfile.all } ), 'calculation mass assignment' 
+  end
+
 end

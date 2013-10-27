@@ -2,6 +2,7 @@
 
 
 class Calculation < ActiveRecord::Base
+  attr_accessible :name, :description, :set_meta, :thermal_storage_profiles, :home_profiles
   validates :name, uniqueness: { scope: :user_id, message: 'Calculation must have unique name' } 
   validates :user, presence: true
   validates :set_meta, presence: true

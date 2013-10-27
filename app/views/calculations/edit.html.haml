@@ -1,0 +1,37 @@
+%h4 
+  Edit Scenario
+%dl
+  %dd 
+    Select a sample, one or more interruptable profiles and one or more thermal storage profiles that will be used in the scenario. 
+
+
+= form_for( @scenario,   :html => {:class => 'form-horizontal'} )  do |f|
+  .control_group
+    .control_label
+      Scenario Name
+    .controls
+      = f.text_field :name
+  .control_group
+    .control_label
+      Description
+    .controls
+      = f.text_field :description
+  .control_group
+    .control_label
+      Sample Name:
+    .controls
+      = select_tag 'calculation[set_meta]', options_from_collection_for_select( @set_metas, "id", "name", @scenario.set_meta.id ) 
+  .control_group
+    .control_label
+      Interruptable Profile(s):
+    .controls
+      = select_tag  'calculation[home_profiles]', options_from_collection_for_select( @home_profiles, "id", "name", @scenario.home_profiles.map(&:id) ), multiple: true  
+  .control_group
+    .control_label
+      Thermal Storage Profile(s):
+    .controls
+      = select_tag  'calculation[thermal_storage_profiles]', options_from_collection_for_select( @thermal_profiles, "id", "name", @scenario.thermal_storage_profiles.map(&:id) ), multiple: true
+
+  .control_group
+    .controls
+      = f.submit 'Save Scenario',  :class => 'btn btn-primary'

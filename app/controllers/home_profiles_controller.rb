@@ -26,6 +26,7 @@ class HomeProfilesController < ApplicationController
 
   end
 
+  
 
   def show 
     @profile ||= HomeProfile.find( params[:id] )

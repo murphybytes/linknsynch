@@ -23,6 +23,37 @@ class CalculationsController < ApplicationController
     @scenario ||= Calculation.find( params[:id] )
   end
 
+  
+
+  def destroy 
+    logger.debug "called destroy"
+    Calculation.delete( params[:id] )
+    flash[:notice]  = 'Scenario deleted'
+    logger.debug "destroy complete"
+    redirect_to calculations_path 
+  end
+
+  def update
+    logger.debug "PARAMS -> #{ params }"
+    
+    @scenario ||= Calculation.find( params[:id] )
+    params[:calculation][:thermal_storage_profiles]  = ThermalStorageProfile.find( params[:calculation][:thermal_storage_profiles] )
+    params[:calculation][:home_profiles]  = HomeProfile.find( params[:calculation][:home_profiles] )
+    params[:calculation][:set_meta] = SetMeta.find( params[:calculation][:set_meta] )
+    @scenario.update_attributes( params[:calculation] )
+    redirect_to calculation_path( params[:id] )
+  end
+
+
+  def edit
+    @set_metas = SetMeta.where( user_id: current_user.id )
+    @home_profiles = HomeProfile.where( user_id: current_user.id )
+    @thermal_profiles = ThermalStorageProfile.where( user_id: current_user.id )
+
+    @scenario ||= Calculation.find( params[:id] )
+    
+  end
+
   def create
     logger.debug "CALCULATION CREATE WITH #{params}"
 
