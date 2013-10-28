@@ -36,6 +36,10 @@ module PQR
       @interruptable_model = interruptable_model
     end
 
+    def thermal_storage_model
+      @interruptable_model.thermal_storage_model
+    end
+
     def interruptable_profiles
       @interruptable_model.interruptables
     end

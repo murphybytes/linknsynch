@@ -92,13 +92,13 @@
     .row-fluid
       .span5.offset1= ts[:profile].name
       .span3= kwh2mwh( ts[:sunk_on_peak] ) 
-      .span3= '-'
+      .span3= number_to_currency( ts[:price_sunk_on_peak], precision: 0 )
 .row-fluid
   .span6
     %strong
       Total
   .span3= kwh2mwh( @calculation.interruptable_model.thermal_storage_model.total_on_peak_sunk )
-  .span3= '-'
+  .span3= number_to_currency( @calculation.interruptable_model.thermal_storage_model.total_price_on_peak_sunk, precision: 0 )
 .row-fluid.label
   .span12
     Thermal Storage Off Peak Sunk
@@ -107,13 +107,13 @@
     .row-fluid
       .span5.offset1= ts[:profile].name
       .span3= kwh2mwh( ts[:sunk_off_peak] ) 
-      .span3= '-'
+      .span3= number_to_currency( ts[:price_sunk_off_peak], precision: 0 )
 .row-fluid
   .span6
     %strong
       Total
   .span3= kwh2mwh( @calculation.interruptable_model.thermal_storage_model.total_off_peak_sunk )
-  .span3= '-'
+  .span3= number_to_currency( @calculation.interruptable_model.thermal_storage_model.total_price_off_peak_sunk, precision: 0 )
 .row-fluid.label
   .span12
     Thermal Storage On Peak Sunk with Link and Sync
@@ -122,13 +122,13 @@
     .row-fluid
       .span5.offset1= ts[:profile].name
       .span3= kwh2mwh( ts[:sunk_on_peak_ls] ) 
-      .span3= '-'
+      .span3= number_to_currency( ts[:price_sunk_on_peak_ls], precision: 0 )
 .row-fluid
   .span6
     %strong
       Total
   .span3= kwh2mwh( @calculation.interruptable_model.thermal_storage_model.total_on_peak_sunk_ls )
-  .span3= '-'
+  .span3= number_to_currency( @calculation.interruptable_model.thermal_storage_model.total_price_on_peak_sunk_ls, precision: 0)
 .row-fluid.label
   .span12
     Thermal Storage Off Peak Sunk with Link and Sync
@@ -137,13 +137,13 @@
     .row-fluid
       .span5.offset1= ts[:profile].name
       .span3= kwh2mwh( ts[:sunk_off_peak_ls] ) 
-      .span3= '-'
+      .span3= number_to_currency( ts[:price_sunk_off_peak_ls], precision: 0 )
 .row-fluid
   .span6
     %strong
       Total
   .span3= kwh2mwh( @calculation.interruptable_model.thermal_storage_model.total_off_peak_sunk_ls )
-  .span3= '-'
+  .span3= number_to_currency( @calculation.interruptable_model.thermal_storage_model.total_price_off_peak_sunk_ls, precision: 0 )
 
 .row-fluid.label
   .span12

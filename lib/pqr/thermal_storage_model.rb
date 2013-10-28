@@ -11,15 +11,24 @@ module PQR
     attr_reader :total_off_peak_sunk
     attr_reader :total_on_peak_sunk_ls
     attr_reader :total_off_peak_sunk_ls
+    attr_reader :total_price_on_peak_sunk
+    attr_reader :total_price_off_peak_sunk
+    attr_reader :total_price_on_peak_sunk_ls
+    attr_reader :total_price_off_peak_sunk_ls
+
 
     def initialize( thermal_storages, prices, log = nil )
       @log = log
       @prices = prices
       @unit_count = 0
       @total_on_peak_sunk = BigDecimal.new( "0" )
+      @total_price_on_peak_sunk = BigDecimal.new( "0" )
       @total_off_peak_sunk = BigDecimal.new( "0" )
+      @total_price_off_peak_sunk = BigDecimal.new( "0" )
       @total_on_peak_sunk_ls = BigDecimal.new( "0" )
       @total_off_peak_sunk_ls = BigDecimal.new( "0" )
+      @total_price_on_peak_sunk_ls = BigDecimal.new("0")
+      @total_price_off_peak_sunk_ls = BigDecimal.new("0")
 
       @thermal_storages = thermal_storages.each_with_object([]) do |profile, arr|
         @unit_count += profile.units
@@ -34,14 +43,17 @@ module PQR
           energy_used: BigDecimal.new("0"),
           energy_used_ls: BigDecimal.new("0"),
           sunk_on_peak: BigDecimal.new("0"),
+          price_sunk_on_peak: BigDecimal.new( "0" ),
           sunk_off_peak: BigDecimal.new( "0" ),
-
+          price_sunk_off_peak: BigDecimal.new( "0" ),
           off_peak_supplement: BigDecimal.new("0"),  # used to cover unserved interruptable needs
           price_off_peak_supplement: BigDecimal.new("0"),
           off_peak_supplement_ls: BigDecimal.new( "0" ),
           price_off_peak_supplement_ls: BigDecimal.new( "0" ),
           sunk_off_peak_ls: BigDecimal.new("0"),
-          sunk_on_peak_ls: BigDecimal.new( "0" )
+          price_sunk_off_peak_ls: BigDecimal.new( "0" ),
+          sunk_on_peak_ls: BigDecimal.new( "0" ),
+          price_sunk_on_peak_ls: BigDecimal.new("0")
         }
       end
     end
@@ -215,10 +227,16 @@ module PQR
 
           if Utils.is_peak?( sample.sample_time ) 
             ts[:sunk_on_peak] += charge
+            price_of_charge = get_price( sample.sample_time, @prices, charge )
+            ts[:price_sunk_on_peak] += price_of_charge
             @total_on_peak_sunk += charge
+            @total_price_on_peak_sunk += price_of_charge
           else
             ts[:sunk_off_peak] += charge
+            price_of_charge = get_price( sample.sample_time, @prices, charge )
+            ts[:price_sunk_off_peak] += price_of_charge
             @total_off_peak_sunk += charge
+            @total_price_off_peak_sunk += price_of_charge
           end
 
         end
@@ -246,8 +264,11 @@ module PQR
           charge = [available_energy, ts[:charge_rate], ts[:capacity] - ts[:available_energy_ls] ].min
           available_energy -= charge
           ts[:available_energy_ls] += charge
+          price_of_charge = get_price( sample.sample_time, @prices, charge )
           ts[:sunk_on_peak_ls] += charge
+          ts[:price_sunk_on_peak_ls] += price_of_charge
           @total_on_peak_sunk_ls += charge
+          @total_price_on_peak_sunk_ls += price_of_charge 
         end
       end
       available_energy 
@@ -259,8 +280,11 @@ module PQR
         charge = [ts[:capacity] - ts[:available_energy_ls], ts[:charge_rate], available_energy ].min
         available_energy -= charge
         ts[:available_energy_ls] += charge
+        price_of_charge = get_price( sample.sample_time, @prices, charge ) 
         ts[:sunk_off_peak_ls] += charge
+        ts[:price_sunk_off_peak_ls] += price_of_charge
         @total_off_peak_sunk_ls += charge
+        @total_price_off_peak_sunk_ls += price_of_charge
       end
       available_energy
     end
@@ -279,6 +303,7 @@ module PQR
         charge_ls = [charge, storage_available_ls].min
         s[:available_energy] += charge
         s[:available_energy_ls] += charge_ls
+        
         #s[:available_energy_ls] = charge_ls
         total_charge += charge
         
