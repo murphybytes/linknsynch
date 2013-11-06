@@ -218,7 +218,8 @@ module PQR
     def update_( available_energy, sample )
       remaining_energy = available_energy
       @thermal_storages.each do | ts |
-        if ts[:available_energy] < ts[:capacity]
+        #if ts[:available_energy] < ts[:capacity]
+        if ts[:available_energy] <= ts[:base_threshold]
           amount_to_charge = ts[:capacity] - ts[:available_energy]
           charge = [remaining_energy, ts[:charge_rate], amount_to_charge].min
           remaining_energy -= charge
@@ -260,7 +261,8 @@ module PQR
     #
     def update_ls_peak_( available_energy, sample )
       @thermal_storages.each do |ts|
-        if ts[:available_energy_ls] < ts[:base_threshold]
+        #if ts[:available_energy_ls] < ts[:base_threshold]
+        if ts[:available_energy_ls] < ts[:capacity]
           charge = [available_energy, ts[:charge_rate], ts[:capacity] - ts[:available_energy_ls] ].min
           available_energy -= charge
           ts[:available_energy_ls] += charge
@@ -279,7 +281,11 @@ module PQR
       @thermal_storages.each do |ts|
         charge = [ts[:capacity] - ts[:available_energy_ls], ts[:charge_rate], available_energy ].min
         available_energy -= charge
-        ts[:available_energy_ls] += charge
+        # pull from non-renewable on off peak to charge as much as we possibly can
+        # TODO: account for this non-renewable use
+        # ts[:available_energy_ls] += [charge, ts[:charge_rate]].max
+        possible_charge = [ts[:capacity] - ts[:available_energy_ls], ts[:charge_rate] ].min
+        ts[:available_energy_ls] += possible_charge
         price_of_charge = get_price( sample.sample_time, @prices, charge ) 
         ts[:sunk_off_peak_ls] += charge
         ts[:price_sunk_off_peak_ls] += price_of_charge
