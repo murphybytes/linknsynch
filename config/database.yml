@@ -19,10 +19,8 @@ test:
   timeout: 5000
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  database: linknsynch_production
-  username: linknsync
-  password: 3zbQN0dxra
-  socket: /run/mysqld/mysqld.sock
-
+  adapter: sqlite3
+  database: db/production.sqlite3
+  pool: 5
+  timeout: 5000
+ 
