@@ -40,6 +40,7 @@ class ThermalStorageProfilesController < ApplicationController
 
   def update
     begin
+      logger.debug params
       @profile ||= ThermalStorageProfile.find( params[:thermal_storage_profile][:id] )
       @profile.update_attributes( params[:thermal_storage_profile])
       flash[:notice] = 'Thermal storage updated'

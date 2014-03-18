@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130809161136) do
+ActiveRecord::Schema.define(:version => 20140316231804) do
 
   create_table "calculations", :force => true do |t|
     t.string  "name"
@@ -105,9 +105,10 @@ ActiveRecord::Schema.define(:version => 20130809161136) do
     t.decimal  "charge_rate"
     t.decimal  "base_threshold"
     t.decimal  "usage"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "priority"
+    t.integer  "water_heat_flag"
   end
 
   create_table "users", :force => true do |t|

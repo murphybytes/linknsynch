@@ -6,7 +6,7 @@
     can be combined with with temperature and generation samples in calculations. 
 %h5 
   Definitions
-%dl{ :class => 'dl-horizontal' }
+%dl{ :class => 'dl-vertical' }
   %dt
     Base Threshold
   %dd
@@ -24,6 +24,11 @@
   %dd
     The amount of energy the thermal storage loses in an hour due to use. For example water heaters 
     would lose energy due to radiation, showers, laundry and the like.
+  %dt
+    Daily Deferred Storage (Water Heaters)
+  %dd
+    If checked the thermal storage will be for water heaters.  Water heaters use energy at a rate defined by the Normal Usage field.  Otherwise energy use
+    is dependent on outside air temperature.  
 
 = form_for @profile, :url => { :action => 'create' }, :html => {:class => 'form-horizontal'}  do |f|
   %div{ :class => 'control-group' }
@@ -61,6 +66,11 @@
       Capacity: 
     .controls
       = f.text_field :capacity
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Daily Deferred Storage (Water Heaters): 
+    .controls
+      = f.check_box :water_heat_flag
 
   = f.hidden_field :user_id
  

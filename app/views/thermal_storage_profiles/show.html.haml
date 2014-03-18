@@ -37,6 +37,11 @@
   .span8
     = @profile.capacity
 .row
+  .span4 
+    Type
+  .span8
+    = @profile.water_heat_flag == 1 ? 'Daily Deferred Storage (Water Heaters)' : 'Thermal Storage' 
+.row
   .span12
     &nbsp;
 .row
