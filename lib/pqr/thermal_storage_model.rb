@@ -40,6 +40,7 @@ module PQR
           base_threshold: profile.units * profile.base_threshold,
           charge_rate: profile.units * profile.charge_rate,
           usage: profile.units * profile.usage,
+          water_heat_flag: profile.water_heat_flag == 1,
           energy_used: BigDecimal.new("0"),
           energy_used_ls: BigDecimal.new("0"),
           sunk_on_peak: BigDecimal.new("0"),
@@ -136,19 +137,34 @@ module PQR
     #  TO DO: add a day / night component to usage
     #  for example, you more water heat during day
     #############################################
-    def apply_normal_usage
+    def apply_normal_usage( sample )
       @thermal_storages.each do | profile |
+
         if profile[:available_energy] > 0
-          profile[:available_energy] -= profile[:usage]
+          profile[:available_energy] -= get_usage( profile, sample )
           profile[:available_energy] = 0 if profile[:available_energy] < 0
         end
+
       end
     end
 
-    def apply_normal_usage_ls
+    def get_usage( profile, sample )
+      dbprofile = profile[:profile]
+      if dbprofile.water_heat_flag == 1
+        profile[:usage]
+      else
+        get_kw_required_for_heating2( dbprofile.thermostat_temperature, 
+                                      dbprofile.base_temperature, 
+                                      sample.temperature, 
+                                      dbprofile.btu_factor, 
+                                      dbprofile.units )
+      end
+    end
+
+    def apply_normal_usage_ls( sample )
       @thermal_storages.each do | profile |
         if profile[:available_energy_ls] > 0
-          profile[:available_energy_ls] -= profile[:usage]
+          profile[:available_energy_ls] -= get_usage( profile, sample )
           profile[:available_energy_ls] = 0 if profile[:available_energy_ls] < 0
         end
       end
@@ -203,8 +219,8 @@ module PQR
     end
 
     def update( available_energy, sample )
-      apply_normal_usage
-      apply_normal_usage_ls
+      apply_normal_usage( sample )
+      apply_normal_usage_ls( sample )
       remaining_energy     = update_( available_energy, sample )
       remaining_energy_ls  = update_ls_( available_energy, sample )
       [remaining_energy, remaining_energy_ls]

@@ -68,6 +68,21 @@
       = f.text_field :capacity
   %div{ :class => 'control-group' }
     %div{ :class => 'control-label' }
+      Base Temperature: 
+    .controls
+      = f.text_field :base_temperature
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      Thermostat Temperature: 
+    .controls
+      = f.text_field :thermostat_temperature
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
+      BTU Factor: 
+    .controls
+      = f.text_field :btu_factor
+  %div{ :class => 'control-group' }
+    %div{ :class => 'control-label' }
       Daily Deferred Storage (Water Heaters): 
     .controls
       = f.check_box :water_heat_flag

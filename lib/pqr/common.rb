@@ -29,6 +29,19 @@ module PQR
     end
 
 
+    def get_kw_required_for_heating2( thermostat_temp, base_temp, outdoor_temp, btu_factor, count  )
+      result = 0.0
+
+      if base_temp > outdoor_temp
+        result = ((thermostat_temp - outdoor_temp ) * btu_factor * count )/BTU_TO_KW_CONVERSION_FACTOR
+      end
+
+      result
+    end
+
+
+
+
     def get_price( sample_time, prices, kws )
       price = prices[sample_time]
       if price.nil?

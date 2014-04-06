@@ -38,9 +38,25 @@
     = @profile.capacity
 .row
   .span4 
+    Base Temperature
+  .span8
+    = @profile.base_temperature
+.row
+  .span4 
+    Thermostat Temperature
+  .span8
+    = @profile.thermostat_temperature
+.row
+  .span4 
+    BTU Factor
+  .span8
+    = @profile.btu_factor
+.row
+  .span4 
     Type
   .span8
     = @profile.water_heat_flag == 1 ? 'Daily Deferred Storage (Water Heaters)' : 'Thermal Storage' 
+
 .row
   .span12
     &nbsp;
