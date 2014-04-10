@@ -99,12 +99,14 @@ module PQR
         load_unserved = BigDecimal.new( "0" )
         energy_remaining = energy_available - energy_used
       else
-        thermal_storage_available = @thermal_storage_model.get_available
-        thermal_storage_reduction = [ thermal_storage_available, energy_needed - energy_available ].min
-        @thermal_storage_model.reduce_available( sample.sample_time, thermal_storage_reduction )
-        energy_used = energy_available + thermal_storage_reduction 
-        energy_remaining = BigDecimal.new( "0" )
+        
+        #thermal_storage_available = @thermal_storage_model.get_available
+        #thermal_storage_reduction = [ thermal_storage_available, energy_needed - energy_available ].min
+        #@thermal_storage_model.reduce_available( sample.sample_time, thermal_storage_reduction )
         load_unserved = energy_needed - energy_available
+        energy_used = energy_available + load_unserved 
+        energy_remaining = BigDecimal.new( "0" )
+
       end
 
       {energy_used: energy_used, load_unserved: load_unserved, energy_remaining: energy_remaining}

@@ -29,6 +29,8 @@ module PQR
       @total_off_peak_sunk_ls = BigDecimal.new( "0" )
       @total_price_on_peak_sunk_ls = BigDecimal.new("0")
       @total_price_off_peak_sunk_ls = BigDecimal.new("0")
+      @total_off_peak_supplement_ls = BigDecimal.new( "0" )
+      @total_price_off_peak_supplement = BigDecimal.new("0")
 
       @thermal_storages = thermal_storages.each_with_object([]) do |profile, arr|
         @unit_count += profile.units
@@ -54,7 +56,10 @@ module PQR
           sunk_off_peak_ls: BigDecimal.new("0"),
           price_sunk_off_peak_ls: BigDecimal.new( "0" ),
           sunk_on_peak_ls: BigDecimal.new( "0" ),
-          price_sunk_on_peak_ls: BigDecimal.new("0")
+          price_sunk_on_peak_ls: BigDecimal.new("0"),
+          off_peak_load_unserved_ls: BigDecimal.new("0"),
+          price_off_peak_load_unserved_ls: BigDecimal.new("0")
+
         }
       end
     end
@@ -170,36 +175,25 @@ module PQR
       end
     end
 
+    def total_off_peak_load_unserved_ls
+      get_total( :off_peak_load_unserved_ls )
+    end
+
+
     def total_off_peak_supplement
-      result = BigDecimal.new("0")
-      @thermal_storages.each do |ts|
-        result += ts[:off_peak_supplement]
-      end
-      result 
+      get_total( :off_peak_supplement )
     end
 
     def total_off_peak_supplement_ls
-      result = BigDecimal.new( "0" )
-      @thermal_storages.each do |ts|
-        result += ts[:off_peak_supplement_ls]
-      end
-      result
+      get_total(:off_peak_supplement_ls )
     end 
 
     def price_total_off_peak_supplement
-      result = BigDecimal.new( "0" )
-      @thermal_storages.each do |ts|
-        result += ts[:price_off_peak_supplement]
-      end
-      result
+      get_total(:price_off_peak_supplement)
     end
 
     def price_total_off_peak_supplement_ls
-      result = BigDecimal.new("0")
-      @thermal_storages.each do |ts|
-        result += ts[:price_off_peak_supplement_ls]
-      end
-      result 
+      get_total( :price_off_peak_supplement_ls )
     end
 
     def total_capacity 
@@ -292,21 +286,39 @@ module PQR
       available_energy 
     end
 
+    def water_heater?( thermal_storage_unit )
+      thermal_storage_unit[:profile].water_heat_flag == 1 
+    end
 
+    # TODO: CHARGE UP AS MUCH AS WE CAN WITH OFF PEAK
     def update_ls_off_peak_( available_energy, sample ) 
       @thermal_storages.each do |ts|
-        charge = [ts[:capacity] - ts[:available_energy_ls], ts[:charge_rate], available_energy ].min
+
+        charge = [ts[:capacity] - ts[:available_energy_ls], ts[:charge_rate] ].min
+
+        load_unserved = 0.0
+        price_load_unserved = 0.0
+
+        if available_energy < charge 
+          load_unserved = charge - available_energy 
+          price_load_unserved = get_price( sample.sample_time, @prices, load_unserved )
+
+#          ts[:off_peak_supplement_ls] += load_unserved
+ #         ts[:price_off_peak_supplement_ls] += price_supplement
+          ts[:off_peak_load_unserved_ls] += load_unserved
+          ts[:price_off_peak_load_unserved_ls] += price_load_unserved
+          available_energy += load_unserved
+        end             
+
         available_energy -= charge
-        # pull from non-renewable on off peak to charge as much as we possibly can
-        # TODO: account for this non-renewable use
-        # ts[:available_energy_ls] += [charge, ts[:charge_rate]].max
-        possible_charge = [ts[:capacity] - ts[:available_energy_ls], ts[:charge_rate] ].min
-        ts[:available_energy_ls] += possible_charge
+
+        ts[:available_energy_ls] += charge
         price_of_charge = get_price( sample.sample_time, @prices, charge ) 
         ts[:sunk_off_peak_ls] += charge
         ts[:price_sunk_off_peak_ls] += price_of_charge
         @total_off_peak_sunk_ls += charge
         @total_price_off_peak_sunk_ls += price_of_charge
+
       end
       available_energy
     end
@@ -343,6 +355,15 @@ module PQR
 
     def get_available_for_unit_ls( unit )
       [unit[:available_energy_ls] - unit[:base_threshold], 0 ].max
+    end
+
+
+    def get_total( sym )
+      result = BigDecimal.new("0")
+      @thermal_storages.each do |ts|
+        result += ts[sym]
+      end
+      result
     end
 
 
