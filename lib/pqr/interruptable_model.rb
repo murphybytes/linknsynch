@@ -120,6 +120,7 @@ module PQR
         load_unserved = BigDecimal.new( "0" )
         energy_remaining = energy_available - energy_used
       else
+        #debugger
         thermal_storage_available = @thermal_storage_model.get_available_ls
         thermal_storage_reduction = [ thermal_storage_available, energy_needed - energy_available ].min
         @thermal_storage_model.reduce_available_ls( sample.sample_time, thermal_storage_reduction ) 

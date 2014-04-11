@@ -213,6 +213,7 @@ module PQR
     end
 
     def update( available_energy, sample )
+      #debugger
       apply_normal_usage( sample )
       apply_normal_usage_ls( sample )
       remaining_energy     = update_( available_energy, sample )
@@ -271,8 +272,8 @@ module PQR
     #
     def update_ls_peak_( available_energy, sample )
       @thermal_storages.each do |ts|
-        #if ts[:available_energy_ls] < ts[:base_threshold]
-        if ts[:available_energy_ls] < ts[:capacity]
+        if ts[:available_energy_ls] < ts[:base_threshold]
+          #if ts[:available_energy_ls] < ts[:capacity]
           charge = [available_energy, ts[:charge_rate], ts[:capacity] - ts[:available_energy_ls] ].min
           available_energy -= charge
           ts[:available_energy_ls] += charge
@@ -294,17 +295,18 @@ module PQR
     def update_ls_off_peak_( available_energy, sample ) 
       @thermal_storages.each do |ts|
 
-        charge = [ts[:capacity] - ts[:available_energy_ls], ts[:charge_rate] ].min
+        charge = [ts[:capacity] - ts[:available_energy_ls], ts[:charge_rate], available_energy ].min
 
         load_unserved = 0.0
         price_load_unserved = 0.0
-
-        if available_energy < charge 
+        #
+        # if our stored energy drops below base we have to charge with 
+        # non wind energy if we don't have a full charge
+        #
+        if available_energy <= charge && ts[:base_threshold] > ts[:available_energy_ls] 
           load_unserved = charge - available_energy 
           price_load_unserved = get_price( sample.sample_time, @prices, load_unserved )
 
-#          ts[:off_peak_supplement_ls] += load_unserved
- #         ts[:price_off_peak_supplement_ls] += price_supplement
           ts[:off_peak_load_unserved_ls] += load_unserved
           ts[:price_off_peak_load_unserved_ls] += price_load_unserved
           available_energy += load_unserved
