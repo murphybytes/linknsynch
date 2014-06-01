@@ -147,22 +147,6 @@
 
 .row-fluid.label
   .span12
-    Off Peak Supplement 
-%small
-  - @calculation.interruptable_model.thermal_storage_model.thermal_storages.each do |ts|
-    .row-fluid
-      .span5.offset1= ts[:profile].name
-      .span3=  kwh2mwh( ts[:off_peak_supplement] )
-      .span3=  number_to_currency(ts[:price_off_peak_supplement], precision: 0 )
-.row-fluid
-  .span6
-    %strong
-      Total
-  .span3= kwh2mwh( @calculation.interruptable_model.thermal_storage_model.total_off_peak_supplement )
-  .span3= number_to_currency(@calculation.interruptable_model.thermal_storage_model.price_total_off_peak_supplement, precision: 0 )
-
-.row-fluid.label
-  .span12
     Off Peak Supplement with Link and Sync
 %small
   - @calculation.interruptable_model.thermal_storage_model.thermal_storages.each do |ts|
